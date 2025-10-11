@@ -1,0 +1,12 @@
+<nav class="header-links-wrapper fade-links" [class.active]="isMenuOpened()">
+  @for (link of navLinks; track link.id) {
+  <a [href]="link.href" (click)="closeMenu()" class="link">
+    {{ link.text }}
+  </a>
+  }
+</nav>
+<button class="hamburger-button" [class.opened]="isMenuOpened()" (click)="toggleMenu()">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</button>

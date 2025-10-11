@@ -1,0 +1,38 @@
+@mixin slide-down-animation {
+  animation-name: slide-down;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 1.75rem;
+
+  .logo-link {
+    display: flex;
+
+    .logo {
+      border-radius: 50%;
+      height: auto;
+      width: 3rem;
+      position: relative;
+      z-index: 1;
+      @include slide-down-animation;
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
