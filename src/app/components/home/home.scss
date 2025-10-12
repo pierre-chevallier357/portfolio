@@ -14,7 +14,7 @@
   }
 }
 
-.hero {
+.home-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,11 +33,32 @@
 }
 
 @media screen and (max-width: 768px) {
-  .hero {
+  .home-wrapper {
     flex-direction: column;
 
     .profile-picture {
       max-width: 70vw;
     }
+  }
+}
+
+.home-title {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  margin: 0 0 2rem;
+
+  .name {
+    background: linear-gradient(to bottom, var(--light-blue), var(--light-turquoise));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-title {
+    font-size: 2.5rem;
+    min-height: 15rem;
+    margin: 0 0 1.5rem;
   }
 }

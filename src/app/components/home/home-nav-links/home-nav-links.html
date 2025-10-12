@@ -1,0 +1,52 @@
+<div class="home-links-wrapper">
+  <a
+    class="about-link"
+    href="/"
+    (mouseenter)="isAboutHovered.set(true)"
+    (mouseleave)="isAboutHovered.set(false)"
+  >
+    À propos
+    <img
+      [ngSrc]="`images/home/${this.isAboutHovered() ? 'arrow' : 'chevron'}-down-solid.svg`"
+      alt="Flèche pointant vers le bas"
+      width="16"
+      height="16"
+      class="arrow-down"
+      priority
+    />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/pierre-chevallier/"
+    target="_blank"
+    class="external-link"
+    (mouseenter)="isLinkedInHovered.set(true)"
+    (mouseleave)="isLinkedInHovered.set(false)"
+  >
+    <img
+      ngSrc="images/home/linkedin.svg"
+      alt="Icône LinkedIn"
+      class="social-icon hovered"
+      width="24"
+      height="24"
+      priority
+    />
+    {{ isLinkedInHovered() ? 'LinkedIn' : '' }}
+  </a>
+  <a
+    href="https://github.com/pierre-chevallier357"
+    target="_blank"
+    class="external-link"
+    (mouseenter)="isGitHubHovered.set(true)"
+    (mouseleave)="isGitHubHovered.set(false)"
+  >
+    <img
+      ngSrc="images/home/github.svg"
+      alt="Icône GitHub"
+      class="social-icon"
+      width="24"
+      height="24"
+      priority
+    />
+    {{ isGitHubHovered() ? 'GitHub' : '' }}
+  </a>
+</div>

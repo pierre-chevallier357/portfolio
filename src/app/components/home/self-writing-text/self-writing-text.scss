@@ -1,0 +1,26 @@
+.self-writing-text {
+  background-image: linear-gradient(to bottom, var(--light-turquoise), var(--light-green));
+  color: transparent;
+  background-clip: text;
+}
+
+.vertical-bar {
+  color: var(--white);
+  font-weight: 200;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: inline-block;
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

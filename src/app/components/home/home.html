@@ -1,8 +1,17 @@
-<div animate.enter="enter-animation" class="hero">
+<div animate.enter="enter-animation" class="home-wrapper">
   <!-- initial={{ y: 200, opacity: 0 }}
 whileInView={{ y: 0, opacity: 1 }}
 transition={{ duration: 2 }} -->
-  <!-- <Presentation /> -->
+  <article>
+    <h1 class="home-title">
+      Hey !
+      <br />
+      Je m'appelle <span class="name">Pierre Chevallier</span>,
+      <br />
+      Je suis <self-writing-text />
+    </h1>
+    <home-nav-links />
+  </article>
   <img
     ngSrc="images/home/profile-picture.png"
     alt="Portrait de Pierre"

@@ -1,0 +1,77 @@
+.home-links-wrapper {
+  display: flex;
+  margin-bottom: 2rem;
+
+  .link-button {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    border: 0.125rem solid var(--light-blue);
+    border-radius: 2rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    height: 3rem;
+    font-size: 1.1rem;
+
+    &:hover {
+      background-color: var(--transparent-light-blue);
+    }
+  }
+
+  .about-link {
+    @extend .link-button;
+    color: var(--light-blue);
+    padding: 0rem 1.4rem;
+    margin-left: 1.5rem;
+    width: fit-content;
+
+    .arrow-down {
+      width: 1rem;
+      height: auto;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .external-link {
+    @extend .link-button;
+    color: var(--white);
+    margin-left: 2rem;
+    min-width: 3rem;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      width: auto;
+      padding: 0rem 1.4rem;
+
+      .social-icon {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .social-icon {
+      height: 1.5rem;
+      width: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-links-wrapper {
+    align-items: center;
+    margin: 0 auto 2rem;
+    justify-content: space-evenly;
+
+    .about-link {
+      margin-left: 0;
+      font-size: 1rem;
+    }
+
+    .external-link {
+      margin-left: 0.8rem;
+      font-size: 1rem;
+    }
+  }
+}
