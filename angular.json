@@ -34,7 +34,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "scripts": ["node_modules/particles.js/particles.js"]
           },
           "configurations": {
             "production": {

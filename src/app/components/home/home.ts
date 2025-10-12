@@ -1,5 +1,9 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+
+declare var particlesJS: {
+  load: (elementId: string, propertiesFilePath: string) => {};
+};
 
 @Component({
   selector: 'home',
@@ -7,4 +11,8 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home implements AfterViewInit {
+  public ngAfterViewInit(): void {
+    particlesJS.load('particles-js', 'particles/particles.json');
+  }
+}
