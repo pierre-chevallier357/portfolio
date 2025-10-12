@@ -1,0 +1,43 @@
+.particles {
+  width: 100%;
+  height: calc(100vh - 6.5rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 3.125rem, black 12.5rem);
+  mask-image: linear-gradient(to bottom, transparent 3.125rem, black 12.5rem);
+}
+
+@media screen and (max-width: 380px) {
+  .particles {
+    min-height: 100vh;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 10vh;
+  width: 80vw;
+
+  .profile-picture {
+    height: auto;
+    width: 28.125rem;
+    max-width: 45vh;
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+
+    .profile-picture {
+      max-width: 70vw;
+    }
+  }
+}

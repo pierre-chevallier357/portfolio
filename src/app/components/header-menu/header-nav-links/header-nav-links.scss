@@ -1,4 +1,4 @@
-@import '../header-menu.scss';
+@use 'slide-down.scss' as *;
 
 .header-links-wrapper {
   display: flex;
@@ -13,7 +13,6 @@
     transition: all 0.1s ease-in-out;
     position: relative;
     z-index: 1;
-    // @include slide-down-animation;
 
     &:hover {
       color: var(--light-blue);
@@ -120,21 +119,11 @@
 }
 
 .fade-links a {
-  // opacity: 0;
-  // transform: translateY(10px);
-  // animation: fadeIn 0.5s ease forwards;
   @include slide-down-animation;
 
   @for $i from 1 through 20 {
     &:nth-child(#{$i}) {
-      animation-delay: (200ms * ($i - 1));
+      animation-delay: (200ms * ($i + 1));
     }
   }
 }
-
-// @keyframes fadeIn {
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }

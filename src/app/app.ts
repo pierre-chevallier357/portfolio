@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderMenu } from './components/header-menu/header-menu';
 import { Home } from './components/home/home';
 
@@ -8,6 +8,4 @@ import { Home } from './components/home/home';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = signal('portfolio');
-}
+export class App {}
