@@ -1,4 +1,4 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 interface NavLink {
   id: number;
@@ -10,7 +10,6 @@ interface NavLink {
   selector: 'header-nav-links',
   imports: [],
   templateUrl: './header-nav-links.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header-nav-links.scss',
 })
 export class HeaderNavLinks {

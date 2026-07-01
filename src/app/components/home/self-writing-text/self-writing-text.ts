@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Typewriter } from '../../../services/typewriter/typewriter';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
@@ -7,7 +7,6 @@ import { AsyncPipe } from '@angular/common';
   selector: 'self-writing-text',
   imports: [AsyncPipe],
   templateUrl: './self-writing-text.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './self-writing-text.scss',
 })
 export class SelfWritingText {

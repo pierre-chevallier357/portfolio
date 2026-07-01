@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderMenu } from './components/header-menu/header-menu';
 import { Home } from './components/home/home';
 
@@ -6,7 +6,6 @@ import { Home } from './components/home/home';
   selector: 'app-root',
   imports: [HeaderMenu, Home],
   templateUrl: './app.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
 export class App {}

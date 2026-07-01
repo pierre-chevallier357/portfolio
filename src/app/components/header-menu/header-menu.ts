@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderNavLinks } from './header-nav-links/header-nav-links';
 import { NgOptimizedImage } from '@angular/common';
 
@@ -6,7 +6,6 @@ import { NgOptimizedImage } from '@angular/common';
   selector: 'header-menu',
   imports: [HeaderNavLinks, NgOptimizedImage],
   templateUrl: './header-menu.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header-menu.scss',
 })
 export class HeaderMenu {}
