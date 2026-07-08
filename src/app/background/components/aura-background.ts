@@ -1,17 +1,20 @@
 import {
   AfterViewInit,
   Component,
+  computed,
   DestroyRef,
   ElementRef,
   inject,
   viewChild,
 } from '@angular/core';
 import { AuraDot } from '../models/aura-dot';
+import { ThemeService } from '../../services/theme/theme';
 
 /** Colors used for the drifting aura dots, in soft pastel tones. */
 const AURA_COLORS = ['#d094e5', '#a3dcd4', '#e8b89c', '#bdf3f9'] as const;
-/** Background color the aura dots fade into, expressed as `r, g, b`. */
-const AURA_BACKGROUND_RGB = '237, 231, 222';
+/** Background color the aura dots fade into, expressed as `r, g, b`, per color scheme. */
+const AURA_BACKGROUND_RGB_LIGHT = '237, 231, 222';
+const AURA_BACKGROUND_RGB_DARK = '35, 56, 49';
 const AURA_DOT_COUNT = 12;
 
 /** Site-wide animated background, rendered once behind all pages/routes. */
@@ -23,6 +26,12 @@ const AURA_DOT_COUNT = 12;
 export class AuraBackground implements AfterViewInit {
   private readonly canvasRef = viewChild<ElementRef<HTMLCanvasElement>>('auraCanvas');
   private readonly destroyRef = inject(DestroyRef);
+  private readonly themeService = inject(ThemeService);
+
+  /** Follows the active theme (OS preference or manual toggle) reactively. */
+  private readonly backgroundRgb = computed(() =>
+    this.themeService.theme() === 'dark' ? AURA_BACKGROUND_RGB_DARK : AURA_BACKGROUND_RGB_LIGHT,
+  );
 
   private dots: AuraDot[] = [];
   private animationFrameId?: number;
@@ -48,7 +57,7 @@ export class AuraBackground implements AfterViewInit {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const dot of this.dots) {
         dot.update();
-        dot.draw(ctx, AURA_BACKGROUND_RGB);
+        dot.draw(ctx, this.backgroundRgb());
       }
       this.animationFrameId = requestAnimationFrame(animate);
     };

@@ -9,7 +9,7 @@
 .about-section {
   display: flex;
   justify-content: center;
-  background-color: var(--white);
+  background-color: var(--text-color);
 }
 
 .experience-section {
@@ -20,7 +20,7 @@
   height: 8vw;
   width: 100vw;
   overflow: hidden;
-  background-color: var(--white);
+  background-color: var(--text-color);
   margin: -4vw 0 -4vw;
   -webkit-transform: rotate(-4deg) scale(1.2, 1);
   -ms-transform: rotate(-4deg) scale(1.2, 1);

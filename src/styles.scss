@@ -1,3 +1,24 @@
+:root {
+  color-scheme: light dark;
+  --text-color: #025a4e;
+  --bg-color: #ede7de;
+  --bg-color-rgb: 237, 231, 222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --text-color: #f6f9fc;
+    --bg-color: #233831;
+    --bg-color-rgb: 35, 56, 49;
+  }
+}
+
+/* Manual override from the theme toggle takes precedence over the OS preference. */
+:root[data-theme='dark'] {
+  --bg-color: #233831;
+  --bg-color-rgb: 35, 56, 49;
+}
+
 body {
   --white: #f6f9fc;
   --light-blue: #56dcfc;
@@ -6,15 +27,13 @@ body {
   --dark-blue: #0b1a2e;
   --transparent-light-blue: #61dbfa3d;
   --dark-gray: #425466;
-  --bg-color: #ede7de; /* Cream site background */
-  --bg-color-rgb: 237, 231, 222;
 
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
     Noto Color Emoji;
   background-color: var(--bg-color);
   height: auto;
-  color: var(--white);
+  color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   margin: 0;
   overflow-x: hidden;

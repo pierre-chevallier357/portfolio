@@ -7,7 +7,7 @@
 
   .link {
     text-decoration: none;
-    color: var(--white);
+    color: var(--text-color);
     padding: 1rem 1.625rem;
     font-weight: bold;
     transition: all 0.1s ease-in-out;
@@ -44,7 +44,7 @@
     width: 3rem;
     height: 0.3125rem;
     border-radius: 0.3rem;
-    background-color: var(--white);
+    background-color: var(--text-color);
     display: block;
     margin: 0.5rem auto;
     -webkit-transition: all 0.3s ease-in-out;
@@ -78,7 +78,7 @@
     .header-links-wrapper {
       position: fixed;
       right: -120%;
-      top: 0rem;
+      top: 0;
       height: 100vh;
       width: 100vw;
       flex-direction: column;
