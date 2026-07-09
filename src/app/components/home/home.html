@@ -5,19 +5,20 @@ transition={{ duration: 2 }} -->
   <article>
     <h1 class="home-title">
       Hey !
-      <br />
-      Je m'appelle <span class="name">Pierre Chevallier</span>,
-      <br />
-      Je suis <self-writing-text />
+      <br/>
+      Je m'appelle <span [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>,
+      <br/>
+      Je suis
+      <self-writing-text/>
     </h1>
-    <home-nav-links />
+    <home-nav-links/>
   </article>
   <img
-    ngSrc="images/home/profile-picture.png"
     alt="Portrait de Pierre"
     class="profile-picture"
-    width="450"
     height="450"
+    ngSrc="images/home/profile-picture.png"
     priority
+    width="450"
   />
 </div>

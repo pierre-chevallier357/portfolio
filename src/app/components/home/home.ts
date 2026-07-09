@@ -1,7 +1,8 @@
-import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
-import { SelfWritingText } from './self-writing-text/self-writing-text';
-import { HomeNavLinks } from './home-nav-links/home-nav-links';
+import {NgOptimizedImage} from '@angular/common';
+import {Component, inject, Signal} from '@angular/core';
+import {SelfWritingText} from './self-writing-text/self-writing-text';
+import {HomeNavLinks} from './home-nav-links/home-nav-links';
+import {ThemeService} from '../../services/theme/theme';
 
 @Component({
   selector: 'home',
@@ -9,4 +10,6 @@ import { HomeNavLinks } from './home-nav-links/home-nav-links';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home {
+  protected isDarkMode: Signal<boolean> = inject(ThemeService).isDarkMode;
+}

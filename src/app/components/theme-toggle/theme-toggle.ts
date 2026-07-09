@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { ThemeService } from '../../services/theme/theme';
+import {Component, inject, WritableSignal} from '@angular/core';
+import {ThemeService} from '../../services/theme/theme';
+import {Theme} from '../../models/theme';
 
 @Component({
   selector: 'theme-toggle',
@@ -8,8 +9,8 @@ import { ThemeService } from '../../services/theme/theme';
   styleUrl: './theme-toggle.scss',
 })
 export class ThemeToggle {
-  private readonly themeService = inject(ThemeService);
-  protected readonly theme = this.themeService.theme;
+  private readonly themeService: ThemeService = inject(ThemeService);
+  protected readonly theme: WritableSignal<Theme> = this.themeService.theme;
 
   protected toggleTheme(): void {
     this.themeService.toggleTheme();

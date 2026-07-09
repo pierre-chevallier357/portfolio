@@ -74,7 +74,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
+  .navbar { // TODO fix navbar on mobile
     .header-links-wrapper {
       position: fixed;
       right: -120%;
@@ -82,7 +82,7 @@
       height: 100vh;
       width: 100vw;
       flex-direction: column;
-      background-color: var(--dark-blue);
+      background-color: var(--brilliant-azure-950); // TODO replace with pine-teal?
       text-align: center;
       transition: 0.3s;
       z-index: 2;

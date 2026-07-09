@@ -1,36 +1,105 @@
 :root {
+  --pine-teal-50: #bbfef5;
+  --pine-teal-100: #76fcea;
+  --pine-teal-200: #32fbe0;
+  --pine-teal-300: #05e3c5;
+  --pine-teal-400: #039e8a;
+  --pine-teal-500: #025a4e;
+  --pine-teal-600: #024b41;
+  --pine-teal-700: #013c34;
+  --pine-teal-800: #012d27;
+  --pine-teal-900: #011e1a;
+  --pine-teal-950: #000f0d;
+
+  --dusty-grape-50: #dfdcee;
+  --dusty-grape-100: #c0b9dd;
+  --dusty-grape-200: #a096cc;
+  --dusty-grape-300: #8073bc;
+  --dusty-grape-400: #6251a9;
+  --dusty-grape-500: #4e4187;
+  --dusty-grape-600: #413670;
+  --dusty-grape-700: #342b5a;
+  --dusty-grape-800: #272043;
+  --dusty-grape-900: #1a162d;
+  --dusty-grape-950: #0d0b16;
+
+  --brilliant-azure-50: #ddebf9;
+  --brilliant-azure-100: #bbd6f3;
+  --brilliant-azure-200: #99c2ee;
+  --brilliant-azure-300: #76ade8;
+  --brilliant-azure-400: #5499e2;
+  --brilliant-azure-500: #3083dc;
+  --brilliant-azure-600: #216ec1;
+  --brilliant-azure-700: #1a589a;
+  --brilliant-azure-800: #144274;
+  --brilliant-azure-900: #0d2c4d;
+  --brilliant-azure-950: #071627;
+
+  --blush-rose-50: #fbe2ea;
+  --blush-rose-100: #f6c5d5;
+  --blush-rose-200: #f2a8c0;
+  --blush-rose-300: #ee8cab;
+  --blush-rose-400: #e96f96;
+  --blush-rose-500: #e55381;
+  --blush-rose-600: #de2560;
+  --blush-rose-700: #b41b4c;
+  --blush-rose-800: #871439;
+  --blush-rose-900: #5a0d26;
+  --blush-rose-950: #2d0713;
+
+  --soft-linen-50: #fcfbfa;
+  --soft-linen-100: #f9f7f4;
+  --soft-linen-200: #f6f3ef;
+  --soft-linen-300: #f3efe9;
+  --soft-linen-400: #f0ebe4;
+  --soft-linen-500: #ede7de;
+  --soft-linen-600: #d2c3ad;
+  --soft-linen-700: #b79f7b;
+  --soft-linen-800: #947951;
+  --soft-linen-900: #635136;
+  --soft-linen-950: #31281b;
+
+  --pine-teal: var(--pine-teal-500);
+  --dusty-grape: var(--dusty-grape-500);
+  --brilliant-azure: var(--brilliant-azure-500);
+  --blush-rose: var(--blush-rose-500);
+  --soft-linen: var(--soft-linen-500);
+
   color-scheme: light dark;
-  --text-color: #025a4e;
-  --bg-color: #ede7de;
+
+  --text-color: var(--pine-teal);
+  --bg-color: var(--soft-linen);
   --bg-color-rgb: 237, 231, 222;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --text-color: #f6f9fc;
-    --bg-color: #233831;
+    --text-color: var(--soft-linen); // TODO check it's good
+    --bg-color: var(--pine-teal); // TODO check it's good, maybe replace with pine-teal-700
     --bg-color-rgb: 35, 56, 49;
   }
 }
 
 /* Manual override from the theme toggle takes precedence over the OS preference. */
 :root[data-theme='dark'] {
-  --bg-color: #233831;
-  --bg-color-rgb: 35, 56, 49;
+  --bg-color: var(--pine-teal);
+  --bg-color-rgb: 35, 56, 49; // TODO replace with pine-teal?
 }
 
 body {
-  --white: #f6f9fc;
+  // TODO delete this
+  //--white: #f6f9fc;
   --light-blue: #56dcfc;
   --light-turquoise: #82ece3;
   --light-green: #adfcc9;
-  --dark-blue: #0b1a2e;
+  //--dark-blue: #0b1a2e;
   --transparent-light-blue: #61dbfa3d;
-  --dark-gray: #425466;
+  //--dark-gray: #425466;
+  /////
 
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-    Noto Color Emoji;
+  Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+  Noto Color Emoji;
   background-color: var(--bg-color);
   height: auto;
   color: var(--text-color);

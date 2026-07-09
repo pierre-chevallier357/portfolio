@@ -1,2 +1,2 @@
-<span class="self-writing-text">développeur {{ typedText$ | async }}</span>
-<span class="vertical-bar" aria-hidden="true">|</span>
+<span [class]="'self-writing-text' + (isDarkMode() ? ' dark' : ' light')">développeur {{ typedText$ | async }}</span>
+<span aria-hidden="true" class="vertical-bar">|</span>
