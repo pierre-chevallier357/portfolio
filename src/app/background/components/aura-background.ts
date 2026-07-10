@@ -2,12 +2,10 @@ import {AfterViewInit, Component, computed, DestroyRef, ElementRef, inject, Sign
 import {AuraDot} from '../models/aura-dot';
 import {ThemeService} from '../../services/theme/theme';
 
-/** Colors used for the drifting aura dots, in soft pastel tones. */
-const AURA_COLORS = ['#d094e5', '#a3dcd4', '#e8b89c', '#bdf3f9'] as const; // TODO choose better colors
-/** Background color the aura dots fade into, expressed as `r, g, b`, per color scheme. */
-const AURA_BACKGROUND_RGB_LIGHT = '237, 231, 222'; // TODO replace with my colors
-const AURA_BACKGROUND_RGB_DARK = '35, 56, 49'; // TODO replace with my colors
-const AURA_DOT_COUNT = 12;
+const DOTS_COLORS = ['#FF5E00', '#F2FF00', '#00E5FF', '#15FF00', '#FF00F7'] as const;
+const BACKGROUND_LIGHT_COLOR = '237, 231, 222';
+const BACKGROUND_DARK_COLOR = '35, 56, 49';
+const DOTS_COUNT = 12;
 
 @Component({
   selector: 'aura-background',
@@ -19,7 +17,7 @@ export class AuraBackground implements AfterViewInit {
   private readonly destroyRef: DestroyRef = inject(DestroyRef);
   private readonly themeService: ThemeService = inject(ThemeService);
   private readonly backgroundColor = computed(() =>
-    this.themeService.isDarkMode() ? AURA_BACKGROUND_RGB_DARK : AURA_BACKGROUND_RGB_LIGHT,
+    this.themeService.isDarkMode() ? BACKGROUND_DARK_COLOR : BACKGROUND_LIGHT_COLOR,
   );
   private dots: AuraDot[] = [];
   private animationFrameId?: number;
@@ -38,7 +36,7 @@ export class AuraBackground implements AfterViewInit {
     const resize = (): void => {
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
-      this.dots = Array.from({length: AURA_DOT_COUNT}, () => new AuraDot(canvas, AURA_COLORS));
+      this.dots = Array.from({length: DOTS_COUNT}, () => new AuraDot(canvas, DOTS_COLORS));
     };
 
     const animate = (): void => {

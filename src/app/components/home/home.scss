@@ -31,17 +31,18 @@
   z-index: 1;
   font-size: 3rem;
   margin: 0 0 2rem;
+  font-family: var(--title-font);
 
   .name {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
     &.dark {
-      background-image: linear-gradient(to bottom, var(--pine-teal-50), var(--pine-teal-200));
+      background-image: linear-gradient(to bottom, var(--brilliant-azure-200), var(--brilliant-azure-400));
     }
 
     &.light {
-      background-image: linear-gradient(to bottom, var(--soft-linen-800), var(--soft-linen-950));
+      background-image: linear-gradient(to bottom, var(--blush-rose-600), var(--blush-rose-900));
     }
   }
 }
