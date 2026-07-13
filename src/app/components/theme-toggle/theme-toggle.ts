@@ -4,7 +4,6 @@ import {Theme} from '../../models/theme';
 
 @Component({
   selector: 'theme-toggle',
-  imports: [],
   templateUrl: './theme-toggle.html',
   styleUrl: './theme-toggle.scss',
 })

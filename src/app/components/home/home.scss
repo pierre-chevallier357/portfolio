@@ -6,15 +6,6 @@
   margin: 0 auto 10vh;
   width: 80vw;
 
-  .profile-picture {
-    height: auto;
-    width: 28.125rem;
-    max-width: 45vh;
-    position: relative;
-    z-index: 1;
-    border-radius: 50%;
-  }
-
   .home-title {
     position: relative;
     z-index: 1;
@@ -36,11 +27,37 @@
     }
   }
 
+  .about-link {
+    z-index: 1;
+    text-decoration: none;
+    border: 0.125rem solid var(--border-color);
+    border-radius: 2rem;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    padding: 1rem 1.5rem;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: var(--bg-hover-color);
+    }
+  }
+
+  .profile-picture {
+    height: auto;
+    width: 28.125rem;
+    max-width: 45vh;
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+  }
+
   .star-icon {
     position: relative;
     height: auto;
     z-index: 2;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     &.left {
       rotate: -4deg;
@@ -90,14 +107,19 @@
   .home-wrapper {
     flex-direction: column;
 
-    .profile-picture {
-      max-width: 70vw;
-    }
-
     .home-title {
       font-size: 2.5rem;
       min-height: 15rem;
       margin: 0 0 1.5rem;
+    }
+
+    .about-link {
+      margin-left: 0;
+      font-size: 1rem;
+    }
+
+    .profile-picture {
+      max-width: 70vw;
     }
   }
 }
