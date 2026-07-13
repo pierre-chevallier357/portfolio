@@ -30,6 +30,14 @@
       position: relative;
       z-index: 1;
     }
+
+    &:hover {
+      color: var(--text-hover-color);
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      -o-transform: scale(1.05);
+      transform: scale(1.05);
+    }
   }
 
   .navbar-controls {
