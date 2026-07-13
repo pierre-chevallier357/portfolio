@@ -14,6 +14,33 @@
     z-index: 1;
     border-radius: 50%;
   }
+
+  .star-icon {
+    position: relative;
+    height: auto;
+    z-index: 2;
+    transition: all 0.1s ease-in-out;
+
+    &.left {
+      top: 130px;
+      left: 130px;
+      width: 4.5rem;
+    }
+
+    &.right {
+      bottom: 60px;
+      right: 80px;
+      width: 3.5rem;
+    }
+
+    &:hover {
+      color: var(--text-hover-color);
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -29,7 +56,7 @@
 .home-title {
   position: relative;
   z-index: 1;
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 0 0 2rem;
   font-family: var(--title-font);
 

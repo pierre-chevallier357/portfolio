@@ -6,13 +6,20 @@ transition={{ duration: 2 }} -->
     <h1 class="home-title">
       Hey !
       <br/>
-      Je m'appelle <span [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>,
+      Je suis <span [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>,
       <br/>
-      Je suis
       <self-writing-text/>
     </h1>
     <home-nav-links/>
   </article>
+  <img
+    alt="Étoile"
+    class="star-icon left"
+    height="24"
+    ngSrc="images/home/star.svg"
+    priority
+    width="24"
+  />
   <img
     alt="Portrait de Pierre"
     class="profile-picture"
@@ -20,5 +27,13 @@ transition={{ duration: 2 }} -->
     ngSrc="images/home/profile-picture.jpg"
     priority
     width="450"
+  />
+  <img
+    alt="Étoile"
+    class="star-icon right"
+    height="24"
+    ngSrc="images/home/star.svg"
+    priority
+    width="24"
   />
 </div>
