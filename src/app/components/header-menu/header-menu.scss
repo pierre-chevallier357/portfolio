@@ -28,8 +28,28 @@
       height: auto;
       width: 3rem;
       position: relative;
+      transition: all 0.1s ease-in-out;
       z-index: 1;
+
+      &:hover {
+        color: var(--text-hover-color);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+      }
     }
+  }
+
+  .navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1;
+  }
+
+  .navbar-title {
+    transition: all 0.1s ease-in-out;
 
     &:hover {
       color: var(--text-hover-color);
@@ -39,11 +59,10 @@
       transform: scale(1.05);
     }
   }
+}
 
-  .navbar-controls {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    z-index: 1;
+@media screen and (max-width: 768px) {
+  .navbar-title {
+    display: none;
   }
 }

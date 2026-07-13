@@ -15,30 +15,73 @@
     border-radius: 50%;
   }
 
+  .home-title {
+    position: relative;
+    z-index: 1;
+    font-size: 4rem;
+    margin: 0 0 2rem;
+    font-family: var(--title-font);
+
+    .name {
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &.dark {
+        background-image: linear-gradient(to bottom, var(--brilliant-azure-100), var(--brilliant-azure-300));
+      }
+
+      &.light {
+        background-image: linear-gradient(to bottom, var(--blush-rose-700), var(--blush-rose-950));
+      }
+    }
+  }
+
   .star-icon {
     position: relative;
     height: auto;
     z-index: 2;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &.left {
+      rotate: -4deg;
       top: 130px;
       left: 130px;
       width: 4.5rem;
+      animation: 10s ease-in-out infinite float-left;
+
+      @keyframes float-left {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-16px) rotate(-8deg);
+        }
+      }
     }
 
     &.right {
+      rotate: 4deg;
       bottom: 60px;
       right: 80px;
       width: 3.5rem;
+      animation: 10s ease-in-out infinite float-right;
+
+      @keyframes float-right {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(16px) rotate(8deg);
+        }
+      }
     }
 
     &:hover {
-      color: var(--text-hover-color);
-      -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      transform: scale(1.2);
+      filter: drop-shadow(0 0 10px white);
     }
   }
 }
@@ -50,34 +93,11 @@
     .profile-picture {
       max-width: 70vw;
     }
-  }
-}
 
-.home-title {
-  position: relative;
-  z-index: 1;
-  font-size: 4rem;
-  margin: 0 0 2rem;
-  font-family: var(--title-font);
-
-  .name {
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    &.dark {
-      background-image: linear-gradient(to bottom, var(--brilliant-azure-100), var(--brilliant-azure-300));
+    .home-title {
+      font-size: 2.5rem;
+      min-height: 15rem;
+      margin: 0 0 1.5rem;
     }
-
-    &.light {
-      background-image: linear-gradient(to bottom, var(--blush-rose-700), var(--blush-rose-950));
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .home-title {
-    font-size: 2.5rem;
-    min-height: 15rem;
-    margin: 0 0 1.5rem;
   }
 }
