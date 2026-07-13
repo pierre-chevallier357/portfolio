@@ -1,35 +1,6 @@
-.home-section {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  min-height: calc(100vh - 6.5rem);
-  align-items: center;
-  justify-content: center;
-}
-
+// TODO remove this when about section is added
 .about-section {
   display: flex;
   justify-content: center;
   background-color: var(--text-color);
-}
-
-.experience-section {
-  margin-top: 8vw;
-}
-
-.separation-line {
-  height: 8vw;
-  width: 100vw;
-  overflow: hidden;
-  background-color: var(--text-color);
-  margin: -4vw 0 -4vw;
-  -webkit-transform: rotate(-4deg) scale(1.2, 1);
-  -ms-transform: rotate(-4deg) scale(1.2, 1);
-  transform: rotate(-4deg) scale(1.2, 1);
-}
-
-@media screen and (max-width: 768px) {
-  .home-section {
-    min-height: 90vh;
-  }
 }

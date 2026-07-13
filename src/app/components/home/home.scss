@@ -1,17 +1,31 @@
-.home-wrapper {
+:host {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 6.5rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.home-section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title portrait"
+    "about about";
   align-items: center;
   margin: 0 auto 10vh;
   width: 80vw;
 
   .home-title {
+    width: fit-content;
     position: relative;
     z-index: 1;
     font-size: 4rem;
     margin: 0 0 2rem;
     font-family: var(--title-font);
+    grid-area: title;
 
     .name {
       background-clip: text;
@@ -27,7 +41,72 @@
     }
   }
 
+  .portrait {
+    grid-area: portrait;
+    position: relative;
+    margin: 0;
+
+    .profile-picture {
+      height: auto;
+      width: 28.125rem;
+      max-width: 45vh;
+      display: block;
+      z-index: 1;
+      border-radius: 50%;
+    }
+
+    .star-icon {
+      position: absolute;
+      height: auto;
+      z-index: 2;
+      transition: all 0.1s ease-in-out;
+
+      &.left {
+        rotate: -4deg;
+        top: 70%;
+        left: 0;
+        width: 4.5rem;
+        animation: 10s ease-in-out infinite float-left;
+
+        @keyframes float-left {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-16px) rotate(-8deg);
+          }
+        }
+      }
+
+      &.right {
+        rotate: 4deg;
+        top: 10%;
+        right: 0;
+        width: 3.5rem;
+        animation: 10s ease-in-out infinite float-right;
+
+        @keyframes float-right {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(16px) rotate(8deg);
+          }
+        }
+      }
+
+      &:hover {
+        filter: drop-shadow(0 0 10px white);
+      }
+    }
+  }
+
   .about-link {
+    grid-area: about;
     z-index: 1;
     text-decoration: none;
     border: 0.125rem solid var(--border-color);
@@ -38,73 +117,21 @@
     color: var(--text-color);
     padding: 1rem 1.5rem;
     transition: all 0.1s ease-in-out;
+    width: fit-content;
+    justify-self: center;
 
     &:hover {
       background-color: var(--bg-hover-color);
     }
   }
-
-  .profile-picture {
-    height: auto;
-    width: 28.125rem;
-    max-width: 45vh;
-    position: relative;
-    z-index: 1;
-    border-radius: 50%;
-  }
-
-  .star-icon {
-    position: relative;
-    height: auto;
-    z-index: 2;
-    transition: all 0.1s ease-in-out;
-
-    &.left {
-      rotate: -4deg;
-      top: 130px;
-      left: 130px;
-      width: 4.5rem;
-      animation: 10s ease-in-out infinite float-left;
-
-      @keyframes float-left {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-16px) rotate(-8deg);
-        }
-      }
-    }
-
-    &.right {
-      rotate: 4deg;
-      bottom: 60px;
-      right: 80px;
-      width: 3.5rem;
-      animation: 10s ease-in-out infinite float-right;
-
-      @keyframes float-right {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(16px) rotate(8deg);
-        }
-      }
-    }
-
-    &:hover {
-      filter: drop-shadow(0 0 10px white);
-    }
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .home-wrapper {
+  :host {
+    min-height: 90vh;
+  }
+
+  .home-section {
     flex-direction: column;
 
     .home-title {

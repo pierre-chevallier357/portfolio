@@ -1,40 +1,40 @@
-<div animate.enter="enter-animation" class="home-wrapper">
+<section class="home-section">
   <!-- // TODO add animation back -->
   <!-- initial={{ y: 200, opacity: 0 }}
 whileInView={{ y: 0, opacity: 1 }}
 transition={{ duration: 2 }} -->
-  <article>
-    <h1 class="home-title">
-      Hey !
-      <br/>
-      Je suis <span [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>,
-      <br/>
-      <self-writing-text/>
-    </h1>
-    <a class="about-link" href="/">À propos ↓</a>
-  </article>
-  <img
-    alt="Étoile"
-    class="star-icon left"
-    height="24"
-    ngSrc="images/home/star.svg"
-    priority
-    width="24"
-  />
-  <img
-    alt="Portrait de Pierre"
-    class="profile-picture"
-    height="450"
-    ngSrc="images/home/profile-picture.jpg"
-    priority
-    width="450"
-  />
-  <img
-    alt="Étoile"
-    class="star-icon right"
-    height="24"
-    ngSrc="images/home/star.svg"
-    priority
-    width="24"
-  />
-</div>
+  <h1 class="home-title">
+    Hey !
+    <br/>
+    Je suis <span [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>,
+    <br/>
+    <self-writing-text/>
+  </h1>
+  <figure class="portrait">
+    <img
+      alt="Étoile"
+      class="star-icon left"
+      height="24"
+      ngSrc="images/home/star.svg"
+      priority
+      width="24"
+    />
+    <img
+      alt="Portrait de Pierre"
+      class="profile-picture"
+      height="450"
+      ngSrc="images/home/profile-picture.jpg"
+      priority
+      width="450"
+    />
+    <img
+      alt="Étoile"
+      class="star-icon right"
+      height="24"
+      ngSrc="images/home/star.svg"
+      priority
+      width="24"
+    />
+  </figure>
+  <a class="about-link" href="/">À propos ↓</a>
+</section>
