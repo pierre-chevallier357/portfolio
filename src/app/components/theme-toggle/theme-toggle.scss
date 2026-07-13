@@ -5,7 +5,7 @@
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
-  border: 0.125rem solid var(--light-blue);
+  border: 0.125rem solid var(--border-color);
   border-radius: 50%;
   background-color: transparent;
   color: var(--text-color);
@@ -13,7 +13,7 @@
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    background-color: var(--transparent-light-blue);
+    background-color: var(--bg-hover-color);
   }
 
   svg {

@@ -6,7 +6,7 @@
     position: relative;
     z-index: 1;
     text-decoration: none;
-    border: 0.125rem solid var(--light-blue);
+    border: 0.125rem solid var(--border-color);
     border-radius: 2rem;
     background-color: transparent;
     display: flex;
@@ -17,13 +17,13 @@
     font-size: 1.1rem;
 
     &:hover {
-      background-color: var(--transparent-light-blue);
+      background-color: var(--bg-hover-color);
     }
   }
 
   .about-link {
     @extend .link-button;
-    color: var(--light-blue);
+    color: var(--text-color);
     padding: 0 1.4rem;
     margin-left: 1.5rem;
     width: fit-content;

@@ -38,11 +38,11 @@
     -webkit-text-fill-color: transparent;
 
     &.dark {
-      background-image: linear-gradient(to bottom, var(--brilliant-azure-200), var(--brilliant-azure-400));
+      background-image: linear-gradient(to bottom, var(--brilliant-azure-100), var(--brilliant-azure-300));
     }
 
     &.light {
-      background-image: linear-gradient(to bottom, var(--blush-rose-600), var(--blush-rose-900));
+      background-image: linear-gradient(to bottom, var(--blush-rose-700), var(--blush-rose-950));
     }
   }
 }

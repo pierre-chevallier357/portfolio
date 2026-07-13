@@ -15,19 +15,7 @@
     z-index: 1;
 
     &:hover {
-      color: var(--light-blue);
-    }
-
-    &:last-child {
-      color: var(--light-blue);
-      border: 0.125rem solid var(--light-blue);
-      border-radius: 2rem;
-      padding: 0.7rem 1rem;
-      margin-left: 0.625rem;
-
-      &:hover {
-        background-color: var(--transparent-light-blue);
-      }
+      color: var(--text-hover-color);
     }
   }
 }
@@ -82,7 +70,7 @@
       height: 100vh;
       width: 100vw;
       flex-direction: column;
-      background-color: var(--brilliant-azure-950); // TODO replace with pine-teal?
+      background-color: var(--bg-color);
       text-align: center;
       transition: 0.3s;
       z-index: 2;
