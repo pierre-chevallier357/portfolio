@@ -25,7 +25,6 @@
     animation-delay: 1200ms;
     width: fit-content;
     position: relative;
-    z-index: 1;
     font-size: 4rem;
     margin: 0 0 2rem;
     font-family: var(--title-font);
@@ -57,14 +56,12 @@
       width: 28.125rem;
       max-width: 45vh;
       display: block;
-      z-index: 1;
       border-radius: 50%;
     }
 
     .star-icon {
       position: absolute;
       height: auto;
-      z-index: 2;
       transition: all 0.1s ease-in-out;
 
       &.left {
@@ -115,7 +112,6 @@
     @include slide-down-animation;
     animation-delay: 2000ms;
     grid-area: about;
-    z-index: 1;
     text-decoration: none;
     border: 0.125rem solid var(--border-color);
     border-radius: 2rem;

@@ -19,7 +19,6 @@
     font-size: 1.2rem;
     transition: all 0.1s ease-in-out;
     position: relative;
-    z-index: 1;
     @include slide-down-animation;
     animation-delay: 200ms;
 
@@ -29,7 +28,6 @@
       width: 3rem;
       position: relative;
       transition: all 0.1s ease-in-out;
-      z-index: 1;
 
       &:hover {
         color: var(--text-hover-color);
@@ -45,7 +43,6 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    z-index: 1;
   }
 
   .navbar-title {
