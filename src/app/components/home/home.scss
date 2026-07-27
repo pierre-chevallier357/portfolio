@@ -146,16 +146,25 @@
 
 @media screen and (max-width: 768px) {
   :host {
-    min-height: 90vh;
+    min-height: auto;
+    padding: 4rem 0 3rem;
   }
 
   .home-section {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "portrait"
+      "about";
+    justify-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    text-align: center;
 
     .home-title {
       font-size: 2.5rem;
-      min-height: 15rem;
-      margin: 0 0 1.5rem;
+      min-height: auto;
+      margin: 0;
     }
 
     .about-link {
