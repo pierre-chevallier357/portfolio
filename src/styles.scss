@@ -122,6 +122,16 @@
   --bg-color-rgb: 35, 56, 49; // TODO replace with pine-teal?
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--body-font);
   background-color: var(--bg-color);
