@@ -1,6 +1,15 @@
-import {AfterViewInit, Component, computed, DestroyRef, ElementRef, inject, Signal, viewChild,} from '@angular/core';
-import {AuraDot} from '../models/aura-dot';
-import {ThemeService} from '../../services/theme/theme';
+import {
+  AfterViewInit,
+  Component,
+  computed,
+  DestroyRef,
+  ElementRef,
+  inject,
+  Signal,
+  viewChild,
+} from '@angular/core';
+import { AuraDot } from '../models/aura-dot';
+import { ThemeService } from '../../services/theme/theme';
 
 const DOTS_COLORS = ['#FF5E00', '#F2FF00', '#00E5FF', '#15FF00', '#FF00F7'] as const;
 const BACKGROUND_LIGHT_COLOR = '237, 231, 222';
@@ -13,7 +22,8 @@ const DOTS_COUNT = 12;
   styleUrl: './aura-background.scss',
 })
 export class AuraBackground implements AfterViewInit {
-  private readonly canvasRef: Signal<ElementRef<HTMLCanvasElement> | undefined> = viewChild<ElementRef<HTMLCanvasElement>>('auraCanvas');
+  private readonly canvasRef: Signal<ElementRef<HTMLCanvasElement> | undefined> =
+    viewChild<ElementRef<HTMLCanvasElement>>('auraCanvas');
   private readonly destroyRef: DestroyRef = inject(DestroyRef);
   private readonly themeService: ThemeService = inject(ThemeService);
   private readonly backgroundColor = computed(() =>
@@ -22,7 +32,8 @@ export class AuraBackground implements AfterViewInit {
   private dots: AuraDot[] = [];
   private animationFrameId?: number;
 
-  public ngAfterViewInit(): void { // TODO replace with signals
+  public ngAfterViewInit(): void {
+    // TODO replace with signals
     if (typeof window === 'undefined') {
       return; // Skip canvas animation during server-side rendering.
     }
@@ -36,7 +47,7 @@ export class AuraBackground implements AfterViewInit {
     const resize = (): void => {
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
-      this.dots = Array.from({length: DOTS_COUNT}, () => new AuraDot(canvas, DOTS_COLORS));
+      this.dots = Array.from({ length: DOTS_COUNT }, () => new AuraDot(canvas, DOTS_COLORS));
     };
 
     const animate = (): void => {

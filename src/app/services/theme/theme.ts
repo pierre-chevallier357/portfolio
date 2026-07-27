@@ -1,5 +1,5 @@
-import {computed, effect, Injectable, Signal, signal, WritableSignal} from '@angular/core';
-import {Theme} from '../../models/theme';
+import { computed, effect, Injectable, Signal, signal, WritableSignal } from '@angular/core';
+import { Theme } from '../../models/theme';
 
 const STORAGE_KEY = 'theme';
 
@@ -17,7 +17,9 @@ const STORAGE_KEY = 'theme';
 export class ThemeService {
   public readonly theme: WritableSignal<Theme> = signal<Theme>(this.getInitialTheme());
   public readonly isDarkMode: Signal<boolean> = computed(() => this.theme() === 'dark');
-  private readonly darkModeQuery: MediaQueryList | null = this.isBrowser() ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  private readonly darkModeQuery: MediaQueryList | null = this.isBrowser()
+    ? window.matchMedia('(prefers-color-scheme: dark)')
+    : null;
 
   constructor() {
     this.darkModeQuery?.addEventListener('change', (event) => {

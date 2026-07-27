@@ -1,6 +1,6 @@
-import {Component, inject, WritableSignal} from '@angular/core';
-import {ThemeService} from '../../services/theme/theme';
-import {Theme} from '../../models/theme';
+import { Component, inject, WritableSignal } from '@angular/core';
+import { ThemeService } from '../../../../services/theme/theme';
+import { Theme } from '../../../../models/theme';
 
 @Component({
   selector: 'theme-toggle',

@@ -1,11 +1,12 @@
-<nav class="header-links-wrapper fade-links" [class.active]="isMenuOpened()">
+<nav [class.active]="isMenuOpened()" class="header-links-wrapper fade-links">
   @for (link of navLinks; track link.id) {
-  <a [href]="link.href" (click)="closeMenu()" class="link">
-    {{ link.text }}
-  </a>
+    <a (click)="closeMenu()" [href]="link.href" class="link">
+      {{ link.text }}
+    </a>
   }
+  <theme-toggle/>
 </nav>
-<button class="hamburger-button" [class.opened]="isMenuOpened()" (click)="toggleMenu()">
+<button (click)="toggleMenu()" [class.opened]="isMenuOpened()" class="hamburger-button">
   <span class="line"></span>
   <span class="line"></span>
   <span class="line"></span>

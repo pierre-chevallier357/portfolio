@@ -1,7 +1,7 @@
-import {NgOptimizedImage} from '@angular/common';
-import {Component, inject, Signal} from '@angular/core';
-import {SelfWritingText} from './self-writing-text/self-writing-text';
-import {ThemeService} from '../../services/theme/theme';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, inject, Signal } from '@angular/core';
+import { SelfWritingText } from './self-writing-text/self-writing-text';
+import { ThemeService } from '../../services/theme/theme';
 
 @Component({
   selector: 'home',

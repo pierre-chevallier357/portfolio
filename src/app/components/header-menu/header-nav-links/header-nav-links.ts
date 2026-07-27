@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { ThemeToggle } from './theme-toggle/theme-toggle';
 
 interface NavLink {
   id: number;
@@ -8,7 +9,7 @@ interface NavLink {
 
 @Component({
   selector: 'header-nav-links',
-  imports: [],
+  imports: [ThemeToggle],
   templateUrl: './header-nav-links.html',
   styleUrl: './header-nav-links.scss',
 })

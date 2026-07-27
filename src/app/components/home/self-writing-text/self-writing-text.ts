@@ -1,8 +1,8 @@
-import {Component, inject, Signal} from '@angular/core';
-import {Typewriter} from '../../../services/typewriter/typewriter';
-import {Observable} from 'rxjs';
-import {AsyncPipe} from '@angular/common';
-import {ThemeService} from '../../../services/theme/theme';
+import { Component, inject, Signal } from '@angular/core';
+import { Typewriter } from '../../../services/typewriter/typewriter';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
+import { ThemeService } from '../../../services/theme/theme';
 
 @Component({
   selector: 'self-writing-text',
