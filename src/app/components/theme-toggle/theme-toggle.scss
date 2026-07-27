@@ -1,4 +1,8 @@
+@use 'slide-down.scss' as *;
+
 .theme-toggle {
+  @include slide-down-animation;
+  animation-delay: 1600ms;
   display: flex;
   align-items: center;
   justify-content: center;
