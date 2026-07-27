@@ -5,7 +5,7 @@ import { NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'header-menu',
   imports: [HeaderNavLinks, NgOptimizedImage],
-  templateUrl: './header-menu.html',
-  styleUrl: './header-menu.scss',
+  templateUrl: './header.html',
+  styleUrl: './header.scss',
 })
-export class HeaderMenu {}
+export class Header {}
