@@ -1,0 +1,94 @@
+@use 'slide-down.scss' as *;
+
+:host {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin: 0 auto;
+  width: 80vw;
+
+  .picture-frame {
+    @include slide-down-hidden;
+    position: relative;
+    margin: 0;
+    width: 20rem;
+    max-width: 40vw;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 1.5rem;
+
+    .profile-picture {
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+
+    .about-title {
+      @include slide-down-hidden;
+      font-size: 3rem;
+      margin: 0 0 1.5rem;
+      font-family: var(--title-font);
+    }
+
+    .about-text {
+      @include slide-down-hidden;
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+  }
+
+  &.in-view {
+    .picture-frame {
+      @include slide-down-animation;
+      animation-delay: 200ms;
+    }
+
+    .about-title {
+      @include slide-down-animation;
+      animation-delay: 600ms;
+    }
+
+    .about-text {
+      @include slide-down-animation;
+      animation-delay: 1000ms;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+
+    .picture-frame {
+      max-width: 60vw;
+      justify-self: center;
+    }
+
+    .about-content .about-title {
+      font-size: 2.5rem;
+    }
+  }
+}

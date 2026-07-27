@@ -17,7 +17,7 @@ export class HeaderNavLinks {
   protected isMenuOpened = signal(false);
   protected navLinks: NavLink[] = [
     { id: 1, href: '/', text: 'Accueil' },
-    { id: 2, href: '/', text: 'À propos' },
+    { id: 2, href: '#about', text: 'À propos' },
     { id: 3, href: '/', text: 'Compétences' },
     { id: 4, href: '/', text: 'Expériences' },
     { id: 5, href: '/', text: 'Projets' },

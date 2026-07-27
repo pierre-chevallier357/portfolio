@@ -21,8 +21,7 @@
   width: 80vw;
 
   .home-title {
-    @include slide-down-animation;
-    animation-delay: 1200ms;
+    @include slide-down-hidden;
     width: fit-content;
     position: relative;
     font-size: 4rem;
@@ -45,8 +44,7 @@
   }
 
   .portrait {
-    @include slide-down-animation;
-    animation-delay: 1600ms;
+    @include slide-down-hidden;
     grid-area: portrait;
     position: relative;
     margin: 0;
@@ -109,8 +107,7 @@
   }
 
   .about-link {
-    @include slide-down-animation;
-    animation-delay: 2000ms;
+    @include slide-down-hidden;
     grid-area: about;
     text-decoration: none;
     border: 0.125rem solid var(--border-color);
@@ -126,6 +123,23 @@
 
     &:hover {
       background-color: var(--bg-hover-color);
+    }
+  }
+
+  &.in-view {
+    .home-title {
+      @include slide-down-animation;
+      animation-delay: 200ms;
+    }
+
+    .portrait {
+      @include slide-down-animation;
+      animation-delay: 600ms;
+    }
+
+    .about-link {
+      @include slide-down-animation;
+      animation-delay: 1000ms;
     }
   }
 }

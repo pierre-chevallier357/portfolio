@@ -1,4 +1,4 @@
-<section class="home-section">
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="home-section" inView>
   <h1 class="home-title">
     Hey !
     <br/>
@@ -32,5 +32,5 @@
       width="24"
     />
   </figure>
-  <a class="about-link" href="/">À propos ↓</a>
+  <a class="about-link" href="#about">À propos ↓</a>
 </section>
