@@ -1,0 +1,124 @@
+@use 'slide-down.scss' as *;
+
+:host {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-section {
+  padding: 2rem;
+  min-height: 100vh;
+
+  &.in-view {
+    .skills-title {
+      @include slide-down-animation;
+      animation-delay: 200ms;
+    }
+
+    .cards-container {
+      @include slide-down-animation;
+      animation-delay: 600ms;
+    }
+  }
+
+  .skills-title {
+    @include slide-down-hidden;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--title-font);
+  }
+
+  .cards-container {
+    @include slide-down-hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    .skill-card {
+      padding: 1.5rem;
+      background: var(--bg-transparent-color);
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.06);
+
+      .card-header {
+        margin-bottom: 1.5rem;
+
+        h2 {
+          margin: 0 0 0.75rem;
+        }
+
+        .card-description {
+          margin: 0;
+          line-height: 1.5;
+          white-space: pre-line;
+        }
+      }
+
+      .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .skill-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+
+          .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span:first-child {
+              font-weight: 500;
+            }
+
+            span:last-child {
+              font-size: 0.9rem;
+            }
+          }
+
+          .progress-bar {
+            height: 10px;
+            overflow: hidden;
+            border-radius: 999px;
+            background-color: var(--bg-transparent-color);
+          }
+
+          .progress-bar-fill {
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(
+              90deg,
+              var(--dark-color) 0%,
+              var(--light-color) 80%
+            );
+            transition: width 300ms ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    min-height: auto;
+    padding: 4rem 0 3rem;
+  }
+
+  .skills-section {
+    justify-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    text-align: center;
+
+    .cards-container {
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    }
+  }
+}
