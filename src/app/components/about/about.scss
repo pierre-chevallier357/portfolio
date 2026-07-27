@@ -11,7 +11,7 @@
 
 .about-section {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto;
   gap: 4rem;
   align-items: center;
   margin: 0 auto;
@@ -54,17 +54,17 @@
   }
 
   &.in-view {
-    .picture-frame {
+    .about-title {
       @include slide-down-animation;
       animation-delay: 200ms;
     }
 
-    .about-title {
+    .about-text {
       @include slide-down-animation;
       animation-delay: 600ms;
     }
 
-    .about-text {
+    .picture-frame {
       @include slide-down-animation;
       animation-delay: 1000ms;
     }
