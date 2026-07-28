@@ -98,7 +98,7 @@
               background: linear-gradient(
                 90deg,
                 var(--pine-teal-800) 0%,
-                var(--pine-teal-400) 80%
+                var(--pine-teal-400) 100%
               );
             }
 
@@ -138,7 +138,7 @@
               background: linear-gradient(
                 90deg,
                 var(--soft-linen-800) 0%,
-                var(--soft-linen-400) 100%
+                var(--soft-linen-400) 100% // TODO choose a darker color variant
               );
             }
           }

@@ -1,0 +1,215 @@
+@use 'slide-down.scss' as *;
+
+:host {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.experiences-section {
+  padding: 5rem 1.5rem;
+  min-height: 100vh;
+
+  &.in-view {
+    .experiences-title {
+      @include slide-down-animation;
+      animation-delay: 200ms;
+    }
+
+    .experiences-container {
+      @include slide-down-animation;
+      animation-delay: 600ms;
+    }
+  }
+
+  .experiences-title {
+    @include slide-down-hidden;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--title-font);
+  }
+
+
+  .experiences-container {
+    @include slide-down-hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+
+    .timeline {
+      position: sticky;
+      top: 20vh;
+      height: 60vh;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      border-radius: 999px;
+      background: #d1d5db;
+    }
+
+    .timeline-progress {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(
+        to bottom,
+        var(--gradient-color)
+      );
+
+      transition: height 0.2s ease;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid #cbd5e1;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: var(--text-color);
+        border-color: var(--text-color);
+        box-shadow: 0 0 15px var(--text-color);
+      }
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    .experience-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.75rem;
+      border-radius: 20px;
+      background: var(--bg-transparent-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .content {
+        flex: 1;
+
+        h2 {
+          margin-bottom: 0.75rem;
+          font-size: 1.3rem;
+          font-weight: 700;
+        }
+
+        p {
+          color: var(--text-color);
+          line-height: 1.7;
+          margin-bottom: 1rem;
+        }
+
+        .chips {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+
+          .chip {
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: var(--bg-transparent-color);
+            color: var(--text-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .logo-container {
+        flex-shrink: 0;
+
+        img {
+          width: 90px;
+          height: 90px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .experiences-container {
+      grid-template-columns: 40px 1fr;
+
+      .logo-container img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      position: relative;
+      height: 100%;
+    }
+
+    .experience-card {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+
+      .logo-container {
+        align-self: center;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .experiences-container {
+      grid-template-columns: 25px 1fr;
+      gap: 1rem;
+
+      .experience-card {
+        padding: 1.25rem;
+
+        .content h3 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    min-height: auto;
+    padding: 4rem 0 3rem;
+  }
+
+  .experiences-section {
+    justify-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

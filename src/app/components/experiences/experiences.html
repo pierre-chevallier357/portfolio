@@ -1,0 +1,35 @@
+<section #section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="experiences-section"
+         id="experiences" inView>
+  <h1 class="experiences-title">Expériences</h1>
+
+  <div class="experiences-container">
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div [style.height.%]="progress()" class="timeline-progress"></div>
+      @for (experience of experiences(); track experience.id; let index = $index) {
+        <div [class.active]="index <= activeIndex()" [style.top.%]="(index / (experiences().length - 1)) * 100"
+             class="timeline-dot"></div>
+      }
+    </div>
+
+
+    <div class="cards">
+      @for (experience of experiences(); track experience.id) {
+        <article #card class="experience-card">
+          <div class="content">
+            <h2>{{ experience.title }}</h2>
+            <p>{{ experience.description }}</p>
+            <div class="chips">
+              @for (tech of experience.technologies; track tech) {
+                <span class="chip">{{ tech }}</span>
+              }
+            </div>
+          </div>
+          <div class="logo-container">
+            <img [alt]="experience.company + ' logo'" [src]="experience.logo">
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

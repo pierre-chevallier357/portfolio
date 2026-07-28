@@ -91,7 +91,7 @@
   --soft-linen-800: #947951;
   --soft-linen-900: #635136;
   --soft-linen-950: #31281b;
-  --soft-linen-500-transparent: #ede7de80;
+  --soft-linen-200-transparent: #f6f3efbf;
 
   --pine-teal: var(--pine-teal-500);
   --pine-teal-transparent: var(--pine-teal-500-transparent);
@@ -104,7 +104,7 @@
   --golden-orange: var(--golden-orange-500);
   --golden-orange-transparent: var(--golden-orange-500-transparent);
   --soft-linen: var(--soft-linen-500);
-  --soft-linen-transparent: var(--soft-linen-500-transparent);
+  --soft-linen-transparent: var(--soft-linen-200-transparent);
 
   color-scheme: light dark;
   --font-gt-planar: 'GT Planar';
@@ -117,6 +117,7 @@
   --bg-hover-color: var(--pine-teal-transparent); // TODO check it's good
   --bg-transparent-color: var(--soft-linen-transparent); // TODO check it's good
   --border-color: var(--pine-teal); // TODO check it's good
+  --gradient-color: var(--pine-teal-800), var(--pine-teal-400);
   --bg-color: var(--soft-linen);
   --bg-color-rgb: 237, 231, 222;
 }
@@ -128,6 +129,7 @@
     --bg-hover-color: var(--soft-linen-transparent); // TODO check it's good
     --bg-transparent-color: var(--pine-teal-transparent); // TODO check it's good
     --border-color: var(--soft-linen-400); // TODO check it's good
+    --gradient-color: var(--soft-linen-800), var(--soft-linen-400);
     --bg-color: var(--pine-teal);
     --bg-color-rgb: 35, 56, 49;
   }
