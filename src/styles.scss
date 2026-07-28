@@ -67,6 +67,19 @@
   --blush-rose-950: #2d0713;
   --blush-rose-500-transparent: #e5538180;
 
+  --golden-orange-50: #ffefd0;
+  --golden-orange-100: #ffdea1;
+  --golden-orange-200: #ffce73;
+  --golden-orange-300: #ffbe44;
+  --golden-orange-400: #ffad15;
+  --golden-orange-500: #e59500;
+  --golden-orange-600: #bf7c00;
+  --golden-orange-700: #996300;
+  --golden-orange-800: #734b00;
+  --golden-orange-900: #4d3200;
+  --golden-orange-950: #261900;
+  --golden-orange-500-transparent: #e5950080;
+
   --soft-linen-50: #fcfbfa;
   --soft-linen-100: #f9f7f4;
   --soft-linen-200: #f6f3ef;
@@ -88,6 +101,8 @@
   --brilliant-azure-transparent: var(--brilliant-azure-500-transparent);
   --blush-rose: var(--blush-rose-500);
   --blush-rose-transparent: var(--blush-rose-500-transparent);
+  --golden-orange: var(--golden-orange-500);
+  --golden-orange-transparent: var(--golden-orange-500-transparent);
   --soft-linen: var(--soft-linen-500);
   --soft-linen-transparent: var(--soft-linen-500-transparent);
 
@@ -102,8 +117,6 @@
   --bg-hover-color: var(--pine-teal-transparent); // TODO check it's good
   --bg-transparent-color: var(--soft-linen-transparent); // TODO check it's good
   --border-color: var(--pine-teal); // TODO check it's good
-  --light-color: var(--pine-teal-400);
-  --dark-color: var(--pine-teal-800);
   --bg-color: var(--soft-linen);
   --bg-color-rgb: 237, 231, 222;
 }
@@ -115,8 +128,6 @@
     --bg-hover-color: var(--soft-linen-transparent); // TODO check it's good
     --bg-transparent-color: var(--pine-teal-transparent); // TODO check it's good
     --border-color: var(--soft-linen-400); // TODO check it's good
-    --light-color: var(--soft-linen-400);
-    --dark-color: var(--soft-linen-800);
     --bg-color: var(--pine-teal);
     --bg-color-rgb: 35, 56, 49;
   }

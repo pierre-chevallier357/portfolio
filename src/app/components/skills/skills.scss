@@ -92,12 +92,55 @@
           .progress-bar-fill {
             height: 100%;
             border-radius: inherit;
-            background: linear-gradient(
-              90deg,
-              var(--dark-color) 0%,
-              var(--light-color) 80%
-            );
             transition: width 300ms ease-in-out;
+
+            &.pine-teal {
+              background: linear-gradient(
+                90deg,
+                var(--pine-teal-800) 0%,
+                var(--pine-teal-400) 80%
+              );
+            }
+
+            &.dusty-grape {
+              background: linear-gradient(
+                90deg,
+                var(--dusty-grape-800) 0%,
+                var(--dusty-grape-400) 100%
+              );
+            }
+
+            &.brilliant-azure {
+              background: linear-gradient(
+                90deg,
+                var(--brilliant-azure-800) 0%,
+                var(--brilliant-azure-400) 100%
+              );
+            }
+
+            &.blush-rose {
+              background: linear-gradient(
+                90deg,
+                var(--blush-rose-800) 0%,
+                var(--blush-rose-400) 100%
+              );
+            }
+
+            &.golden-orange {
+              background: linear-gradient(
+                90deg,
+                var(--golden-orange-800) 0%,
+                var(--golden-orange-400) 100%
+              );
+            }
+
+            &.soft-linen {
+              background: linear-gradient(
+                90deg,
+                var(--soft-linen-800) 0%,
+                var(--soft-linen-400) 100%
+              );
+            }
           }
         }
       }
