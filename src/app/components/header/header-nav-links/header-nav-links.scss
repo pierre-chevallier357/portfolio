@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 768px) {
   .header-links-wrapper {
-    position: absolute;
+    position: fixed;
     right: -100%;
     top: 0;
     height: 100vh;

@@ -1,59 +1,72 @@
 @use 'slide-down.scss' as *;
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 90vw;
-  margin: 0 auto;
-  padding: 1.75rem;
+.header {
+  position: sticky;
+  top: 1rem;
+  z-index: 1;
 
-  .logo-link {
+  .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-decoration: none;
-    color: var(--text-color);
-    gap: 1.5rem;
-    padding: 1rem 1.625rem;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: all 0.1s ease-in-out;
-    position: relative;
-    @include slide-down-animation;
-    animation-delay: 200ms;
+    max-width: 90vw;
+    margin: 0 1.75rem;
+    border-radius: 3rem;
+    transition: all .2s linear;
 
-    .logo {
-      border-radius: 50%;
-      height: auto;
-      width: 3rem;
+    &.scrolled {
+      background-color: var(--bg-transparent-color);
+      backdrop-filter: blur(20px) saturate(1.7);
+      -webkit-backdrop-filter: blur(20px) saturate(1.7);
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-color);
+      gap: 1.5rem;
+      padding: 1rem 1.625rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.1s ease-in-out;
       position: relative;
+      @include slide-down-animation;
+      animation-delay: 200ms;
+
+      .logo {
+        border-radius: 50%;
+        height: auto;
+        width: 3rem;
+        position: relative;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          color: var(--text-hover-color);
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar-title {
       transition: all 0.1s ease-in-out;
 
       &:hover {
         color: var(--text-hover-color);
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        transform: scale(1.05);
       }
-    }
-  }
-
-  .navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .navbar-title {
-    transition: all 0.1s ease-in-out;
-
-    &:hover {
-      color: var(--text-hover-color);
-      -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-      -o-transform: scale(1.05);
-      transform: scale(1.05);
     }
   }
 }
