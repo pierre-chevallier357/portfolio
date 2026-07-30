@@ -1,0 +1,44 @@
+.timeline {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.line {
+  position: relative;
+  width: 4px;
+  background: white;
+  border-radius: 999px;
+  overflow: visible;
+  transition: height 2s ease;
+
+  &__fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(
+      to bottom,
+      var(--gradient-color)
+    );
+    transition: height 0.2s ease;
+  }
+}
+
+.dot {
+  position: absolute;
+  left: 50%;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+
+  &--active {
+    background: var(--text-color);
+    border-color: var(--text-color);
+    box-shadow: 0 0 15px var(--text-color);
+  }
+}

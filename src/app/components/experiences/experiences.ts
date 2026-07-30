@@ -1,6 +1,7 @@
 import {
   afterNextRender,
   Component,
+  computed,
   ElementRef,
   inject,
   PLATFORM_ID,
@@ -12,6 +13,7 @@ import {
 } from '@angular/core';
 import { InView } from '../../directives/in-view/in-view';
 import { isPlatformBrowser } from '@angular/common';
+import { Timeline } from './timeline/timeline';
 
 interface Experience {
   id: number;
@@ -24,13 +26,27 @@ interface Experience {
 
 @Component({
   selector: 'experiences',
-  imports: [InView],
+  imports: [InView, Timeline],
   templateUrl: './experiences.html',
   styleUrl: './experiences.scss',
 })
 export class Experiences {
   protected readonly cards: Signal<readonly ElementRef<HTMLElement>[]> =
     viewChildren<ElementRef<HTMLElement>>('card');
+  protected readonly cardsContainer: Signal<readonly ElementRef<HTMLElement>[]> =
+    viewChildren<ElementRef<HTMLElement>>('cardsContainer');
+  protected readonly timelineHeight: Signal<number> = computed(() => {
+    const cardsContainer: ElementRef<HTMLElement> = this.cardsContainer()[0];
+    const firstCard: ElementRef<HTMLElement> = this.cards()[0];
+    const cardsContainerHeight = cardsContainer ? cardsContainer.nativeElement?.offsetHeight : 0;
+    const firstCardHeight = firstCard ? firstCard.nativeElement?.offsetHeight : 0;
+    return cardsContainerHeight - firstCardHeight;
+  });
+  protected readonly timelineStartingPosition: Signal<number> = computed(() => {
+    const firstCard: ElementRef<HTMLElement> = this.cards()[0];
+    const firstCardHeight = firstCard ? firstCard.nativeElement?.offsetHeight : 0;
+    return firstCardHeight / 2;
+  });
   protected readonly section: Signal<ElementRef<HTMLElement> | undefined> =
     viewChild<ElementRef<HTMLElement>>('section');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
@@ -102,13 +118,11 @@ export class Experiences {
     const updateActiveCard = (): void => {
       const viewportCenter = window.innerHeight / 2;
       let closestIndex = 0;
-      let closestDistance = Number.MAX_VALUE;
       this.cards().forEach((card, index) => {
-        const rect: DOMRect = card.nativeElement.getBoundingClientRect();
-        const cardCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(cardCenter - viewportCenter);
-        if (distance < closestDistance) {
-          closestDistance = distance;
+        const cardRect: DOMRect = card.nativeElement.getBoundingClientRect();
+        const cardCenter = cardRect.top + cardRect.height / 2;
+        const isCardAboveScreenCenter = cardCenter < viewportCenter;
+        if (isCardAboveScreenCenter) {
           closestIndex = index;
         }
       });
@@ -133,9 +147,7 @@ export class Experiences {
       this.progress.set(Math.max(0, Math.min(progress, 100)));
     };
     updateProgress();
-    window.addEventListener('scroll', updateProgress, {
-      passive: true,
-    });
+    window.addEventListener('scroll', updateProgress, { passive: true });
     window.addEventListener('resize', updateProgress);
   }
 }

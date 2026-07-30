@@ -1,0 +1,8 @@
+<div [style.height.px]="height()" [style.top.px]="top()" class="timeline">
+  <div #line class="line">
+    <div [style.height]="fillHeight()" class="line__fill"></div>
+    @for (dot of dotsPercentages(); track dot) {
+      <div [class.dot--active]="progress() >= dot / 100" [style.top.%]="dot" class="dot"></div>
+    }
+  </div>
+</div>
