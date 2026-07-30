@@ -11,9 +11,9 @@ import {
   viewChildren,
   WritableSignal,
 } from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
-import {Timeline} from './timeline/timeline';
-import {InView} from '../../directives/in-view/in-view';
+import { isPlatformBrowser } from '@angular/common';
+import { Timeline } from './timeline/timeline';
+import { InView } from '../../directives/in-view/in-view';
 
 interface Experience {
   id: number;
@@ -35,10 +35,7 @@ export class Experiences {
     viewChildren<ElementRef<HTMLElement>>('card');
   protected readonly cardsContainer: Signal<ElementRef<HTMLElement> | undefined> =
     viewChild<ElementRef<HTMLElement>>('cardsContainer');
-  protected readonly section: Signal<ElementRef<HTMLElement> | undefined> =
-    viewChild<ElementRef<HTMLElement>>('section');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
-  protected readonly progress: WritableSignal<number> = signal(0);
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   protected readonly experiences: Signal<Experience[]> = signal<Experience[]>([
     {
@@ -103,13 +100,12 @@ export class Experiences {
       return;
     }
     afterNextRender(() => {
-      this.initializeMeasurements();
-      this.initializeObserver();
-      this.initializeScrollProgress();
+      this.initializeCardsMeasurements();
+      this.initializeDotsActivation();
     });
   }
 
-  private initializeMeasurements(): void {
+  private initializeCardsMeasurements(): void {
     const container: HTMLElement | undefined = this.cardsContainer()?.nativeElement;
     const firstCard: HTMLElement = this.cards()[0]?.nativeElement;
     if (!container) {
@@ -131,42 +127,24 @@ export class Experiences {
     window.addEventListener('resize', updateMeasurements);
   }
 
-  private initializeObserver(): void {
+  private initializeDotsActivation(): void {
     this.cards().forEach((card, index) => {
       card.nativeElement.dataset['index'] = `${index}`;
     });
     const updateActiveCard = (): void => {
       const viewportCenter = window.innerHeight / 2;
-      let closestIndex = 0;
+      let activeIndex = 0;
       this.cards().forEach((card, index) => {
         const cardRect: DOMRect = card.nativeElement.getBoundingClientRect();
         const cardCenter = cardRect.top + cardRect.height / 2;
         if (cardCenter < viewportCenter) {
-          closestIndex = index;
+          activeIndex = index;
         }
       });
-      this.activeIndex.set(closestIndex);
+      this.activeIndex.set(activeIndex);
     };
     updateActiveCard();
     window.addEventListener('scroll', updateActiveCard, { passive: true });
     window.addEventListener('resize', updateActiveCard);
-  }
-
-  private initializeScrollProgress(): void {
-    const updateProgress = () => {
-      const section: HTMLElement | undefined = this.section()?.nativeElement;
-      if (!section) {
-        return;
-      }
-      const rect: DOMRect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const start = viewportHeight;
-      const end = -rect.height;
-      const progress = ((start - rect.top) / (start - end)) * 100;
-      this.progress.set(Math.max(0, Math.min(progress, 100)));
-    };
-    updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress);
   }
 }
