@@ -11,9 +11,9 @@ import {
   viewChildren,
   WritableSignal,
 } from '@angular/core';
-import { InView } from '../../directives/in-view/in-view';
-import { isPlatformBrowser } from '@angular/common';
-import { Timeline } from './timeline/timeline';
+import {isPlatformBrowser} from '@angular/common';
+import {Timeline} from './timeline/timeline';
+import {InView} from '../../directives/in-view/in-view';
 
 interface Experience {
   id: number;
@@ -33,24 +33,13 @@ interface Experience {
 export class Experiences {
   protected readonly cards: Signal<readonly ElementRef<HTMLElement>[]> =
     viewChildren<ElementRef<HTMLElement>>('card');
-  protected readonly cardsContainer: Signal<readonly ElementRef<HTMLElement>[]> =
-    viewChildren<ElementRef<HTMLElement>>('cardsContainer');
-  protected readonly timelineHeight: Signal<number> = computed(() => {
-    const cardsContainer: ElementRef<HTMLElement> = this.cardsContainer()[0];
-    const firstCard: ElementRef<HTMLElement> = this.cards()[0];
-    const cardsContainerHeight = cardsContainer ? cardsContainer.nativeElement?.offsetHeight : 0;
-    const firstCardHeight = firstCard ? firstCard.nativeElement?.offsetHeight : 0;
-    return cardsContainerHeight - firstCardHeight;
-  });
-  protected readonly timelineStartingPosition: Signal<number> = computed(() => {
-    const firstCard: ElementRef<HTMLElement> = this.cards()[0];
-    const firstCardHeight = firstCard ? firstCard.nativeElement?.offsetHeight : 0;
-    return firstCardHeight / 2;
-  });
+  protected readonly cardsContainer: Signal<ElementRef<HTMLElement> | undefined> =
+    viewChild<ElementRef<HTMLElement>>('cardsContainer');
   protected readonly section: Signal<ElementRef<HTMLElement> | undefined> =
     viewChild<ElementRef<HTMLElement>>('section');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
   protected readonly progress: WritableSignal<number> = signal(0);
+  protected readonly isInView: WritableSignal<boolean> = signal(false);
   protected readonly experiences: Signal<Experience[]> = signal<Experience[]>([
     {
       id: 1,
@@ -98,7 +87,15 @@ export class Experiences {
       technologies: ['Angular', 'Spring Boot', 'Kubernetes', 'GitLab CI'],
     },
   ]);
-  protected isInView: WritableSignal<boolean> = signal(false);
+  private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
+  private readonly firstCardHeight: WritableSignal<number> = signal(0);
+  protected readonly timelineHeight: Signal<number> = computed(
+    () => this.cardsContainerHeight() - this.firstCardHeight(),
+  );
+  protected readonly timelineStartingPosition: Signal<number> = computed(
+    () => this.firstCardHeight() / 2,
+  );
+  private resizeObserver!: ResizeObserver;
   private readonly platformId: Object = inject(PLATFORM_ID);
 
   constructor() {
@@ -106,9 +103,32 @@ export class Experiences {
       return;
     }
     afterNextRender(() => {
+      this.initializeMeasurements();
       this.initializeObserver();
       this.initializeScrollProgress();
     });
+  }
+
+  private initializeMeasurements(): void {
+    const container: HTMLElement | undefined = this.cardsContainer()?.nativeElement;
+    const firstCard: HTMLElement = this.cards()[0]?.nativeElement;
+    if (!container) {
+      return;
+    }
+    const updateMeasurements = () => {
+      this.cardsContainerHeight.set(container.offsetHeight);
+      this.firstCardHeight.set(firstCard?.offsetHeight ?? 0);
+    };
+    updateMeasurements();
+    this.resizeObserver = new ResizeObserver(() => {
+      updateMeasurements();
+    });
+    this.resizeObserver.observe(container);
+    if (firstCard) {
+      this.resizeObserver.observe(firstCard);
+    }
+    window.addEventListener('load', updateMeasurements);
+    window.addEventListener('resize', updateMeasurements);
   }
 
   private initializeObserver(): void {
@@ -121,8 +141,7 @@ export class Experiences {
       this.cards().forEach((card, index) => {
         const cardRect: DOMRect = card.nativeElement.getBoundingClientRect();
         const cardCenter = cardRect.top + cardRect.height / 2;
-        const isCardAboveScreenCenter = cardCenter < viewportCenter;
-        if (isCardAboveScreenCenter) {
+        if (cardCenter < viewportCenter) {
           closestIndex = index;
         }
       });
