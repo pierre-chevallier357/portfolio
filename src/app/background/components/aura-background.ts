@@ -1,13 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  computed,
-  DestroyRef,
-  ElementRef,
-  inject,
-  Signal,
-  viewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, computed, DestroyRef, ElementRef, inject, Signal, viewChild } from '@angular/core';
 import { AuraDot } from '../models/aura-dot';
 import { ThemeService } from '../../services/theme/theme';
 
@@ -26,7 +17,7 @@ export class AuraBackground implements AfterViewInit {
     viewChild<ElementRef<HTMLCanvasElement>>('auraCanvas');
   private readonly destroyRef: DestroyRef = inject(DestroyRef);
   private readonly themeService: ThemeService = inject(ThemeService);
-  private readonly backgroundColor = computed(() =>
+  private readonly backgroundColor: Signal<string> = computed(() =>
     this.themeService.isDarkMode() ? BACKGROUND_DARK_COLOR : BACKGROUND_LIGHT_COLOR,
   );
   private dots: AuraDot[] = [];
@@ -38,8 +29,8 @@ export class AuraBackground implements AfterViewInit {
       return; // Skip canvas animation during server-side rendering.
     }
 
-    const canvas = this.canvasRef()?.nativeElement;
-    const ctx = canvas?.getContext('2d');
+    const canvas: HTMLCanvasElement | undefined = this.canvasRef()?.nativeElement;
+    const ctx: CanvasRenderingContext2D | undefined | null = canvas?.getContext('2d');
     if (!canvas || !ctx) {
       return;
     }
