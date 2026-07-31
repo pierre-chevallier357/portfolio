@@ -15,7 +15,7 @@
     transition: all .2s linear;
 
     &.blurred {
-      background-color: var(--bg-transparent-color);
+      background-color: var(--bg-color-transparent);
       backdrop-filter: blur(20px) saturate(1.7);
       -webkit-backdrop-filter: blur(20px) saturate(1.7);
     }
@@ -24,7 +24,6 @@
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: var(--text-color);
       gap: 1.5rem;
       padding: 1rem 1.625rem;
       font-weight: bold;
@@ -41,7 +40,6 @@
         transition: all 0.1s ease-in-out;
 
         &:hover {
-          color: var(--text-hover-color);
           -webkit-transform: scale(1.1);
           -ms-transform: scale(1.1);
           -o-transform: scale(1.1);
@@ -60,11 +58,10 @@
       transition: all 0.1s ease-in-out;
 
       &:hover {
-        color: var(--text-hover-color);
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        -o-transform: scale(1.05);
-        transform: scale(1.05);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
       }
     }
   }

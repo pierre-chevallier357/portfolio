@@ -123,28 +123,29 @@
   --font-size-small: clamp(.875rem, .8rem + .1vw, 1rem);
 
   --text-color: var(--pine-teal-600); // TODO check it's good
-  --text-hover-color: var(--pine-teal-900); // TODO check it's good
-  --bg-hover-color: var(--pine-teal-transparent); // TODO check it's good
-  --bg-transparent-color: var(--soft-linen-transparent); // TODO check it's good
+  --text-color-hover: var(--pine-teal-900); // TODO check it's good
   --border-color: var(--pine-teal); // TODO check it's good
   --gradient-color: var(--pine-teal-800), var(--pine-teal-400);
   --bg-color: var(--soft-linen);
   --bg-color-rgb: 237, 231, 222;
+  --bg-color-hover: var(--pine-teal-transparent); // TODO check it's good
+  --bg-color-transparent: var(--soft-linen-transparent); // TODO check it's good
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --text-color: var(--soft-linen); // TODO check it's good
-    --text-hover-color: var(--soft-linen-600); // TODO check it's good
-    --bg-hover-color: var(--soft-linen-transparent); // TODO check it's good
-    --bg-transparent-color: var(--pine-teal-transparent); // TODO check it's good
+    --text-color-hover: var(--soft-linen-600); // TODO check it's good
     --border-color: var(--soft-linen-400); // TODO check it's good
     --gradient-color: var(--soft-linen-800), var(--soft-linen-400);
     --bg-color: var(--pine-teal);
     --bg-color-rgb: 35, 56, 49;
+    --bg-color-hover: var(--soft-linen-transparent); // TODO check it's good
+    --bg-color-transparent: var(--pine-teal-transparent); // TODO check it's good
   }
 }
 
+// TODO remove? Is this really useful?
 :root[data-theme='dark'] {
   --bg-color: var(--pine-teal);
   --bg-color-rgb: 35, 56, 49; // TODO replace with pine-teal?
@@ -205,5 +206,10 @@ h6 {
 
 a {
   font-size: var(--font-size-link);
+  color: var(--text-color);
+
+  &:hover {
+    color: var(--text-color-hover);
+  }
 }
 

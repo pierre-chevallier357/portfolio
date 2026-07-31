@@ -7,7 +7,6 @@
 
   .link {
     text-decoration: none;
-    color: var(--text-color);
     padding: 1rem 1.625rem;
     font-weight: bold;
     transition: all 0.1s ease-in-out;
@@ -15,11 +14,11 @@
     z-index: 1;
 
     &:hover {
-      color: var(--text-hover-color);
       -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
       -o-transform: scale(1.1);
       transform: scale(1.1);
+      scale: 1.1;
     }
   }
 }

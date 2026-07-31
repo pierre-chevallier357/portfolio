@@ -39,55 +39,6 @@
     display: grid;
     grid-template-columns: 80px 1fr;
     gap: 2rem;
-
-    .timeline {
-      position: sticky;
-      top: 20vh;
-      height: 60vh;
-    }
-
-    .timeline-line {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 100%;
-      border-radius: 999px;
-      background: #d1d5db;
-    }
-
-    .timeline-progress {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      border-radius: 999px;
-      background: linear-gradient(
-        to bottom,
-        var(--gradient-color)
-      );
-
-      transition: height 0.2s ease;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: white;
-      border: 3px solid #cbd5e1;
-      transition: all 0.3s ease;
-
-      &.active {
-        background: var(--text-color);
-        border-color: var(--text-color);
-        box-shadow: 0 0 15px var(--text-color);
-      }
-    }
   }
 
   .cards {
@@ -102,7 +53,7 @@
       gap: 2rem;
       padding: 1.75rem;
       border-radius: 20px;
-      background: var(--bg-transparent-color);
+      background: var(--bg-color-transparent);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease,
       box-shadow 0.3s ease;
@@ -121,7 +72,6 @@
         }
 
         p {
-          color: var(--text-color);
           line-height: 1.7;
           margin-bottom: 1rem;
         }
@@ -135,8 +85,7 @@
           .chip {
             padding: 0.45rem 0.9rem;
             border-radius: 999px;
-            background: var(--bg-transparent-color);
-            color: var(--text-color);
+            background: var(--bg-color-transparent);
             font-size: var(--font-size-small);
             font-weight: 600;
           }
@@ -167,11 +116,6 @@
   }
 
   @media (max-width: 768px) {
-    .timeline {
-      position: relative;
-      height: 100%;
-    }
-
     .experience-card {
       flex-direction: column-reverse;
       align-items: flex-start;
