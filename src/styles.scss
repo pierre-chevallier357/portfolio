@@ -132,23 +132,15 @@
   --bg-color-transparent: var(--soft-linen-transparent); // TODO check it's good
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --text-color: var(--soft-linen); // TODO check it's good
-    --text-color-hover: var(--soft-linen-600); // TODO check it's good
-    --border-color: var(--soft-linen-400); // TODO check it's good
-    --gradient-color: var(--soft-linen-800), var(--soft-linen-400);
-    --bg-color: var(--pine-teal);
-    --bg-color-rgb: 35, 56, 49;
-    --bg-color-hover: var(--soft-linen-transparent); // TODO check it's good
-    --bg-color-transparent: var(--pine-teal-transparent); // TODO check it's good
-  }
-}
-
-// TODO remove? Is this really useful?
 :root[data-theme='dark'] {
+  --text-color: var(--soft-linen); // TODO check it's good
+  --text-color-hover: var(--soft-linen-600); // TODO check it's good
+  --border-color: var(--soft-linen-400); // TODO check it's good
+  --gradient-color: var(--soft-linen-800), var(--soft-linen-400);
   --bg-color: var(--pine-teal);
-  --bg-color-rgb: 35, 56, 49; // TODO replace with pine-teal?
+  --bg-color-rgb: 35, 56, 49;
+  --bg-color-hover: var(--soft-linen-transparent); // TODO check it's good
+  --bg-color-transparent: var(--pine-teal-transparent); // TODO check it's good
 }
 
 html {
