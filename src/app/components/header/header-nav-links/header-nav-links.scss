@@ -77,7 +77,6 @@
     text-align: center;
     transition: 0.3s;
     z-index: 1;
-    font-size: 1.7rem;
 
     &.active {
       right: 0;
@@ -85,6 +84,7 @@
 
     .link {
       margin: auto 0;
+      font-size: 1.7rem; // TODO keep that hard coded?
 
       &:first-child {
         margin-top: 6.5rem;

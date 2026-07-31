@@ -27,9 +27,7 @@
 
   .skills-title {
     @include slide-down-hidden;
-    font-size: 3rem;
     margin-bottom: 1.5rem;
-    font-family: var(--title-font);
   }
 
   .cards-container {
@@ -75,10 +73,6 @@
 
             span:first-child {
               font-weight: 500;
-            }
-
-            span:last-child {
-              font-size: 0.9rem;
             }
           }
 

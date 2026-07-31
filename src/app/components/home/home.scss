@@ -24,9 +24,9 @@
     @include slide-down-hidden;
     width: fit-content;
     position: relative;
-    font-size: 4rem;
+    font-size: var(--font-size-huge);
+    letter-spacing: -2px;
     margin: 0 0 2rem;
-    font-family: var(--title-font);
     grid-area: title;
 
     .name {
@@ -115,7 +115,6 @@
     border-radius: 2rem;
     background-color: transparent;
     font-weight: bold;
-    font-size: 1.1rem;
     color: var(--text-color);
     padding: 1rem 1.5rem;
     transition: all 0.1s ease-in-out;
@@ -145,6 +144,12 @@
   }
 }
 
+@media (min-width: 992px) {
+  .home-title {
+    letter-spacing: -4px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   :host {
     min-height: auto;
@@ -163,14 +168,12 @@
     text-align: center;
 
     .home-title {
-      font-size: 2.5rem;
       min-height: auto;
       margin: 0;
     }
 
     .about-link {
       margin-left: 0;
-      font-size: 1rem;
     }
 
     .profile-picture {

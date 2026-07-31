@@ -1,4 +1,4 @@
-import { Component, inject, PLATFORM_ID, Signal, signal } from '@angular/core';
+import { Component, computed, inject, PLATFORM_ID, Signal, signal } from '@angular/core';
 import { HeaderNavLinks } from './header-nav-links/header-nav-links';
 import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -14,14 +14,15 @@ import { startWith } from 'rxjs/operators';
 export class Header {
   private readonly platformId: Object = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
-  private readonly scrollThreshold = this.isBrowser
-    ? 10 * parseFloat(getComputedStyle(document.documentElement).fontSize)
-    : 160; // fallback for SSR
-  protected readonly isScrolledAboveThreshold: Signal<boolean> = this.isBrowser
+  private readonly remSize: Signal<number> = computed(() =>
+    parseFloat(getComputedStyle(document.documentElement).fontSize),
+  );
+  private readonly scrollThresholdInPixels = this.isBrowser ? 5 * this.remSize() : 80; // 80 px is the fallback for SSR
+  protected readonly hasScrolledAfterThreshold: Signal<boolean> = this.isBrowser
     ? toSignal(
         fromEvent(window, 'scroll').pipe(
-          map(() => window.scrollY > this.scrollThreshold),
-          startWith(window.scrollY > this.scrollThreshold),
+          map(() => window.scrollY > this.scrollThresholdInPixels),
+          startWith(window.scrollY > this.scrollThresholdInPixels),
         ),
         { initialValue: false },
       )

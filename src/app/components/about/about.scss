@@ -40,15 +40,12 @@
 
     .about-title {
       @include slide-down-hidden;
-      font-size: 3rem;
       margin-bottom: 1.5rem;
-      font-family: var(--title-font);
     }
 
     .about-text {
       @include slide-down-hidden;
       margin: 0;
-      font-size: 1.1rem;
       line-height: 1.8;
       color: var(--text-color);
     }
@@ -86,10 +83,6 @@
     .picture-frame {
       max-width: 60vw;
       justify-self: center;
-    }
-
-    .about-content .about-title {
-      font-size: 2.5rem;
     }
   }
 }
