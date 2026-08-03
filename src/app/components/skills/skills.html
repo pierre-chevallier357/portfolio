@@ -2,7 +2,7 @@
   <h1 class="skills-title">Compétences</h1>
 
   <div class="cards-container">
-    @for (category of categories; track category.title) {
+    @for (category of categories(); track category.title) {
       <article class="skill-card">
         <header class="card-header">
           <h2>{{ category.title }}</h2>

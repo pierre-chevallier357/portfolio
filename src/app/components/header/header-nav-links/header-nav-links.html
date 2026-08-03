@@ -1,5 +1,5 @@
 <div [class.active]="isMenuOpened()" class="header-links-wrapper fade-links">
-  @for (link of navLinks; track link.id) {
+  @for (link of navLinks(); track link.id) {
     <a (click)="closeMenu()" [href]="link.href" class="link">
       {{ link.text }}
     </a>

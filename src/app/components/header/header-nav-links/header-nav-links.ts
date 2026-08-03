@@ -1,11 +1,8 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, inject, Signal, signal, WritableSignal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ThemeToggle } from './theme-toggle/theme-toggle';
-
-interface NavLink {
-  id: number;
-  href: string;
-  text: string;
-}
+import { NavLink } from '../../../models/nav-link';
 
 @Component({
   selector: 'header-nav-links',
@@ -15,15 +12,11 @@ interface NavLink {
 })
 export class HeaderNavLinks {
   protected readonly isMenuOpened: WritableSignal<boolean> = signal(false);
-  protected readonly navLinks: NavLink[] = [
-    { id: 1, href: '#home', text: 'Accueil' },
-    { id: 2, href: '#about', text: 'À propos' },
-    { id: 3, href: '#skills', text: 'Compétences' },
-    { id: 4, href: '#experiences', text: 'Expériences' },
-    { id: 5, href: '#projects', text: 'Projets' },
-    { id: 6, href: '#education', text: 'Études' },
-    { id: 7, href: '#contact', text: 'Contact' },
-  ];
+  private readonly http: HttpClient = inject(HttpClient);
+  protected readonly navLinks: Signal<NavLink[]> = toSignal(
+    this.http.get<NavLink[]>('data/nav-links.json'),
+    { initialValue: [] },
+  );
 
   protected toggleMenu(): void {
     this.isMenuOpened.update((isMenuOpened) => !isMenuOpened);

@@ -12,18 +12,12 @@ import {
   viewChildren,
   WritableSignal,
 } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Timeline } from './timeline/timeline';
 import { InView } from '../../directives/in-view/in-view';
-
-interface Experience {
-  id: number;
-  company: string;
-  logo: string;
-  title: string;
-  description: string;
-  technologies: string[];
-}
+import { Experience } from '../../models/experience';
 
 @Component({
   selector: 'experiences',
@@ -38,53 +32,11 @@ export class Experiences {
     viewChild.required<ElementRef<HTMLElement>>('cardsContainer');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  protected readonly experiences: Signal<Experience[]> = signal<Experience[]>([
-    {
-      id: 1,
-      company: 'NovaTech',
-      logo: 'assets/logos/novatech.svg',
-      title: 'Développeur Front-End Angular',
-      description:
-        'Développement d’un portail métier destiné aux équipes internes. Mise en place d’interfaces performantes et amélioration continue de l’expérience utilisateur.',
-      technologies: ['Angular', 'TypeScript', 'RxJS', 'SCSS'],
-    },
-    {
-      id: 2,
-      company: 'DataSphere',
-      logo: 'assets/logos/datasphere.svg',
-      title: 'Développeur Full Stack',
-      description:
-        'Conception de services web et d’API REST pour des applications de gestion. Participation aux choix techniques et aux revues de code.',
-      technologies: ['Angular', 'Node.js', 'NestJS', 'PostgreSQL'],
-    },
-    {
-      id: 3,
-      company: 'GreenSoft',
-      logo: 'assets/logos/greensoft.svg',
-      title: 'Ingénieur Logiciel',
-      description:
-        'Création de solutions logicielles pour le suivi d’indicateurs environnementaux avec intégration de tableaux de bord interactifs.',
-      technologies: ['Angular', 'C#', '.NET', 'Azure'],
-    },
-    {
-      id: 4,
-      company: 'CloudVision',
-      logo: 'assets/logos/cloudvision.svg',
-      title: 'Lead Développeur Front',
-      description:
-        'Encadrement technique d’une équipe front-end et définition d’architectures modernes pour plusieurs produits SaaS.',
-      technologies: ['Angular', 'Nx', 'Jest', 'Docker'],
-    },
-    {
-      id: 5,
-      company: 'TechFactory',
-      logo: 'assets/logos/techfactory.svg',
-      title: 'Ingénieur Développement',
-      description:
-        'Développement de fonctionnalités stratégiques et optimisation des performances applicatives sur des projets à forte visibilité.',
-      technologies: ['Angular', 'Spring Boot', 'Kubernetes', 'GitLab CI'],
-    },
-  ]);
+  private readonly http: HttpClient = inject(HttpClient);
+  protected readonly experiences: Signal<Experience[]> = toSignal(
+    this.http.get<Experience[]>('data/experiences.json'),
+    { initialValue: [] },
+  );
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(

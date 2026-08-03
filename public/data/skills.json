@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Front-end",
+    "description": "Développement d’interfaces modernes, performantes et responsives.\nExpérience sur les frameworks et bibliothèques web actuels.",
+    "skills": [
+      { "name": "Angular", "level": 90, "color": "blush-rose" },
+      { "name": "TypeScript", "level": 85, "color": "brilliant-azure" },
+      { "name": "HTML5", "level": 95, "color": "golden-orange" },
+      { "name": "SCSS", "level": 80, "color": "blush-rose" },
+      { "name": "RxJS", "level": 75, "color": "dusty-grape" }
+    ]
+  },
+  {
+    "title": "Back-end",
+    "description": "Conception de services robustes et évolutifs.\nMise en œuvre d’APIs et intégration avec les bases de données.",
+    "skills": [
+      { "name": "Java", "level": 88, "color": "golden-orange" },
+      { "name": "Spring Boot", "level": 82, "color": "pine-teal" },
+      { "name": "REST APIs", "level": 90, "color": "soft-linen" },
+      { "name": "SQL", "level": 78, "color": "soft-linen" }
+    ]
+  },
+  {
+    "title": "DevOps",
+    "description": "Gestion des infrastructures et automatisation des déploiements.\nMise en place de pipelines CI/CD et surveillance des systèmes.",
+    "skills": [
+      { "name": "Docker", "level": 80, "color": "brilliant-azure" },
+      { "name": "Kubernetes", "level": 75, "color": "brilliant-azure" },
+      { "name": "GitLab CI/CD", "level": 75, "color": "golden-orange" }
+    ]
+  },
+  {
+    "title": "Autres",
+    "description": "Compétences variées et outils complémentaires.\nExpérience sur différents aspects du développement et de l’infrastructure.",
+    "skills": [
+      { "name": "Jira", "level": 80, "color": "brilliant-azure" },
+      { "name": "Git", "level": 75, "color": "golden-orange" },
+      { "name": "Méthodes agiles", "level": 75, "color": "soft-linen" },
+      { "name": "Cycle en V", "level": 75, "color": "pine-teal" }
+    ]
+  }
+]

@@ -1,5 +1,7 @@
 import { Component, inject, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { HttpClient } from '@angular/common/http';
+import { switchMap } from 'rxjs';
 import { Typewriter } from '../../../services/typewriter/typewriter';
 import { ThemeService } from '../../../services/theme/theme';
 
@@ -11,9 +13,11 @@ import { ThemeService } from '../../../services/theme/theme';
 export class SelfWritingText {
   protected readonly isDarkMode: Signal<boolean> = inject(ThemeService).isDarkMode;
   private readonly typewriter: Typewriter = inject(Typewriter);
-  private readonly words: string[] = ['front-end', 'back-end', 'full stack'];
+  private readonly http: HttpClient = inject(HttpClient);
   protected readonly typedText: Signal<string> = toSignal(
-    this.typewriter.getTypewriterEffect(this.words),
+    this.http
+      .get<string[]>('data/typewriter-words.json')
+      .pipe(switchMap((words) => this.typewriter.getTypewriterEffect(words))),
     { initialValue: '' },
   );
 }
