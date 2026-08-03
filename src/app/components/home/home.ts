@@ -11,6 +11,6 @@ import { ThemeService } from '../../services/theme/theme';
   styleUrl: './home.scss',
 })
 export class Home {
-  protected isDarkMode: Signal<boolean> = inject(ThemeService).isDarkMode;
-  protected isInView: WritableSignal<boolean> = signal(false);
+  protected readonly isDarkMode: Signal<boolean> = inject(ThemeService).isDarkMode;
+  protected readonly isInView: WritableSignal<boolean> = signal(false);
 }

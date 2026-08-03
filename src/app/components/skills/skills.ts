@@ -29,7 +29,7 @@ interface SkillCategory {
   styleUrl: './skills.scss',
 })
 export class Skills {
-  readonly categories: SkillCategory[] = [
+  protected readonly categories: SkillCategory[] = [
     {
       title: 'Front-end',
       description:
@@ -75,5 +75,5 @@ export class Skills {
       ],
     },
   ];
-  protected isInView: WritableSignal<boolean> = signal(false);
+  protected readonly isInView: WritableSignal<boolean> = signal(false);
 }
