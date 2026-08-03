@@ -1,13 +1,16 @@
 import {
-  AfterViewInit,
+  afterNextRender,
   Component,
   computed,
   DestroyRef,
   ElementRef,
   inject,
+  NgZone,
+  PLATFORM_ID,
   Signal,
   viewChild,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { AuraDot } from '../models/aura-dot';
 import { ThemeService } from '../../services/theme/theme';
 
@@ -21,26 +24,30 @@ const DOTS_COUNT = 12;
   templateUrl: './aura-background.html',
   styleUrl: './aura-background.scss',
 })
-export class AuraBackground implements AfterViewInit {
-  private readonly canvasRef: Signal<ElementRef<HTMLCanvasElement> | undefined> =
-    viewChild<ElementRef<HTMLCanvasElement>>('auraCanvas');
+export class AuraBackground {
+  private readonly canvasRef: Signal<ElementRef<HTMLCanvasElement>> =
+    viewChild.required<ElementRef<HTMLCanvasElement>>('auraCanvas');
   private readonly destroyRef: DestroyRef = inject(DestroyRef);
   private readonly themeService: ThemeService = inject(ThemeService);
+  private readonly ngZone: NgZone = inject(NgZone);
+  private readonly platformId: object = inject(PLATFORM_ID);
   private readonly backgroundColor: Signal<string> = computed(() =>
     this.themeService.isDarkMode() ? BACKGROUND_DARK_COLOR : BACKGROUND_LIGHT_COLOR,
   );
   private dots: AuraDot[] = [];
   private animationFrameId?: number;
 
-  public ngAfterViewInit(): void {
-    // TODO replace with signals ?
-    if (typeof window === 'undefined') {
+  constructor() {
+    if (!isPlatformBrowser(this.platformId)) {
       return; // Skip canvas animation during server-side rendering.
     }
+    afterNextRender(() => this.initializeCanvas());
+  }
 
-    const canvas: HTMLCanvasElement | undefined = this.canvasRef()?.nativeElement;
-    const ctx: CanvasRenderingContext2D | undefined | null = canvas?.getContext('2d');
-    if (!canvas || !ctx) {
+  private initializeCanvas(): void {
+    const canvas: HTMLCanvasElement = this.canvasRef().nativeElement;
+    const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
+    if (!ctx) {
       return;
     }
 
@@ -67,8 +74,6 @@ export class AuraBackground implements AfterViewInit {
       }
     };
 
-    // Debounce so a drag-resize doesn't repeatedly clear/rescale the canvas
-    // on every intermediate resize event.
     let resizeTimeoutId: ReturnType<typeof setTimeout> | undefined;
     const debouncedResize = (): void => {
       clearTimeout(resizeTimeoutId);
@@ -84,9 +89,13 @@ export class AuraBackground implements AfterViewInit {
       this.animationFrameId = requestAnimationFrame(animate);
     };
 
-    window.addEventListener('resize', debouncedResize);
-    resize();
-    animate();
+    // Run the resize listener and animation loop outside Angular's zone so
+    // per-frame updates don't trigger unnecessary change detection cycles.
+    this.ngZone.runOutsideAngular(() => {
+      window.addEventListener('resize', debouncedResize);
+      resize();
+      animate();
+    });
 
     this.destroyRef.onDestroy(() => {
       window.removeEventListener('resize', debouncedResize);
