@@ -106,11 +106,12 @@
   --soft-linen: var(--soft-linen-500);
   --soft-linen-transparent: var(--soft-linen-200-transparent);
 
-  color-scheme: light dark;
+  color-scheme: light;
   --font-gt-planar: 'GT Planar';
   --font-acorn: 'Acorn';
-  --font-family-title: var(--font-acorn), "acorn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-family-body: var(--font-gt-planar), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-family-title: var(--font-acorn), var(--font-family-fallback);
+  --font-family-body: var(--font-gt-planar), var(--font-family-fallback);
   --font-size-body: clamp(1rem, 1rem + .5vw, 1.3rem);
   --font-size-h1: clamp(3rem, 0.5rem + 2vw, 5rem);
   --font-size-h2: clamp(1.5rem, 0.5rem + 1vw, 2.5rem);
@@ -133,6 +134,7 @@
 }
 
 :root[data-theme='dark'] {
+  color-scheme: dark;
   --text-color: var(--soft-linen); // TODO check it's good
   --text-color-hover: var(--soft-linen-600); // TODO check it's good
   --border-color: var(--soft-linen-400); // TODO check it's good
@@ -157,14 +159,13 @@ html {
 body {
   font-family: var(--font-family-body);
   background-color: var(--bg-color);
-  height: auto;
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   overflow-x: hidden;
   font-size: var(--font-size-body);
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-title);
