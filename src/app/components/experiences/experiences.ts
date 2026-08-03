@@ -1,7 +1,9 @@
 import {
   afterNextRender,
+  ChangeDetectionStrategy,
   Component,
   computed,
+  DestroyRef,
   ElementRef,
   inject,
   PLATFORM_ID,
@@ -29,12 +31,13 @@ interface Experience {
   imports: [InView, Timeline],
   templateUrl: './experiences.html',
   styleUrl: './experiences.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Experiences {
   protected readonly cards: Signal<readonly ElementRef<HTMLElement>[]> =
     viewChildren<ElementRef<HTMLElement>>('card');
-  protected readonly cardsContainer: Signal<ElementRef<HTMLElement> | undefined> =
-    viewChild<ElementRef<HTMLElement>>('cardsContainer');
+  protected readonly cardsContainer: Signal<ElementRef<HTMLElement>> =
+    viewChild.required<ElementRef<HTMLElement>>('cardsContainer');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   protected readonly experiences: Signal<Experience[]> = signal<Experience[]>([
@@ -92,8 +95,9 @@ export class Experiences {
   protected readonly timelineStartingPosition: Signal<number> = computed(
     () => this.firstCardHeight() / 2,
   );
-  private resizeObserver!: ResizeObserver;
-  private readonly platformId: Object = inject(PLATFORM_ID);
+  private resizeObserver?: ResizeObserver;
+  private readonly platformId: object = inject(PLATFORM_ID);
+  private readonly destroyRef: DestroyRef = inject(DestroyRef);
 
   constructor() {
     if (!isPlatformBrowser(this.platformId)) {
@@ -106,11 +110,8 @@ export class Experiences {
   }
 
   private initializeCardsMeasurements(): void {
-    const container: HTMLElement | undefined = this.cardsContainer()?.nativeElement;
-    const firstCard: HTMLElement = this.cards()[0]?.nativeElement;
-    if (!container) {
-      return;
-    }
+    const container: HTMLElement = this.cardsContainer().nativeElement;
+    const firstCard: HTMLElement | undefined = this.cards()[0]?.nativeElement;
     const updateMeasurements = () => {
       this.cardsContainerHeight.set(container.offsetHeight);
       this.firstCardHeight.set(firstCard?.offsetHeight ?? 0);
@@ -125,6 +126,12 @@ export class Experiences {
     }
     window.addEventListener('load', updateMeasurements);
     window.addEventListener('resize', updateMeasurements);
+
+    this.destroyRef.onDestroy(() => {
+      this.resizeObserver?.disconnect();
+      window.removeEventListener('load', updateMeasurements);
+      window.removeEventListener('resize', updateMeasurements);
+    });
   }
 
   private initializeDotsActivation(): void {
@@ -146,5 +153,10 @@ export class Experiences {
     updateActiveCard();
     window.addEventListener('scroll', updateActiveCard, { passive: true });
     window.addEventListener('resize', updateActiveCard);
+
+    this.destroyRef.onDestroy(() => {
+      window.removeEventListener('scroll', updateActiveCard);
+      window.removeEventListener('resize', updateActiveCard);
+    });
   }
 }

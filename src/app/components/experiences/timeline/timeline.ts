@@ -31,7 +31,7 @@ export class Timeline {
   );
   private readonly line: Signal<ElementRef<HTMLDivElement>> =
     viewChild.required<ElementRef<HTMLDivElement>>('line');
-  private readonly platformId: Object = inject(PLATFORM_ID);
+  private readonly platformId: object = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly updateScrollValue: Signal<number> = toSignal(
     this.isBrowser
