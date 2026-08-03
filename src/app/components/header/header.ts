@@ -12,7 +12,7 @@ import { startWith } from 'rxjs/operators';
   styleUrl: './header.scss',
 })
 export class Header {
-  private readonly platformId: Object = inject(PLATFORM_ID);
+  private readonly platformId: object = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly remSize: Signal<number> = computed(() =>
     parseFloat(getComputedStyle(document.documentElement).fontSize),

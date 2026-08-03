@@ -1,6 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
   computed,
   ElementRef,
@@ -9,7 +8,7 @@ import {
   InputSignal,
   PLATFORM_ID,
   Signal,
-  viewChild
+  viewChild,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { fromEvent, of } from 'rxjs';
@@ -20,7 +19,6 @@ import { map, startWith } from 'rxjs/operators';
   standalone: true,
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
   public readonly dotsCount: InputSignal<number> = input.required<number>();

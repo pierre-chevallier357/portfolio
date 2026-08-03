@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { ThemeToggle } from './theme-toggle/theme-toggle';
 
 interface NavLink {
@@ -14,8 +14,8 @@ interface NavLink {
   styleUrl: './header-nav-links.scss',
 })
 export class HeaderNavLinks {
-  protected isMenuOpened = signal(false);
-  protected navLinks: NavLink[] = [
+  protected readonly isMenuOpened: WritableSignal<boolean> = signal(false);
+  protected readonly navLinks: NavLink[] = [
     { id: 1, href: '#home', text: 'Accueil' },
     { id: 2, href: '#about', text: 'À propos' },
     { id: 3, href: '#skills', text: 'Compétences' },

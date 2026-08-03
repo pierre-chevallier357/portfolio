@@ -1,4 +1,4 @@
-import { Component, inject, WritableSignal } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { ThemeService } from '../../../../services/theme/theme';
 import { Theme } from '../../../../models/theme';
 
@@ -9,7 +9,7 @@ import { Theme } from '../../../../models/theme';
 })
 export class ThemeToggle {
   private readonly themeService: ThemeService = inject(ThemeService);
-  protected readonly theme: WritableSignal<Theme> = this.themeService.theme;
+  protected readonly theme: Signal<Theme> = this.themeService.theme.asReadonly();
 
   protected toggleTheme(): void {
     this.themeService.toggleTheme();

@@ -1,6 +1,5 @@
 import {
   afterNextRender,
-  ChangeDetectionStrategy,
   Component,
   computed,
   DestroyRef,
@@ -31,7 +30,6 @@ interface Experience {
   imports: [InView, Timeline],
   templateUrl: './experiences.html',
   styleUrl: './experiences.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Experiences {
   protected readonly cards: Signal<readonly ElementRef<HTMLElement>[]> =
