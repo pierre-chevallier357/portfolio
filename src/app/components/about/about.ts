@@ -1,8 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, computed, inject, Signal, signal, WritableSignal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { InView } from '../../directives/in-view/in-view';
+import { ContentService } from '../../services/content/content';
 
 @Component({
   selector: 'about',
@@ -13,11 +12,8 @@ import { InView } from '../../directives/in-view/in-view';
 export class About {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   protected readonly age: number = this.calculateAge(new Date('2000-10-20'));
-  private readonly http: HttpClient = inject(HttpClient);
-  private readonly rawParagraphs: Signal<string[]> = toSignal(
-    this.http.get<string[]>('data/about.json'),
-    { initialValue: [] },
-  );
+  private readonly contentService: ContentService = inject(ContentService);
+  private readonly rawParagraphs: Signal<string[]> = this.contentService.getAboutParagraphs();
   protected readonly paragraphs: Signal<string[]> = computed(() =>
     this.rawParagraphs().map((paragraph) => paragraph.replace('{{age}}', `${this.age}`)),
   );

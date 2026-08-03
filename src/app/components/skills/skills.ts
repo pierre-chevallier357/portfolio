@@ -1,8 +1,7 @@
 import { Component, inject, Signal, signal, WritableSignal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { InView } from '../../directives/in-view/in-view';
 import { SkillCategory } from '../../models/skill';
+import { ContentService } from '../../services/content/content';
 
 @Component({
   selector: 'skills',
@@ -12,9 +11,6 @@ import { SkillCategory } from '../../models/skill';
 })
 export class Skills {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  private readonly http: HttpClient = inject(HttpClient);
-  protected readonly categories: Signal<SkillCategory[]> = toSignal(
-    this.http.get<SkillCategory[]>('data/skills.json'),
-    { initialValue: [] },
-  );
+  private readonly contentService: ContentService = inject(ContentService);
+  protected readonly categories: Signal<SkillCategory[]> = this.contentService.getSkillCategories();
 }

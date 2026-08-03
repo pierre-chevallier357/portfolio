@@ -12,12 +12,11 @@ import {
   viewChildren,
   WritableSignal,
 } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { Timeline } from './timeline/timeline';
 import { InView } from '../../directives/in-view/in-view';
 import { Experience } from '../../models/experience';
+import { ContentService } from '../../services/content/content';
 
 @Component({
   selector: 'experiences',
@@ -32,11 +31,8 @@ export class Experiences {
     viewChild.required<ElementRef<HTMLElement>>('cardsContainer');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  private readonly http: HttpClient = inject(HttpClient);
-  protected readonly experiences: Signal<Experience[]> = toSignal(
-    this.http.get<Experience[]>('data/experiences.json'),
-    { initialValue: [] },
-  );
+  private readonly contentService: ContentService = inject(ContentService);
+  protected readonly experiences: Signal<Experience[]> = this.contentService.getExperiences();
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(
