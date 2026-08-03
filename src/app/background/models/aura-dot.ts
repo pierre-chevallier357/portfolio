@@ -15,7 +15,7 @@ export class AuraDot {
   }
 
   /** Randomizes position, size, color and velocity within the canvas bounds. */
-  reset(): void {
+  public reset(): void {
     this.x = Math.random() * this.canvas.width;
     this.y = Math.random() * this.canvas.height;
     this.radius = Math.random() * 300 + 200;
@@ -24,8 +24,19 @@ export class AuraDot {
     this.vy = (Math.random() - 0.5) * 12;
   }
 
+  /**
+   * Rescales position and size to match a new canvas size, keeping the dot's
+   * relative place instead of jumping to a brand new random spot. Used when
+   * the canvas is resized so the aura stretches smoothly rather than resetting.
+   */
+  public rescale(scaleX: number, scaleY: number): void {
+    this.x *= scaleX;
+    this.y *= scaleY;
+    this.radius *= (scaleX + scaleY) / 2;
+  }
+
   /** Moves the dot and wraps it around the canvas edges once fully off-screen. */
-  update(): void {
+  public update(): void {
     this.x += this.vx;
     this.y += this.vy;
 
@@ -36,8 +47,15 @@ export class AuraDot {
   }
 
   /** Paints the dot as a radial gradient fading into the given background color. */
-  draw(ctx: CanvasRenderingContext2D, backgroundRgb: string): void {
-    const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+  public draw(ctx: CanvasRenderingContext2D, backgroundRgb: string): void {
+    const gradient: CanvasGradient = ctx.createRadialGradient(
+      this.x,
+      this.y,
+      0,
+      this.x,
+      this.y,
+      this.radius,
+    );
     gradient.addColorStop(0, this.color);
     // Hold the full color further out before fading, so the pastel tones read
     // clearly instead of thinning out immediately from the center.
