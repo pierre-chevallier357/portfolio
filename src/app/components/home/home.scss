@@ -152,7 +152,7 @@
 @media screen and (max-width: 768px) {
   :host {
     min-height: auto;
-    padding: 4rem 0 3rem;
+    padding: 4rem 1rem 3rem;
   }
 
   .home-section {
@@ -164,6 +164,7 @@
     justify-items: center;
     gap: 2rem;
     margin: 0 auto;
+    width: auto;
     text-align: center;
 
     .home-title {
@@ -174,8 +175,10 @@
       margin-left: 0;
     }
 
-    .profile-picture {
-      max-width: 70vw;
+    .portrait {
+      .profile-picture {
+        max-width: 80vw;
+      }
     }
   }
 }
