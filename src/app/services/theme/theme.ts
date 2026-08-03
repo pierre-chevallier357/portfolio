@@ -51,7 +51,7 @@ export class ThemeService {
     if (!this.isBrowser()) {
       return null;
     }
-    const stored = window.localStorage.getItem(STORAGE_KEY);
+    const stored: string | null = window.localStorage.getItem(STORAGE_KEY);
     return stored === 'dark' || stored === 'light' ? stored : null;
   }
 

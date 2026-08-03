@@ -2,7 +2,7 @@
 
 ## Setup
 
-  On view init (aura-background.ts), a canvas is resized to fill its container and 12 "AuraDot" instances are created, each picking a random pastel color from AURA_COLORS. Each frame, the canvas is cleared and every dot is updated then redrawn via requestAnimationFrame.
+On view init (aura-background.ts), a canvas is resized to fill its container and 12 "AuraDot" instances are created, each picking a random pastel color from AURA_COLORS. Each frame, the canvas is cleared and every dot is updated then redrawn via requestAnimationFrame.
 
 ## Movement
 

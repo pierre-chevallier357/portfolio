@@ -1,4 +1,14 @@
-import {Directive, ElementRef, inject, OnDestroy, OnInit, output, OutputEmitterRef,} from '@angular/core';
+import {
+  afterNextRender,
+  DestroyRef,
+  Directive,
+  ElementRef,
+  inject,
+  output,
+  OutputEmitterRef,
+  PLATFORM_ID
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 /**
  * Emits `inView` once when the host element first becomes visible in the
@@ -8,18 +18,21 @@ import {Directive, ElementRef, inject, OnDestroy, OnInit, output, OutputEmitterR
 @Directive({
   selector: '[inView]',
 })
-export class InView implements OnInit, OnDestroy {
+export class InView {
   public readonly inView: OutputEmitterRef<void> = output<void>();
-
   private readonly elementRef: ElementRef<HTMLElement> = inject(ElementRef);
+  private readonly destroyRef: DestroyRef = inject(DestroyRef);
+  private readonly platformId: object = inject(PLATFORM_ID);
   private observer: IntersectionObserver | null = null;
 
-  // TODO use signals instead
-  public ngOnInit(): void {
-    if (!this.isBrowser()) {
+  constructor() {
+    if (!isPlatformBrowser(this.platformId)) {
       return;
     }
+    afterNextRender(() => this.observeVisibility());
+  }
 
+  private observeVisibility(): void {
     this.observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,13 +43,6 @@ export class InView implements OnInit, OnDestroy {
       { threshold: 0.25 },
     );
     this.observer.observe(this.elementRef.nativeElement);
-  }
-
-  public ngOnDestroy(): void {
-    this.observer?.disconnect();
-  }
-
-  private isBrowser(): boolean {
-    return typeof IntersectionObserver !== 'undefined';
+    this.destroyRef.onDestroy(() => this.observer?.disconnect());
   }
 }
