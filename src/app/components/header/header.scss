@@ -78,10 +78,15 @@
   .header {
     .navbar {
       max-width: none;
-      width: calc(100% - 1.5rem);
+      margin: 0 1rem;
+      width: calc(100% - 2rem);
 
       .navbar-title {
         display: none;
+      }
+
+      .logo-link, .navbar-links {
+        padding: 1rem;
       }
     }
   }
