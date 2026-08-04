@@ -13,4 +13,5 @@ export class Skills {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly contentService: ContentService = inject(ContentService);
   protected readonly categories: Signal<SkillCategory[]> = this.contentService.getSkillCategories();
+  protected readonly title: Signal<string> = this.contentService.getNavLinkText('skills');
 }

@@ -8,6 +8,21 @@
   <meta content="Pierre Chevallier" name="author"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <link href="favicon.png" rel="icon" type="image/png"/>
+  <script>
+    // Applies the user's previously chosen language before first paint, so the
+    // `lang` attribute (used by screen readers/translators) is correct from
+    // the start instead of flashing the server-rendered default ("fr").
+    (function () {
+      try {
+        var storedLanguage = window.localStorage.getItem('language');
+        if (storedLanguage === 'en' || storedLanguage === 'fr') {
+          document.documentElement.setAttribute('lang', storedLanguage);
+        }
+      } catch (e) {
+        // localStorage may be unavailable (private browsing, disabled storage); keep the default.
+      }
+    })();
+  </script>
 </head>
 <body>
 <app-root></app-root>

@@ -1,6 +1,6 @@
 <button
   (click)="toggleTheme()"
-  [attr.aria-label]="theme() === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre'"
+  [attr.aria-label]="ariaLabel()"
   [attr.aria-pressed]="theme() === 'dark'"
   class="theme-toggle"
   type="button"

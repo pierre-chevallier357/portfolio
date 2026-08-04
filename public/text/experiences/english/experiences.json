@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "company": "NovaTech",
+    "logo": "assets/logos/novatech.svg",
+    "title": "Angular Front-End Developer",
+    "description": "Development of a business portal intended for internal teams. Implementation of high-performance interfaces and continuous improvement of the user experience.",
+    "technologies": ["Angular", "TypeScript", "RxJS", "SCSS"]
+  },
+  {
+    "id": 2,
+    "company": "DataSphere",
+    "logo": "assets/logos/datasphere.svg",
+    "title": "Full-Stack Developer",
+    "description": "Design of web services and REST APIs for business management applications. Participation in technical decision-making and code reviews.",
+    "technologies": ["Angular", "Node.js", "NestJS", "PostgreSQL"]
+  },
+  {
+    "id": 3,
+    "company": "GreenSoft",
+    "logo": "assets/logos/greensoft.svg",
+    "title": "Software Engineer",
+    "description": "Creation of software solutions for monitoring environmental indicators, including the integration of interactive dashboards.",
+    "technologies": ["Angular", "C#", ".NET", "Azure"]
+  },
+  {
+    "id": 4,
+    "company": "CloudVision",
+    "logo": "assets/logos/cloudvision.svg",
+    "title": "Lead Front-End Developer",
+    "description": "Technical leadership of a front-end team and definition of modern architectures for multiple SaaS products.",
+    "technologies": ["Angular", "Nx", "Jest", "Docker"]
+  },
+  {
+    "id": 5,
+    "company": "TechFactory",
+    "logo": "assets/logos/techfactory.svg",
+    "title": "Development Engineer",
+    "description": "Development of strategic features and optimization of application performance for high-visibility projects.",
+    "technologies": ["Angular", "Spring Boot", "Kubernetes", "GitLab CI"]
+  }
+]

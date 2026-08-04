@@ -1,12 +1,21 @@
-<div [class.active]="isMenuOpened()" class="header-links-wrapper fade-links">
+<div [class.active]="isMenuOpened()" class="header-links-wrapper fade-links" id="header-nav-links-menu">
   @for (link of navLinks(); track link.id) {
     <a (click)="closeMenu()" [href]="link.href" class="link">
       {{ link.text }}
     </a>
   }
+  <language-toggle/>
   <theme-toggle/>
 </div>
-<button (click)="toggleMenu()" [class.opened]="isMenuOpened()" class="hamburger-button">
+<button
+  (click)="toggleMenu()"
+  [attr.aria-expanded]="isMenuOpened()"
+  [attr.aria-label]="menuButtonLabel()"
+  [class.opened]="isMenuOpened()"
+  aria-controls="header-nav-links-menu"
+  class="hamburger-button"
+  type="button"
+>
   <span class="line"></span>
   <span class="line"></span>
   <span class="line"></span>

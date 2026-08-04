@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, Signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable } from 'rxjs';
+import { computed, inject, Injectable, Signal } from '@angular/core';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { map, Observable, shareReplay, switchMap } from 'rxjs';
 import { Experience } from '../../models/experience';
 import { SkillCategory } from '../../models/skill';
 import { NavLink } from '../../models/nav-link';
+import { LanguageService } from '../language/language';
 
 @Injectable({
   providedIn: 'root',
@@ -12,30 +13,57 @@ import { NavLink } from '../../models/nav-link';
 export class ContentService {
   private readonly baseUrl: string = 'text';
   private readonly http: HttpClient = inject(HttpClient);
+  private readonly languageService: LanguageService = inject(LanguageService);
+  private readonly languageFolder: Signal<string> = computed(() =>
+    this.languageService.language() === 'fr' ? 'french' : 'english',
+  );
+  private readonly navLinks$: Observable<NavLink[]> = this.getLocalized<NavLink[]>(
+    'header',
+    'nav-links.json',
+  ).pipe(shareReplay(1));
 
   public getExperiences(): Signal<Experience[]> {
-    return toSignal(this.http.get<Experience[]>(`${this.baseUrl}/experiences.json`), {
+    return toSignal(this.getLocalized<Experience[]>('experiences', 'experiences.json'), {
       initialValue: [],
     });
   }
 
   public getSkillCategories(): Signal<SkillCategory[]> {
-    return toSignal(this.http.get<SkillCategory[]>(`${this.baseUrl}/skills.json`), {
+    return toSignal(this.getLocalized<SkillCategory[]>('skills', 'skills.json'), {
       initialValue: [],
     });
   }
 
   public getNavLinks(): Signal<NavLink[]> {
-    return toSignal(this.http.get<NavLink[]>(`${this.baseUrl}/nav-links.json`), {
+    return toSignal(this.navLinks$, {
       initialValue: [],
     });
   }
 
+  public getNavLinkText(id: string): Signal<string> {
+    return toSignal(
+      this.navLinks$.pipe(
+        map((navLinks) => navLinks.find((navLink) => navLink.id === id)?.text ?? ''),
+      ),
+      { initialValue: '' },
+    );
+  }
+
   public getAboutParagraphs(): Signal<string[]> {
-    return toSignal(this.http.get<string[]>(`${this.baseUrl}/about.json`), { initialValue: [] });
+    return toSignal(this.getLocalized<string[]>('about', 'about.json'), {
+      initialValue: [],
+    });
   }
 
   public getTypewriterWords$(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseUrl}/typewriter-words.json`);
+    return this.getLocalized<string[]>('home', 'typewriter-words.json');
+  }
+
+  private getLocalized<T>(category: string, fileName: string): Observable<T> {
+    return toObservable(this.languageFolder).pipe(
+      switchMap((languageFolder) =>
+        this.http.get<T>(`${this.baseUrl}/${category}/${languageFolder}/${fileName}`),
+      ),
+    );
   }
 }

@@ -1,0 +1,37 @@
+:host {
+  padding: 1rem 1.625rem 1rem 0;
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border: 0.125rem solid var(--border-color);
+  border-radius: 1.5rem;
+  background-color: transparent;
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: var(--bg-color-hover);
+  }
+
+  svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: currentColor;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    padding: 1rem 1.625rem;
+  }
+
+  .language-toggle {
+    margin: auto;
+  }
+}

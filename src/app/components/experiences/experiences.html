@@ -1,5 +1,5 @@
 <section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="experiences-section" id="experiences" inView>
-  <h1 class="experiences-title">Expériences</h1>
+  <h1 class="experiences-title">{{ title() }}</h1>
 
   <div #cardsContainer class="experiences-container">
     <timeline [dotsCount]="experiences().length" [height]="timelineHeight()"

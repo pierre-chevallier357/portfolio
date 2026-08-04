@@ -4,6 +4,7 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { fromEvent, map } from 'rxjs';
 import { startWith } from 'rxjs/operators';
+import { LanguageService } from '../../services/language/language';
 
 @Component({
   selector: 'header-menu',
@@ -14,6 +15,7 @@ import { startWith } from 'rxjs/operators';
 export class Header {
   private readonly platformId: object = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
+  private readonly languageService: LanguageService = inject(LanguageService);
   private readonly remSize: Signal<number> = computed(() =>
     parseFloat(getComputedStyle(document.documentElement).fontSize),
   );
@@ -27,4 +29,7 @@ export class Header {
         { initialValue: false },
       )
     : signal(false);
+  protected readonly logoAlt: Signal<string> = computed(() =>
+    this.languageService.isFrench() ? 'Dessin simplifié de Pierre' : 'Simplified drawing of Pierre',
+  );
 }

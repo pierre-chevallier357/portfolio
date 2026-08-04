@@ -33,6 +33,7 @@ export class Experiences {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly contentService: ContentService = inject(ContentService);
   protected readonly experiences: Signal<Experience[]> = this.contentService.getExperiences();
+  protected readonly title: Signal<string> = this.contentService.getNavLinkText('experiences');
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(
