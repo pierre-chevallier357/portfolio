@@ -6,6 +6,7 @@ import { Experience } from '../../models/experience';
 import { SkillCategory } from '../../models/skill';
 import { NavLink } from '../../models/nav-link';
 import { LanguageService } from '../language/language';
+import { HomeTitle } from '../../models/home-title';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,12 @@ export class ContentService {
     'header',
     'nav-links.json',
   ).pipe(shareReplay(1));
+
+  public getHomeTitle(): Signal<HomeTitle> {
+    return toSignal(this.getLocalized<HomeTitle>('home', 'title.json'), {
+      initialValue: {} as HomeTitle,
+    });
+  }
 
   public getExperiences(): Signal<Experience[]> {
     return toSignal(this.getLocalized<Experience[]>('experiences', 'experiences.json'), {

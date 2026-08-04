@@ -4,6 +4,8 @@ import { SelfWritingText } from './self-writing-text/self-writing-text';
 import { InView } from '../../directives/in-view/in-view';
 import { ThemeService } from '../../services/theme/theme';
 import { LanguageService } from '../../services/language/language';
+import { ContentService } from '../../services/content/content';
+import { HomeTitle } from '../../models/home-title';
 
 @Component({
   selector: 'home',
@@ -21,4 +23,6 @@ export class Home {
   protected readonly portraitAlt: Signal<string> = computed(() =>
     this.languageService.isFrench() ? 'Portrait de Pierre' : 'Portrait of Pierre',
   );
+  private readonly contentService: ContentService = inject(ContentService);
+  protected readonly title: Signal<HomeTitle> = this.contentService.getHomeTitle();
 }

@@ -1,9 +1,9 @@
 <section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="home-section" id="home" inView>
   <h1 class="home-title">
-    Hey !
+    {{ title().hey }}
     <br/>
-    Je suis <span [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>,
-    <br/>
+    {{ title().im }} <span
+    [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>{{ title().a }}
     <self-writing-text/>
   </h1>
   <figure class="portrait">

@@ -1,2 +1,5 @@
-<span [class]="'self-writing-text' + (isDarkMode() ? ' dark' : ' light')">développeur {{ typedText() }}</span>
-<span aria-hidden="true" class="vertical-bar"></span>
+<span [class]="'self-writing-text' + (isDarkMode() ? ' dark' : ' light')">
+  {{ isFrench() ? homeTitle().developer : '' }}
+  {{ typedText() }}<span aria-hidden="true" class="vertical-bar"></span>
+  {{ !isFrench() ? homeTitle().developer : '' }}
+</span>

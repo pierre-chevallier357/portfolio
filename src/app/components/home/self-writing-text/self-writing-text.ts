@@ -4,6 +4,8 @@ import { switchMap } from 'rxjs';
 import { Typewriter } from '../../../services/typewriter/typewriter';
 import { ThemeService } from '../../../services/theme/theme';
 import { ContentService } from '../../../services/content/content';
+import { HomeTitle } from '../../../models/home-title';
+import { LanguageService } from '../../../services/language/language';
 
 @Component({
   selector: 'self-writing-text',
@@ -20,4 +22,7 @@ export class SelfWritingText {
       .pipe(switchMap((words) => this.typewriter.getTypewriterEffect(words))),
     { initialValue: '' },
   );
+  protected readonly homeTitle: Signal<HomeTitle> = this.contentService.getHomeTitle();
+  private readonly languageService: LanguageService = inject(LanguageService);
+  protected readonly isFrench: Signal<boolean> = this.languageService.isFrench;
 }
