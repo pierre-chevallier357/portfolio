@@ -11,8 +11,29 @@
       />
       <span class="navbar-title">Pierre Chevallier</span>
     </a>
-    <div class="navbar-links">
-      <header-nav-links/>
-    </div>
+
+    <button (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpened()" [attr.aria-label]="menuButtonLabel()"
+            [class.opened]="isMenuOpened()" aria-controls="header-nav-links-menu" class="hamburger-button"
+            type="button">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+
+    <ul [class.active]="isMenuOpened()" class="navbar-menu sliding-down-links" id="header-nav-links-menu">
+      @for (link of navLinks(); track link.id) {
+        <li class="navbar-item">
+          <a (click)="closeMenu()" [href]="link.href" class="navbar-link">
+            {{ link.text }}
+          </a>
+        </li>
+      }
+      <li class="navbar-item">
+        <language-toggle/>
+      </li>
+      <li class="navbar-item">
+        <theme-toggle/>
+      </li>
+    </ul>
   </nav>
 </header>

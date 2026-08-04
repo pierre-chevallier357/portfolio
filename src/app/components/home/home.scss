@@ -171,6 +171,7 @@
     .home-title {
       margin: 0;
       text-align: center;
+      height: 3lh; // TODO use a better unit than that
     }
 
     .about-link {
@@ -186,7 +187,9 @@
 }
 
 @media screen and (max-width: 550px) {
-  .home-title {
-    height: 5lh;
+  .home-section {
+    .home-title {
+      height: 5lh; // TODO use a better unit than that
+    }
   }
 }

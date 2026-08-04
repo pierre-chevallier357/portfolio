@@ -1,6 +1,6 @@
 import { Component, computed, inject, Signal } from '@angular/core';
-import { LanguageService } from '../../../../services/language/language';
-import { Language } from '../../../../models/language';
+import { LanguageService } from '../../../services/language/language';
+import { Language } from '../../../models/language';
 
 @Component({
   selector: 'language-toggle',
@@ -11,7 +11,7 @@ export class LanguageToggle {
   private readonly languageService: LanguageService = inject(LanguageService);
   protected readonly language: Signal<Language> = this.languageService.language.asReadonly();
   protected readonly label: Signal<string> = computed(() =>
-    this.language() === 'fr' ? 'Anglais' : 'French',
+    this.language() === 'fr' ? 'English' : 'Français',
   );
 
   protected toggleLanguage(): void {

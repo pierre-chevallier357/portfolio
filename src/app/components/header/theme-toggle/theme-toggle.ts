@@ -1,7 +1,7 @@
 import { Component, computed, inject, Signal } from '@angular/core';
-import { ThemeService } from '../../../../services/theme/theme';
-import { LanguageService } from '../../../../services/language/language';
-import { Theme } from '../../../../models/theme';
+import { ThemeService } from '../../../services/theme/theme';
+import { LanguageService } from '../../../services/language/language';
+import { Theme } from '../../../models/theme';
 
 @Component({
   selector: 'theme-toggle',
@@ -10,8 +10,8 @@ import { Theme } from '../../../../models/theme';
 })
 export class ThemeToggle {
   private readonly themeService: ThemeService = inject(ThemeService);
-  private readonly languageService: LanguageService = inject(LanguageService);
   protected readonly theme: Signal<Theme> = this.themeService.theme.asReadonly();
+  private readonly languageService: LanguageService = inject(LanguageService);
   protected readonly ariaLabel: Signal<string> = computed(() => {
     const isFrench: boolean = this.languageService.isFrench();
     if (this.theme() === 'dark') {

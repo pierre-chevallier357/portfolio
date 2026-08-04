@@ -25,6 +25,81 @@
       -webkit-backdrop-filter: blur(20px) saturate(1.7);
     }
 
+    .sliding-down-links > * {
+      @include slide-down-animation;
+
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          animation-delay: (200ms * ($i + 1));
+        }
+      }
+    }
+
+    .navbar-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+
+      .navbar-link {
+        text-decoration: none;
+        padding: 1rem 1.625rem;
+        font-weight: bold;
+        transition: all 0.1s ease-in-out;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+          transform: scale(1.1);
+          scale: 1.1;
+        }
+      }
+    }
+
+    .hamburger-button {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      background-color: transparent;
+      border: none;
+      display: none;
+      padding: 0;
+
+      .line {
+        width: 3rem;
+        height: 0.3125rem;
+        border-radius: 0.3rem;
+        background-color: var(--text-color);
+        display: block;
+        margin: 0.5rem auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &.opened .line {
+        &:nth-child(1) {
+          -webkit-transform: translateY(0.8125rem) rotate(45deg);
+          -ms-transform: translateY(0.8125rem) rotate(45deg);
+          -o-transform: translateY(0.8125rem) rotate(45deg);
+          transform: translateY(0.8125rem) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          -webkit-transform: translateY(-0.8125rem) rotate(-45deg);
+          -ms-transform: translateY(-0.8125rem) rotate(-45deg);
+          -o-transform: translateY(-0.8125rem) rotate(-45deg);
+          transform: translateY(-0.8125rem) rotate(-45deg);
+        }
+      }
+    }
+
     .logo-link {
       display: flex;
       align-items: center;
@@ -53,7 +128,7 @@
       }
     }
 
-    .navbar-links {
+    .navbar-item {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -83,9 +158,54 @@
         display: none;
       }
 
-      .logo-link, .navbar-links {
+      .logo-link, .navbar-item {
         padding: 1rem;
+      }
+
+      .hamburger-button {
+        display: block;
+        padding-right: 0.5rem;
+        position: relative;
+        z-index: 2;
+        animation-delay: 0.5s;
+        @include slide-down-animation;
       }
     }
   }
+
+  .navbar-menu {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100dvh;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    text-align: center;
+    transition: 0.3s;
+    z-index: 1;
+
+    &.active {
+      right: 0;
+    }
+
+    .navbar-item {
+      margin: auto 0;
+      font-size: 1.7rem; // TODO keep that hard coded?
+
+      &:first-child {
+        margin-top: 6.5rem;
+      }
+
+      // TODO remove?
+      //&:last-child {
+      //  margin: auto 7rem 4rem;
+      //}
+    }
+  }
+
+  // TODO add it back
+  //.lock-scroll {
+  //  overflow: hidden;
+  //}
 }
