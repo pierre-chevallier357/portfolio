@@ -5,7 +5,7 @@ import { map, Observable, shareReplay, switchMap } from 'rxjs';
 import { Experience } from './experience';
 import { SkillCategory } from './skill';
 import { NavLink } from './nav-link';
-import { LanguageStore } from '../core/language-store';
+import { LanguageStore } from '../core/language/language-store';
 import { HomeTitle } from './home-title';
 
 @Injectable({

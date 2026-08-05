@@ -2,8 +2,8 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, inject, Signal, signal, WritableSignal } from '@angular/core';
 import { SelfWritingText } from './self-writing-text/self-writing-text';
 import { InView } from '../../shared/in-view/in-view';
-import { ThemeStore } from '../../core/theme-store';
-import { LanguageStore } from '../../core/language-store';
+import { ThemeStore } from '../../core/theme/theme-store';
+import { LanguageStore } from '../../core/language/language-store';
 import { TextProvider } from '../../content/text-provider';
 import { HomeTitle } from '../../content/home-title';
 

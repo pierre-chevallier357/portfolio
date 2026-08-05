@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AuraDot } from './aura-dot';
-import { ThemeStore } from '../../core/theme-store';
+import { ThemeStore } from '../../core/theme/theme-store';
 
 const DOTS_COLORS = ['#FF5E00', '#F2FF00', '#00E5FF', '#15FF00', '#FF00F7'] as const;
 const BACKGROUND_LIGHT_COLOR = '237, 231, 222';

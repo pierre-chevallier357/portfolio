@@ -2,10 +2,10 @@ import { Component, inject, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { switchMap } from 'rxjs';
 import { TypewriterEffect } from '../typewriter-effect/typewriter-effect';
-import { ThemeStore } from '../../../core/theme-store';
+import { ThemeStore } from '../../../core/theme/theme-store';
 import { TextProvider } from '../../../content/text-provider';
 import { HomeTitle } from '../../../content/home-title';
-import { LanguageStore } from '../../../core/language-store';
+import { LanguageStore } from '../../../core/language/language-store';
 
 @Component({
   selector: 'portfolio-self-writing-text',

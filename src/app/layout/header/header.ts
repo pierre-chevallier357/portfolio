@@ -11,7 +11,7 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { fromEvent, map } from 'rxjs';
 import { startWith } from 'rxjs/operators';
-import { LanguageStore } from '../../core/language-store';
+import { LanguageStore } from '../../core/language/language-store';
 import { LanguageToggle } from './language-toggle/language-toggle';
 import { ThemeToggle } from './theme-toggle/theme-toggle';
 import { TextProvider } from '../../content/text-provider';

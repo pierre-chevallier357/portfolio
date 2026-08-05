@@ -1,7 +1,7 @@
 import { Component, computed, inject, Signal } from '@angular/core';
-import { ThemeStore } from '../../../core/theme-store';
-import { LanguageStore } from '../../../core/language-store';
-import { Theme } from '../../../core/theme';
+import { ThemeStore } from '../../../core/theme/theme-store';
+import { LanguageStore } from '../../../core/language/language-store';
+import { Theme } from '../../../core/theme/theme';
 
 @Component({
   selector: 'portfolio-theme-toggle',
