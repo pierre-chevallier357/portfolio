@@ -1,4 +1,5 @@
-<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="about-section" id="about" inView>
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="about-section" id="about"
+         portfolioInView>
   <div class="about-content">
     <h1 class="about-title">{{ title() }}</h1>
     @for (paragraph of paragraphs(); track $index) {

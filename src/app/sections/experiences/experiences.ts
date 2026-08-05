@@ -19,7 +19,7 @@ import { Experience } from '../../content/experience';
 import { TextProvider } from '../../content/text-provider';
 
 @Component({
-  selector: 'experiences',
+  selector: 'portfolio-experiences',
   imports: [InView, Timeline],
   templateUrl: './experiences.html',
   styleUrl: './experiences.scss',

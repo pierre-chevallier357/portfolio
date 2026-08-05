@@ -8,7 +8,7 @@ import { HomeTitle } from '../../../content/home-title';
 import { LanguageStore } from '../../../core/language-store';
 
 @Component({
-  selector: 'self-writing-text',
+  selector: 'portfolio-self-writing-text',
   templateUrl: './self-writing-text.html',
   styleUrl: './self-writing-text.scss',
 })

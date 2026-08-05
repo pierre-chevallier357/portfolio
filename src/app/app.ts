@@ -7,7 +7,7 @@ import { Skills } from './sections/skills/skills';
 import { Experiences } from './sections/experiences/experiences';
 
 @Component({
-  selector: 'app-root',
+  selector: 'portfolio-root',
   imports: [AuraBackground, Header, Home, About, Skills, Experiences],
   templateUrl: './app.html',
   styleUrl: './app.scss',

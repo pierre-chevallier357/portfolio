@@ -4,7 +4,7 @@ import { LanguageStore } from '../../../core/language-store';
 import { Theme } from '../../../core/theme';
 
 @Component({
-  selector: 'theme-toggle',
+  selector: 'portfolio-theme-toggle',
   templateUrl: './theme-toggle.html',
   styleUrl: './theme-toggle.scss',
 })

@@ -4,7 +4,7 @@ import { SkillCategory } from '../../content/skill';
 import { TextProvider } from '../../content/text-provider';
 
 @Component({
-  selector: 'skills',
+  selector: 'portfolio-skills',
   imports: [InView],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',

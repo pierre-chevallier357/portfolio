@@ -20,7 +20,7 @@ const BACKGROUND_DARK_COLOR = '35, 56, 49';
 const DOTS_COUNT = 12;
 
 @Component({
-  selector: 'aura-background',
+  selector: 'portfolio-aura-background',
   templateUrl: './aura-background.html',
   styleUrl: './aura-background.scss',
 })

@@ -8,14 +8,14 @@ import {
   InputSignal,
   PLATFORM_ID,
   Signal,
-  viewChild,
+  viewChild
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { fromEvent, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 @Component({
-  selector: 'timeline',
+  selector: 'portfolio-timeline',
   standalone: true,
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss',

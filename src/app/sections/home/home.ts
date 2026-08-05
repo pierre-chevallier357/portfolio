@@ -8,7 +8,7 @@ import { TextProvider } from '../../content/text-provider';
 import { HomeTitle } from '../../content/home-title';
 
 @Component({
-  selector: 'home',
+  selector: 'portfolio-home',
   imports: [NgOptimizedImage, SelfWritingText, InView],
   templateUrl: './home.html',
   styleUrl: './home.scss',

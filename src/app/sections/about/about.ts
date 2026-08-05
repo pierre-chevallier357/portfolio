@@ -5,7 +5,7 @@ import {TextProvider} from '../../content/text-provider';
 import {LanguageStore} from '../../core/language-store';
 
 @Component({
-  selector: 'about',
+  selector: 'portfolio-about',
   imports: [NgOptimizedImage, InView],
   templateUrl: './about.html',
   styleUrl: './about.scss',
@@ -13,11 +13,11 @@ import {LanguageStore} from '../../core/language-store';
 export class About {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   protected readonly age: number = this.calculateAge(new Date('2000-10-20'));
-  private readonly textProvider: TextProvider = inject(TextProvider);
-  protected readonly rawParagraphs: Signal<string[]> = this.textProvider.getAboutParagraphs();
   protected readonly paragraphs: Signal<string[]> = computed(() =>
     this.rawParagraphs().map((paragraph) => paragraph.replace('{{age}}', `${this.age}`)),
   );
+  private readonly textProvider: TextProvider = inject(TextProvider);
+  protected readonly rawParagraphs: Signal<string[]> = this.textProvider.getAboutParagraphs();
   protected readonly title: Signal<string> = this.textProvider.getNavLinkText('about');
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly portraitAlt: Signal<string> = computed(() =>

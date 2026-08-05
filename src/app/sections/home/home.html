@@ -1,10 +1,11 @@
-<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="home-section" id="home" inView>
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="home-section" id="home"
+         portfolioInView>
   <h1 class="home-title">
     {{ title().hey }}
     <br/>
     {{ title().im }} <span
     [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>{{ title().a }}
-    <self-writing-text/>
+    <portfolio-self-writing-text/>
   </h1>
   <figure class="portrait">
     <img

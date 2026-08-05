@@ -6,9 +6,9 @@ import {
   inject,
   output,
   OutputEmitterRef,
-  PLATFORM_ID
+  PLATFORM_ID,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import {isPlatformBrowser} from '@angular/common';
 
 /**
  * Emits `inView` once when the host element first becomes visible in the
@@ -16,7 +16,7 @@ import { isPlatformBrowser } from '@angular/common';
  * scrolls to the element instead of always playing on page load.
  */
 @Directive({
-  selector: '[inView]',
+  selector: '[portfolioInView]',
 })
 export class InView {
   public readonly inView: OutputEmitterRef<void> = output<void>();

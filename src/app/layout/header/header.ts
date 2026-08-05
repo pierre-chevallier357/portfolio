@@ -18,7 +18,7 @@ import { TextProvider } from '../../content/text-provider';
 import { NavLink } from '../../content/nav-link';
 
 @Component({
-  selector: 'header-menu',
+  selector: 'portfolio-header',
   imports: [NgOptimizedImage, LanguageToggle, ThemeToggle],
   templateUrl: './header.html',
   styleUrl: './header.scss',
