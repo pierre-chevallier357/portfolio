@@ -28,7 +28,7 @@
             ],
             "styles": ["src/styles.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/app/animations"]
+              "includePaths": ["src/app/shared/animations"]
             },
             "server": "src/main.server.ts",
             "outputMode": "server",

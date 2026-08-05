@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { AuraBackground } from './background/components/aura-background';
-import { About } from './components/about/about';
-import { Header } from './components/header/header';
-import { Home } from './components/home/home';
-import { Skills } from './components/skills/skills';
-import { Experiences } from './components/experiences/experiences';
+import { AuraBackground } from './shared/background/aura-background';
+import { Header } from './layout/header/header';
+import { Home } from './sections/home/home';
+import { About } from './sections/about/about';
+import { Skills } from './sections/skills/skills';
+import { Experiences } from './sections/experiences/experiences';
 
 @Component({
   selector: 'app-root',
