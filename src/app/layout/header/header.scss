@@ -173,48 +173,48 @@
 
       .hamburger-button {
         display: block;
-        padding-right: 0.5rem;
+        padding: 1rem;
         position: relative;
         z-index: 2;
         animation-delay: 0.5s;
         @include slide-down-animation;
       }
-    }
-  }
 
-  .navbar-menu {
-    position: fixed;
-    right: -100%;
-    top: 0;
-    height: 100dvh;
-    width: 100%;
-    flex-direction: column;
-    background-color: var(--bg-color);
-    text-align: center;
-    transition: 0.3s;
-    z-index: 1;
+      .navbar-menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100dvh;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        text-align: center;
+        transition: 0.3s;
+        z-index: 1;
+        margin: 0;
 
-    &.active {
-      right: 0;
-    }
+        &.active {
+          right: 0;
+        }
 
-    .navbar-item {
-      margin: auto 0;
-      font-size: 1.7rem; // TODO keep that hard coded?
+        .navbar-item {
+          margin: auto 0;
 
-      &:first-child {
-        margin-top: 6.5rem;
+          &:first-child {
+            margin-top: 6.5rem;
+          }
+
+          &:last-child {
+            margin-bottom: 4rem;
+          }
+
+          .navbar-link {
+            margin: 0;
+            padding: 0;
+            font-size: 1.5rem;
+          }
+        }
       }
-
-      // TODO remove?
-      //&:last-child {
-      //  margin: auto 7rem 4rem;
-      //}
     }
   }
-
-  // TODO add it back
-  //.lock-scroll {
-  //  overflow: hidden;
-  //}
 }

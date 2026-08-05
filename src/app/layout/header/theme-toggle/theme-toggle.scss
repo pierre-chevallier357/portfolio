@@ -22,12 +22,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  :host {
-    padding: 1rem 1.625rem;
-  }
-
   .theme-toggle {
-    margin: auto;
+    font-size: 1rem;
   }
 }
-

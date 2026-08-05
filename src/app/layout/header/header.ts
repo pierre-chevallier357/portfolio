@@ -56,11 +56,11 @@ export class Header {
 
   protected toggleMenu(): void {
     this.isMenuOpened.update((isMenuOpened) => !isMenuOpened);
-    // document.body.classList.toggle('lock-scroll'); // TODO add it back
+    document.body.classList.toggle('lock-scroll');
   }
 
   protected closeMenu(): void {
     this.isMenuOpened.set(false);
-    // document.body.classList.remove('lock-scroll'); // TODO add it back
+    document.body.classList.remove('lock-scroll');
   }
 }
