@@ -17,9 +17,6 @@ export class Home {
   protected readonly isDarkMode: Signal<boolean> = inject(ThemeStore).isDarkMode;
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly languageStore: LanguageStore = inject(LanguageStore);
-  protected readonly starAlt: Signal<string> = computed(() =>
-    this.languageStore.isFrench() ? 'Étoile' : 'Star',
-  );
   protected readonly portraitAlt: Signal<string> = computed(() =>
     this.languageStore.isFrench() ? 'Portrait de Pierre' : 'Portrait of Pierre',
   );

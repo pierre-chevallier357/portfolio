@@ -134,11 +134,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  :host {
-    min-height: auto;
-    padding: 4rem 1rem 3rem;
-  }
-
   .skills-section {
     justify-items: center;
     gap: 2rem;

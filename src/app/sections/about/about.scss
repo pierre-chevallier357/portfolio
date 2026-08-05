@@ -60,11 +60,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  :host {
-    min-height: auto;
-    padding: 4rem 0;
-  }
-
   .about-section {
     grid-template-columns: 1fr;
     gap: 2rem;
