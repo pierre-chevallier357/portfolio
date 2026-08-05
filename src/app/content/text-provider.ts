@@ -6,7 +6,7 @@ import { Experience } from './experience';
 import { SkillCategory } from './skill';
 import { NavLink } from './nav-link';
 import { LanguageStore } from '../core/language/language-store';
-import { HomeTitle } from './home-title';
+import { Title } from './title';
 
 @Injectable({
   providedIn: 'root',
@@ -20,10 +20,13 @@ export class TextProvider {
   private readonly navLinks$: Observable<NavLink[]> = this.getLocalized<NavLink[]>(
     'nav-links.json',
   ).pipe(shareReplay(1));
+  private readonly typewriterWords$: Observable<string[]> = this.getLocalized<string[]>(
+    'typewriter.json',
+  ).pipe(shareReplay(1));
 
-  public getHomeTitle(): Signal<HomeTitle> {
-    return toSignal(this.getLocalized<HomeTitle>('home-title.json'), {
-      initialValue: {} as HomeTitle,
+  public getHomeTitle(): Signal<Title> {
+    return toSignal(this.getLocalized<Title>('title.json'), {
+      initialValue: {} as Title,
     });
   }
 
@@ -61,7 +64,7 @@ export class TextProvider {
   }
 
   public getTypewriterWords$(): Observable<string[]> {
-    return this.getLocalized<string[]>('typewriter.json');
+    return this.typewriterWords$;
   }
 
   private getLocalized<T>(fileName: string): Observable<T> {

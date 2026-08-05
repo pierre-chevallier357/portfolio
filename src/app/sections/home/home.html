@@ -1,12 +1,6 @@
 <section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="home-section" id="home"
          portfolioInView>
-  <h1 class="home-title">
-    {{ title().hey }}
-    <br/>
-    {{ title().im }} <span
-    [class]="'name' + (isDarkMode() ? ' dark' : ' light')">Pierre Chevallier</span>{{ title().a }}
-    <portfolio-self-writing-text/>
-  </h1>
+  <h1 class="home-title" portfolioHomeTitle></h1>
   <figure class="portrait">
     <img
       alt=""

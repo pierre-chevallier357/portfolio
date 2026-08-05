@@ -22,26 +22,13 @@
 
   .home-title {
     @include slide-down-hidden;
-    width: fit-content;
+    width: 100%;
     position: relative;
     font-size: var(--font-size-huge);
     letter-spacing: -2px;
     margin: 0 0 2rem;
     grid-area: title;
     text-align: start;
-
-    .name {
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      &.dark {
-        background-image: linear-gradient(to bottom, var(--brilliant-azure-100), var(--brilliant-azure-300));
-      }
-
-      &.light {
-        background-image: linear-gradient(to bottom, var(--blush-rose-700), var(--blush-rose-950));
-      }
-    }
   }
 
   .portrait {
@@ -171,7 +158,6 @@
     .home-title {
       margin: 0;
       text-align: center;
-      height: 3lh; // TODO use a better unit than that
     }
 
     .about-link {
@@ -182,14 +168,6 @@
       .profile-picture {
         max-width: 80vw;
       }
-    }
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .home-section {
-    .home-title {
-      height: 5lh; // TODO use a better unit than that
     }
   }
 }

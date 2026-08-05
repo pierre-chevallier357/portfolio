@@ -4,7 +4,7 @@ import { switchMap } from 'rxjs';
 import { TypewriterEffect } from '../typewriter-effect/typewriter-effect';
 import { ThemeStore } from '../../../core/theme/theme-store';
 import { TextProvider } from '../../../content/text-provider';
-import { HomeTitle } from '../../../content/home-title';
+import { Title } from '../../../content/title';
 import { LanguageStore } from '../../../core/language/language-store';
 
 @Component({
@@ -22,7 +22,7 @@ export class SelfWritingText {
       .pipe(switchMap((words) => this.typewriterEffect.getTypewriterEffect(words))),
     { initialValue: '' },
   );
-  protected readonly homeTitle: Signal<HomeTitle> = this.textProvider.getHomeTitle();
+  protected readonly homeTitle: Signal<Title> = this.textProvider.getHomeTitle();
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly isFrench: Signal<boolean> = this.languageStore.isFrench;
 }

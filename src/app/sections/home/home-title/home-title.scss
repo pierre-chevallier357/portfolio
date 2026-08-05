@@ -1,0 +1,33 @@
+:host {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  position: relative;
+}
+
+.content {
+  grid-area: 1 / 1;
+}
+
+.ghost {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  visibility: hidden;
+  grid-area: 1 / 1;
+
+  .ghost-variant {
+    grid-area: 1 / 1;
+  }
+}
+
+.name {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &.dark {
+    background-image: linear-gradient(to bottom, var(--brilliant-azure-100), var(--brilliant-azure-300));
+  }
+
+  &.light {
+    background-image: linear-gradient(to bottom, var(--blush-rose-700), var(--blush-rose-950));
+  }
+}
