@@ -1,12 +1,12 @@
-import {HttpClient} from '@angular/common/http';
-import {computed, inject, Injectable, Signal} from '@angular/core';
-import {toObservable, toSignal} from '@angular/core/rxjs-interop';
-import {map, Observable, shareReplay, switchMap} from 'rxjs';
-import {Experience} from './experience';
-import {SkillCategory} from './skill';
-import {NavLink} from './nav-link';
-import {LanguageStore} from '../core/language-store';
-import {HomeTitle} from './home-title';
+import { HttpClient } from '@angular/common/http';
+import { computed, inject, Injectable, Signal } from '@angular/core';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { map, Observable, shareReplay, switchMap } from 'rxjs';
+import { Experience } from './experience';
+import { SkillCategory } from './skill';
+import { NavLink } from './nav-link';
+import { LanguageStore } from '../core/language-store';
+import { HomeTitle } from './home-title';
 
 @Injectable({
   providedIn: 'root',
@@ -18,24 +18,23 @@ export class TextProvider {
     this.languageStore.language() === 'fr' ? 'french' : 'english',
   );
   private readonly navLinks$: Observable<NavLink[]> = this.getLocalized<NavLink[]>(
-    'header',
     'nav-links.json',
   ).pipe(shareReplay(1));
 
   public getHomeTitle(): Signal<HomeTitle> {
-    return toSignal(this.getLocalized<HomeTitle>('home', 'title.json'), {
+    return toSignal(this.getLocalized<HomeTitle>('home-title.json'), {
       initialValue: {} as HomeTitle,
     });
   }
 
   public getExperiences(): Signal<Experience[]> {
-    return toSignal(this.getLocalized<Experience[]>('experiences', 'experiences.json'), {
+    return toSignal(this.getLocalized<Experience[]>('experiences.json'), {
       initialValue: [],
     });
   }
 
   public getSkillCategories(): Signal<SkillCategory[]> {
-    return toSignal(this.getLocalized<SkillCategory[]>('skills', 'skills.json'), {
+    return toSignal(this.getLocalized<SkillCategory[]>('skills.json'), {
       initialValue: [],
     });
   }
@@ -56,19 +55,19 @@ export class TextProvider {
   }
 
   public getAboutParagraphs(): Signal<string[]> {
-    return toSignal(this.getLocalized<string[]>('about', 'about.json'), {
+    return toSignal(this.getLocalized<string[]>('about.json'), {
       initialValue: [],
     });
   }
 
   public getTypewriterWords$(): Observable<string[]> {
-    return this.getLocalized<string[]>('home', 'typewriter-words.json');
+    return this.getLocalized<string[]>('typewriter.json');
   }
 
-  private getLocalized<T>(category: string, fileName: string): Observable<T> {
+  private getLocalized<T>(fileName: string): Observable<T> {
     return toObservable(this.languageFolder).pipe(
       switchMap((languageFolder) =>
-        this.httpClient.get<T>(`content/${category}/${languageFolder}/${fileName}`),
+        this.httpClient.get<T>(`content/${languageFolder}/${fileName}`),
       ),
     );
   }
