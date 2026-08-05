@@ -1,18 +1,13 @@
-:host {
-  padding: 1rem 1.625rem;
-}
-
 .theme-toggle {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  padding: 0;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
   border: 0.125rem solid var(--border-color);
-  border-radius: 50%;
+  border-radius: 1.5rem;
   background-color: transparent;
   color: var(--text-color);
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 
@@ -28,6 +23,11 @@
 
 @media screen and (max-width: 768px) {
   :host {
-    margin: auto 0;
+    padding: 1rem 1.625rem;
+  }
+
+  .theme-toggle {
+    margin: auto;
   }
 }
+

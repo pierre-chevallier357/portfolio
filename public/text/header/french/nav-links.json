@@ -3,7 +3,6 @@
   { "id": "about", "href": "#about", "text": "À propos" },
   { "id": "skills", "href": "#skills", "text": "Compétences" },
   { "id": "experiences", "href": "#experiences", "text": "Expériences" },
-  { "id": "projects", "href": "#projects", "text": "Projets" },
   { "id": "education", "href": "#education", "text": "Études" },
   { "id": "contact", "href": "#contact", "text": "Contact" }
 ]

@@ -39,11 +39,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 0;
+      margin: 1rem 1.625rem;
+      padding: 0;
+
+      > :last-child {
+        margin-left: 1.5rem;
+      }
+
+      > :nth-last-child(2) {
+        margin-left: 0.5rem;
+      }
 
       .navbar-link {
         text-decoration: none;
-        padding: 1rem 1.625rem;
+        margin: 0 1.625rem;
+        padding: 1rem 0;
         font-weight: bold;
         transition: all 0.1s ease-in-out;
         position: relative;
