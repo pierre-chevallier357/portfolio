@@ -16,7 +16,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Timeline } from './timeline/timeline';
 import { InView } from '../../directives/in-view/in-view';
 import { Experience } from '../../models/experience';
-import { ContentService } from '../../services/content/content';
+import { TextProvider } from '../../services/text-provider/text-provider';
 
 @Component({
   selector: 'experiences',
@@ -31,9 +31,9 @@ export class Experiences {
     viewChild.required<ElementRef<HTMLElement>>('cardsContainer');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  private readonly contentService: ContentService = inject(ContentService);
-  protected readonly experiences: Signal<Experience[]> = this.contentService.getExperiences();
-  protected readonly title: Signal<string> = this.contentService.getNavLinkText('experiences');
+  private readonly textProvider: TextProvider = inject(TextProvider);
+  protected readonly experiences: Signal<Experience[]> = this.textProvider.getExperiences();
+  protected readonly title: Signal<string> = this.textProvider.getNavLinkText('experiences');
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(

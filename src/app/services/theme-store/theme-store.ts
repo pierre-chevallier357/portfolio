@@ -3,18 +3,10 @@ import { Theme } from '../../models/theme';
 
 const STORAGE_KEY = 'theme';
 
-/**
- * Tracks the active light/dark theme and keeps `<html data-theme>` in sync.
- *
- * Defaults to the OS preference (`prefers-color-scheme`) and always follows
- * it live. `toggleTheme` lets the user manually override that for the current
- * session; the override is persisted to `localStorage` but is cleared again
- * as soon as the OS preference changes, so the OS setting always wins back.
- */
 @Injectable({
   providedIn: 'root',
 })
-export class ThemeService {
+export class ThemeStore {
   public readonly theme: WritableSignal<Theme> = signal<Theme>(this.getInitialTheme());
   public readonly isDarkMode: Signal<boolean> = computed(() => this.theme() === 'dark');
   private readonly darkModeQuery: MediaQueryList | null = this.isBrowser()

@@ -26,8 +26,8 @@ const DESCRIPTION_BY_LANGUAGE: Record<Language, string> = {
 @Injectable({
   providedIn: 'root',
 })
-export class LanguageService {
-  public readonly language: WritableSignal<Language> = signal<Language>(this.getInitialLanguage());
+export class LanguageStore {
+  public readonly language: WritableSignal<Language> = signal<Language>(this.getStoredLanguage());
   public readonly isFrench: Signal<boolean> = computed(() => this.language() === 'fr');
   private readonly titleService: Title = inject(Title);
   private readonly metaService: Meta = inject(Meta);
@@ -54,16 +54,12 @@ export class LanguageService {
     }
   }
 
-  private getInitialLanguage(): Language {
-    return this.getStoredLanguage() ?? DEFAULT_LANGUAGE;
-  }
-
-  private getStoredLanguage(): Language | null {
+  private getStoredLanguage(): Language {
     if (!this.isBrowser()) {
-      return null;
+      return DEFAULT_LANGUAGE;
     }
     const stored: string | null = window.localStorage.getItem(STORAGE_KEY);
-    return stored === 'fr' || stored === 'en' ? stored : null;
+    return stored === 'fr' || stored === 'en' ? stored : DEFAULT_LANGUAGE;
   }
 
   private isBrowser(): boolean {

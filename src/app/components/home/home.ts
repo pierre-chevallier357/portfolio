@@ -2,9 +2,9 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, inject, Signal, signal, WritableSignal } from '@angular/core';
 import { SelfWritingText } from './self-writing-text/self-writing-text';
 import { InView } from '../../directives/in-view/in-view';
-import { ThemeService } from '../../services/theme/theme';
-import { LanguageService } from '../../services/language/language';
-import { ContentService } from '../../services/content/content';
+import { ThemeStore } from '../../services/theme-store/theme-store';
+import { LanguageStore } from '../../services/language-store/language-store';
+import { TextProvider } from '../../services/text-provider/text-provider';
 import { HomeTitle } from '../../models/home-title';
 
 @Component({
@@ -14,15 +14,15 @@ import { HomeTitle } from '../../models/home-title';
   styleUrl: './home.scss',
 })
 export class Home {
-  protected readonly isDarkMode: Signal<boolean> = inject(ThemeService).isDarkMode;
+  protected readonly isDarkMode: Signal<boolean> = inject(ThemeStore).isDarkMode;
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  private readonly languageService: LanguageService = inject(LanguageService);
+  private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly starAlt: Signal<string> = computed(() =>
-    this.languageService.isFrench() ? 'Étoile' : 'Star',
+    this.languageStore.isFrench() ? 'Étoile' : 'Star',
   );
   protected readonly portraitAlt: Signal<string> = computed(() =>
-    this.languageService.isFrench() ? 'Portrait de Pierre' : 'Portrait of Pierre',
+    this.languageStore.isFrench() ? 'Portrait de Pierre' : 'Portrait of Pierre',
   );
-  private readonly contentService: ContentService = inject(ContentService);
-  protected readonly title: Signal<HomeTitle> = this.contentService.getHomeTitle();
+  private readonly textProvider: TextProvider = inject(TextProvider);
+  protected readonly title: Signal<HomeTitle> = this.textProvider.getHomeTitle();
 }

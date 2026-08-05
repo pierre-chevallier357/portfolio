@@ -1,5 +1,5 @@
 import { Component, computed, inject, Signal } from '@angular/core';
-import { LanguageService } from '../../../services/language/language';
+import { LanguageStore } from '../../../services/language-store/language-store';
 import { Language } from '../../../models/language';
 
 @Component({
@@ -8,13 +8,13 @@ import { Language } from '../../../models/language';
   styleUrl: './language-toggle.scss',
 })
 export class LanguageToggle {
-  private readonly languageService: LanguageService = inject(LanguageService);
-  protected readonly language: Signal<Language> = this.languageService.language.asReadonly();
   protected readonly label: Signal<string> = computed(() =>
     this.language() === 'fr' ? 'English' : 'Français',
   );
+  private readonly languageStore: LanguageStore = inject(LanguageStore);
+  protected readonly language: Signal<Language> = this.languageStore.language.asReadonly();
 
   protected toggleLanguage(): void {
-    this.languageService.toggleLanguage();
+    this.languageStore.toggleLanguage();
   }
 }

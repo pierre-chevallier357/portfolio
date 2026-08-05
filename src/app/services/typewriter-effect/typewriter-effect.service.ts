@@ -16,7 +16,7 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class Typewriter {
+export class TypewriterEffect {
   public getTypewriterEffect(words: string[]): Observable<string> {
     return from(words).pipe(
       concatMap((word) => this.typeAndEraseEffect(word)),

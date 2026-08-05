@@ -1,7 +1,7 @@
 import { Component, inject, Signal, signal, WritableSignal } from '@angular/core';
 import { InView } from '../../directives/in-view/in-view';
 import { SkillCategory } from '../../models/skill';
-import { ContentService } from '../../services/content/content';
+import { TextProvider } from '../../services/text-provider/text-provider';
 
 @Component({
   selector: 'skills',
@@ -11,7 +11,7 @@ import { ContentService } from '../../services/content/content';
 })
 export class Skills {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  private readonly contentService: ContentService = inject(ContentService);
-  protected readonly categories: Signal<SkillCategory[]> = this.contentService.getSkillCategories();
-  protected readonly title: Signal<string> = this.contentService.getNavLinkText('skills');
+  private readonly textProvider: TextProvider = inject(TextProvider);
+  protected readonly categories: Signal<SkillCategory[]> = this.textProvider.getSkillCategories();
+  protected readonly title: Signal<string> = this.textProvider.getNavLinkText('skills');
 }

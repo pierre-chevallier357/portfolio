@@ -5,18 +5,17 @@ import { map, Observable, shareReplay, switchMap } from 'rxjs';
 import { Experience } from '../../models/experience';
 import { SkillCategory } from '../../models/skill';
 import { NavLink } from '../../models/nav-link';
-import { LanguageService } from '../language/language';
+import { LanguageStore } from '../language-store/language-store';
 import { HomeTitle } from '../../models/home-title';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ContentService {
-  private readonly baseUrl: string = 'text';
-  private readonly http: HttpClient = inject(HttpClient);
-  private readonly languageService: LanguageService = inject(LanguageService);
+export class TextProvider {
+  private readonly httpClient: HttpClient = inject(HttpClient);
+  private readonly languageStore: LanguageStore = inject(LanguageStore);
   private readonly languageFolder: Signal<string> = computed(() =>
-    this.languageService.language() === 'fr' ? 'french' : 'english',
+    this.languageStore.language() === 'fr' ? 'french' : 'english',
   );
   private readonly navLinks$: Observable<NavLink[]> = this.getLocalized<NavLink[]>(
     'header',
@@ -69,7 +68,7 @@ export class ContentService {
   private getLocalized<T>(category: string, fileName: string): Observable<T> {
     return toObservable(this.languageFolder).pipe(
       switchMap((languageFolder) =>
-        this.http.get<T>(`${this.baseUrl}/${category}/${languageFolder}/${fileName}`),
+        this.httpClient.get<T>(`text/${category}/${languageFolder}/${fileName}`),
       ),
     );
   }

@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AuraDot } from '../models/aura-dot';
-import { ThemeService } from '../../services/theme/theme';
+import { ThemeStore } from '../../services/theme-store/theme-store';
 
 const DOTS_COLORS = ['#FF5E00', '#F2FF00', '#00E5FF', '#15FF00', '#FF00F7'] as const;
 const BACKGROUND_LIGHT_COLOR = '237, 231, 222';
@@ -28,11 +28,11 @@ export class AuraBackground {
   private readonly canvasRef: Signal<ElementRef<HTMLCanvasElement>> =
     viewChild.required<ElementRef<HTMLCanvasElement>>('auraCanvas');
   private readonly destroyRef: DestroyRef = inject(DestroyRef);
-  private readonly themeService: ThemeService = inject(ThemeService);
+  private readonly themeStore: ThemeStore = inject(ThemeStore);
   private readonly ngZone: NgZone = inject(NgZone);
   private readonly platformId: object = inject(PLATFORM_ID);
   private readonly backgroundColor: Signal<string> = computed(() =>
-    this.themeService.isDarkMode() ? BACKGROUND_DARK_COLOR : BACKGROUND_LIGHT_COLOR,
+    this.themeStore.isDarkMode() ? BACKGROUND_DARK_COLOR : BACKGROUND_LIGHT_COLOR,
   );
   private dots: AuraDot[] = [];
   private animationFrameId?: number;
