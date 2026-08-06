@@ -19,6 +19,7 @@
   align-items: center;
   margin: 10vh auto;
   width: 80vw;
+  column-gap: 3rem;
 
   .home-title {
     @include slide-down-hidden;
@@ -154,6 +155,7 @@
     margin: 0 auto;
     width: auto;
     text-align: center;
+    column-gap: 0;
 
     .home-title {
       margin: 0;
