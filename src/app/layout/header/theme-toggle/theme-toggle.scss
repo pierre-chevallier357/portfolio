@@ -10,6 +10,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+  font-size: clamp(.5rem, .3rem + .5vw, 1.125rem);
 
   &:hover {
     background-color: var(--bg-color-hover);
