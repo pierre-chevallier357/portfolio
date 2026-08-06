@@ -13,6 +13,8 @@
     margin: 1rem;
     border-radius: 3rem;
     transition: all .2s linear;
+    --pad: clamp(1rem, 0.4rem + 1vw, 1.5rem);
+    padding: var(--pad) calc(var(--pad) * 1.2);
 
     &.blurred::before {
       content: '';
@@ -29,8 +31,8 @@
       display: flex;
       align-items: center;
       text-decoration: none;
-      gap: 1.25rem;
-      margin: 0 1.625rem;
+      gap: clamp(0.8rem, 0.3rem + 1vw, 1.5rem);
+      margin-right: 1.5rem;
       font-weight: bold;
       transition: all 0.1s ease-in-out;
       position: relative;
@@ -71,7 +73,6 @@
       background-color: transparent;
       border: none;
       display: none;
-      margin: 1rem;
       position: relative;
       z-index: 2;
       animation-delay: 0.5s;
@@ -114,10 +115,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 1rem 1.625rem 1rem 0;
+      margin: 0;
       padding: 0;
       flex: 1;
-      max-width: 62.5rem;
+      max-width: clamp(60rem, 54rem + 10vw, 70rem);
 
       > :nth-last-child(n + 3) {
         margin: 0 0.5rem;
@@ -133,7 +134,6 @@
 
         .navbar-link {
           text-decoration: none;
-          margin: 1rem 0;
           font-weight: bold;
           transition: all 0.1s ease-in-out;
           position: relative;
@@ -162,11 +162,13 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .header {
     .navbar {
+      --pad: 1rem;
+
       .logo-link {
-        margin: 1rem;
+        margin: 0;
 
         .logo {
           width: 3rem;

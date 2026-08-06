@@ -11,6 +11,7 @@
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   font-size: clamp(.5rem, .3rem + .5vw, 1.125rem);
+  height: clamp(2rem, 1rem + 1.8vw, 3rem);
 
   &:hover {
     background-color: var(--bg-color-hover);
@@ -25,5 +26,6 @@
 @media screen and (max-width: 768px) {
   .theme-toggle {
     font-size: 1rem;
+    height: auto;
   }
 }
