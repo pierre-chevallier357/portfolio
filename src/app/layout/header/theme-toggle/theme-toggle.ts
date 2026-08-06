@@ -1,4 +1,4 @@
-import { Component, computed, inject, Signal } from '@angular/core';
+import { Component, computed, inject, output, OutputEmitterRef, Signal } from '@angular/core';
 import { ThemeStore } from '../../../core/theme/theme-store';
 import { LanguageStore } from '../../../core/language/language-store';
 import { Theme } from '../../../core/theme/theme';
@@ -9,6 +9,7 @@ import { Theme } from '../../../core/theme/theme';
   styleUrl: './theme-toggle.scss',
 })
 export class ThemeToggle {
+  public readonly clicked: OutputEmitterRef<void> = output<void>();
   private readonly themeStore: ThemeStore = inject(ThemeStore);
   protected readonly theme: Signal<Theme> = this.themeStore.theme.asReadonly();
   private readonly languageStore: LanguageStore = inject(LanguageStore);
@@ -28,6 +29,7 @@ export class ThemeToggle {
   });
 
   protected toggleTheme(): void {
+    this.clicked.emit();
     this.themeStore.toggleTheme();
   }
 }

@@ -1,6 +1,6 @@
-import {Component, computed, inject, Signal} from '@angular/core';
-import {LanguageStore} from '../../../core/language/language-store';
-import {Language} from '../../../core/language/language';
+import { Component, computed, inject, output, OutputEmitterRef, Signal } from '@angular/core';
+import { LanguageStore } from '../../../core/language/language-store';
+import { Language } from '../../../core/language/language';
 
 @Component({
   selector: 'portfolio-language-toggle',
@@ -8,6 +8,7 @@ import {Language} from '../../../core/language/language';
   styleUrl: './language-toggle.scss',
 })
 export class LanguageToggle {
+  public readonly clicked: OutputEmitterRef<void> = output<void>();
   protected readonly label: Signal<string> = computed(() =>
     this.language() === 'fr' ? 'English' : 'Français',
   );
@@ -15,6 +16,7 @@ export class LanguageToggle {
   protected readonly language: Signal<Language> = this.languageStore.language.asReadonly();
 
   protected toggleLanguage(): void {
+    this.clicked.emit();
     this.languageStore.toggleLanguage();
   }
 }
