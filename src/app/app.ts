@@ -6,10 +6,11 @@ import { About } from './sections/about/about';
 import { Skills } from './sections/skills/skills';
 import { Experiences } from './sections/experiences/experiences';
 import { Contact } from './sections/contact/contact';
+import { Footer } from './layout/footer/footer';
 
 @Component({
   selector: 'portfolio-root',
-  imports: [AuraBackground, Header, Home, About, Skills, Experiences, Contact],
+  imports: [AuraBackground, Header, Home, About, Skills, Experiences, Contact, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

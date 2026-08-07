@@ -8,6 +8,7 @@ import { NavLink } from './nav-link';
 import { LanguageStore } from '../core/language/language-store';
 import { Title } from './title';
 import { ContactContent } from './contact-content';
+import { FooterContent } from './footer-content';
 
 @Injectable({
   providedIn: 'root',
@@ -71,6 +72,12 @@ export class TextProvider {
   public getContactContent(): Signal<ContactContent> {
     return toSignal(this.getLocalized<ContactContent>('contact.json'), {
       initialValue: {} as ContactContent,
+    });
+  }
+
+  public getFooterContent(): Signal<FooterContent> {
+    return toSignal(this.getLocalized<FooterContent>('footer.json'), {
+      initialValue: {} as FooterContent,
     });
   }
 
