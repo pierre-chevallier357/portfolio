@@ -1,3 +1,5 @@
+export type SkillsContent = SkillCategory[];
+
 export enum SkillColor {
   PineTeal = 'pine-teal',
   DustyGrape = 'dusty-grape',

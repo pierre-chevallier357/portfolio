@@ -14,8 +14,8 @@ import { startWith } from 'rxjs/operators';
 import { LanguageStore } from '../../core/language/language-store';
 import { LanguageToggle } from './language-toggle/language-toggle';
 import { ThemeToggle } from './theme-toggle/theme-toggle';
-import { TextProvider } from '../../content/text-provider';
-import { NavLink } from '../../content/nav-link';
+import { ContentProvider } from '../../content/content-provider';
+import { HeaderContent } from '../../content/header-content';
 
 @Component({
   selector: 'portfolio-header',
@@ -51,8 +51,8 @@ export class Header {
         { initialValue: false },
       )
     : signal(false);
-  private readonly textProvider: TextProvider = inject(TextProvider);
-  protected readonly navLinks: Signal<NavLink[]> = this.textProvider.getNavLinks();
+  private readonly contentProvider: ContentProvider = inject(ContentProvider);
+  protected readonly navLinks: Signal<HeaderContent> = this.contentProvider.getHeaderContent();
 
   protected toggleMenu(): void {
     this.isMenuOpened.update((isMenuOpened) => !isMenuOpened);

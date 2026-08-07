@@ -2,70 +2,74 @@ import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, Signal } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { map, Observable, shareReplay, switchMap } from 'rxjs';
-import { Experience } from './experience';
-import { SkillCategory } from './skill';
-import { NavLink } from './nav-link';
+import { ExperienceContent } from './experience-content';
+import { SkillsContent } from './skills-content';
+import { HeaderContent } from './header-content';
 import { LanguageStore } from '../core/language/language-store';
-import { Title } from './title';
+import { HomeContent } from './home-content';
 import { ContactContent } from './contact-content';
 import { FooterContent } from './footer-content';
+import { AboutContent } from './about-content';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TextProvider {
+export class ContentProvider {
   private readonly httpClient: HttpClient = inject(HttpClient);
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   private readonly languageFolder: Signal<string> = computed(() =>
     this.languageStore.language() === 'fr' ? 'french' : 'english',
   );
-  private readonly navLinks$: Observable<NavLink[]> = this.getLocalized<NavLink[]>(
-    'nav-links.json',
+  private readonly headerContent$: Observable<HeaderContent> = this.getLocalized<HeaderContent>(
+    'header.json',
   ).pipe(shareReplay(1));
-  private readonly typewriterWords$: Observable<string[]> = this.getLocalized<string[]>(
-    'typewriter.json',
-  ).pipe(shareReplay(1));
+  private readonly typewriterWords$: Observable<string[]> = this.getLocalized<HomeContent>(
+    'home.json',
+  ).pipe(
+    map((homeContent) => homeContent.typewriter),
+    shareReplay(1),
+  );
 
-  public getHomeTitle(): Signal<Title> {
-    return toSignal(this.getLocalized<Title>('title.json'), {
-      initialValue: {} as Title,
+  public getHomeContent(): Signal<HomeContent> {
+    return toSignal(this.getLocalized<HomeContent>('home.json'), {
+      initialValue: {} as HomeContent,
     });
   }
 
-  public getExperiences(): Signal<Experience[]> {
-    return toSignal(this.getLocalized<Experience[]>('experiences.json'), {
+  public getExperienceContent(): Signal<ExperienceContent> {
+    return toSignal(this.getLocalized<ExperienceContent>('experiences.json'), {
       initialValue: [],
     });
   }
 
-  public getSkillCategories(): Signal<SkillCategory[]> {
-    return toSignal(this.getLocalized<SkillCategory[]>('skills.json'), {
+  public getSkillsContent(): Signal<SkillsContent> {
+    return toSignal(this.getLocalized<SkillsContent>('skills.json'), {
       initialValue: [],
     });
   }
 
-  public getNavLinks(): Signal<NavLink[]> {
-    return toSignal(this.navLinks$, {
+  public getHeaderContent(): Signal<HeaderContent> {
+    return toSignal(this.headerContent$, {
       initialValue: [],
     });
   }
 
   public getNavLinkText(id: string): Signal<string> {
     return toSignal(
-      this.navLinks$.pipe(
+      this.headerContent$.pipe(
         map((navLinks) => navLinks.find((navLink) => navLink.id === id)?.text ?? ''),
       ),
       { initialValue: '' },
     );
   }
 
-  public getAboutParagraphs(): Signal<string[]> {
-    return toSignal(this.getLocalized<string[]>('about.json'), {
+  public getAboutContent(): Signal<AboutContent> {
+    return toSignal(this.getLocalized<AboutContent>('about.json'), {
       initialValue: [],
     });
   }
 
-  public getTypewriterWords$(): Observable<string[]> {
+  public getTypewriterContent$(): Observable<string[]> {
     return this.typewriterWords$;
   }
 

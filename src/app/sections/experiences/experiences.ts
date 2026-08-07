@@ -10,10 +10,10 @@ import {
   viewChildren,
   WritableSignal,
 } from '@angular/core';
-import {Timeline} from './timeline/timeline';
-import {InView} from '../../shared/in-view/in-view';
-import {Experience} from '../../content/experience';
-import {TextProvider} from '../../content/text-provider';
+import { Timeline } from './timeline/timeline';
+import { InView } from '../../shared/in-view/in-view';
+import { ExperienceContent } from '../../content/experience-content';
+import { ContentProvider } from '../../content/content-provider';
 
 @Component({
   selector: 'portfolio-experiences',
@@ -28,9 +28,10 @@ export class Experiences {
     viewChild.required<ElementRef<HTMLElement>>('cardsContainer');
   protected readonly activeIndex: WritableSignal<number> = signal(0);
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  private readonly textProvider: TextProvider = inject(TextProvider);
-  protected readonly experiences: Signal<Experience[]> = this.textProvider.getExperiences();
-  protected readonly title: Signal<string> = this.textProvider.getNavLinkText('experience');
+  private readonly contentProvider: ContentProvider = inject(ContentProvider);
+  protected readonly experiences: Signal<ExperienceContent> =
+    this.contentProvider.getExperienceContent();
+  protected readonly title: Signal<string> = this.contentProvider.getNavLinkText('experiences');
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(

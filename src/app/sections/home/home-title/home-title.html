@@ -1,7 +1,8 @@
 <ng-template #staticText>
-  {{ title().hey }}
+  {{ homeTitle().hey }}
   <br/>
-  {{ title().im }} <span [class]="'name' + (isDarkMode() ? ' dark' : ' light')">{{ title().name }}</span>{{ title().a }}
+  {{ homeTitle().im }} <span
+  [class]="'name' + (isDarkMode() ? ' dark' : ' light')">{{ homeTitle().name }}</span>{{ homeTitle().a }}
 </ng-template>
 
 <span class="content">

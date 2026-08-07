@@ -3,5 +3,6 @@
   "im": "Je suis",
   "name": "Pierre Chevallier",
   "a": ", un",
-  "developer": "développeur"
+  "developer": "développeur",
+  "typewriter": ["front-end", "back-end", "full stack"]
 }

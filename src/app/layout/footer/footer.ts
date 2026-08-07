@@ -1,5 +1,5 @@
 import { Component, inject, Signal } from '@angular/core';
-import { TextProvider } from '../../content/text-provider';
+import { ContentProvider } from '../../content/content-provider';
 import { FooterContent } from '../../content/footer-content';
 
 @Component({
@@ -9,7 +9,7 @@ import { FooterContent } from '../../content/footer-content';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  private readonly textProvider: TextProvider = inject(TextProvider);
-  protected readonly content: Signal<FooterContent> = this.textProvider.getFooterContent();
   protected readonly currentYear: number = new Date().getFullYear();
+  private readonly contentProvider: ContentProvider = inject(ContentProvider);
+  protected readonly footerContent: Signal<FooterContent> = this.contentProvider.getFooterContent();
 }

@@ -1,7 +1,7 @@
 import { Component, inject, Signal, signal, WritableSignal } from '@angular/core';
 import { InView } from '../../shared/in-view/in-view';
-import { SkillCategory } from '../../content/skill';
-import { TextProvider } from '../../content/text-provider';
+import { SkillsContent } from '../../content/skills-content';
+import { ContentProvider } from '../../content/content-provider';
 
 @Component({
   selector: 'portfolio-skills',
@@ -11,7 +11,7 @@ import { TextProvider } from '../../content/text-provider';
 })
 export class Skills {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
-  private readonly textProvider: TextProvider = inject(TextProvider);
-  protected readonly categories: Signal<SkillCategory[]> = this.textProvider.getSkillCategories();
-  protected readonly title: Signal<string> = this.textProvider.getNavLinkText('skills');
+  private readonly contentProvider: ContentProvider = inject(ContentProvider);
+  protected readonly categories: Signal<SkillsContent> = this.contentProvider.getSkillsContent();
+  protected readonly title: Signal<string> = this.contentProvider.getNavLinkText('skills');
 }

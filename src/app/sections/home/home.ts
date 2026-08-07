@@ -3,7 +3,7 @@ import { Component, computed, inject, Signal, signal, WritableSignal } from '@an
 import { InView } from '../../shared/in-view/in-view';
 import { LanguageStore } from '../../core/language/language-store';
 import { HomeTitle } from './home-title/home-title';
-import { TextProvider } from '../../content/text-provider';
+import { ContentProvider } from '../../content/content-provider';
 
 @Component({
   selector: 'portfolio-home',
@@ -17,6 +17,6 @@ export class Home {
   protected readonly portraitAlt: Signal<string> = computed(() =>
     this.languageStore.isFrench() ? 'Portrait de Pierre' : 'Portrait of Pierre',
   );
-  private readonly textProvider: TextProvider = inject(TextProvider);
-  protected readonly aboutLabel: Signal<string> = this.textProvider.getNavLinkText('about');
+  private readonly contentProvider: ContentProvider = inject(ContentProvider);
+  protected readonly aboutLabel: Signal<string> = this.contentProvider.getNavLinkText('about');
 }

@@ -1,4 +1,6 @@
-export interface Experience {
+export type ExperienceContent = ExperienceEntry[];
+
+export interface ExperienceEntry {
   id: number;
   company: string;
   logo: string;
