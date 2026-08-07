@@ -1,5 +1,3 @@
-import { SocialLink } from './social-link';
-
 export interface ContactContent {
   mailTitle: string;
   socialMediasTitle: string;
@@ -7,4 +5,9 @@ export interface ContactContent {
   copiedLabel: string;
   email: string;
   socialLinks: SocialLink[];
+}
+
+export interface SocialLink {
+  name: string;
+  href: string;
 }

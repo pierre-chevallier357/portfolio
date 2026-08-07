@@ -2,7 +2,7 @@
   { "id": "home", "href": "#home", "text": "Home" },
   { "id": "about", "href": "#about", "text": "About" },
   { "id": "skills", "href": "#skills", "text": "Skills" },
-  { "id": "experiences", "href": "#experiences", "text": "Experience" },
+  { "id": "experience", "href": "#experience", "text": "Experience" },
   { "id": "education", "href": "#education", "text": "Education" },
   { "id": "contact", "href": "#contact", "text": "Contact" }
 ]

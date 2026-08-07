@@ -10,7 +10,7 @@ import {
   signal,
   viewChild,
   viewChildren,
-  WritableSignal,
+  WritableSignal
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Timeline } from './timeline/timeline';
@@ -33,7 +33,7 @@ export class Experiences {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly textProvider: TextProvider = inject(TextProvider);
   protected readonly experiences: Signal<Experience[]> = this.textProvider.getExperiences();
-  protected readonly title: Signal<string> = this.textProvider.getNavLinkText('experiences');
+  protected readonly title: Signal<string> = this.textProvider.getNavLinkText('experience');
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(
