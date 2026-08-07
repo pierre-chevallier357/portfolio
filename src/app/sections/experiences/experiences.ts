@@ -1,22 +1,19 @@
 import {
-  afterNextRender,
+  afterRenderEffect,
   Component,
   computed,
-  DestroyRef,
   ElementRef,
   inject,
-  PLATFORM_ID,
   Signal,
   signal,
   viewChild,
   viewChildren,
-  WritableSignal
+  WritableSignal,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { Timeline } from './timeline/timeline';
-import { InView } from '../../shared/in-view/in-view';
-import { Experience } from '../../content/experience';
-import { TextProvider } from '../../content/text-provider';
+import {Timeline} from './timeline/timeline';
+import {InView} from '../../shared/in-view/in-view';
+import {Experience} from '../../content/experience';
+import {TextProvider} from '../../content/text-provider';
 
 @Component({
   selector: 'portfolio-experiences',
@@ -42,53 +39,59 @@ export class Experiences {
   protected readonly timelineStartingPosition: Signal<number> = computed(
     () => this.firstCardHeight() / 2,
   );
-  private resizeObserver?: ResizeObserver;
-  private readonly platformId: object = inject(PLATFORM_ID);
-  private readonly destroyRef: DestroyRef = inject(DestroyRef);
-
   constructor() {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-    afterNextRender(() => {
-      this.initializeCardsMeasurements();
-      this.initializeDotsActivation();
+    afterRenderEffect((onCleanup) => {
+      const cards: readonly ElementRef<HTMLElement>[] = this.cards();
+      const container: ElementRef<HTMLElement> | undefined = this.cardsContainer();
+      const firstCard: HTMLElement | undefined = cards[0]?.nativeElement;
+      if (!container || !firstCard) {
+        return;
+      }
+      this.initializeCardsMeasurements(container.nativeElement, firstCard, onCleanup);
+    });
+    afterRenderEffect((onCleanup) => {
+      const cards: readonly ElementRef<HTMLElement>[] = this.cards();
+      if (cards.length === 0) {
+        return;
+      }
+      this.initializeDotsActivation(cards, onCleanup);
     });
   }
 
-  private initializeCardsMeasurements(): void {
-    const container: HTMLElement = this.cardsContainer().nativeElement;
-    const firstCard: HTMLElement | undefined = this.cards()[0]?.nativeElement;
+  private initializeCardsMeasurements(
+    container: HTMLElement,
+    firstCard: HTMLElement,
+    onCleanup: (cleanupFn: () => void) => void,
+  ): void {
     const updateMeasurements = () => {
       this.cardsContainerHeight.set(container.offsetHeight);
-      this.firstCardHeight.set(firstCard?.offsetHeight ?? 0);
+      this.firstCardHeight.set(firstCard.offsetHeight);
     };
     updateMeasurements();
-    this.resizeObserver = new ResizeObserver(() => {
+    const resizeObserver = new ResizeObserver(() => {
       updateMeasurements();
     });
-    this.resizeObserver.observe(container);
-    if (firstCard) {
-      this.resizeObserver.observe(firstCard);
-    }
-    window.addEventListener('load', updateMeasurements);
+    resizeObserver.observe(container);
+    resizeObserver.observe(firstCard);
     window.addEventListener('resize', updateMeasurements);
 
-    this.destroyRef.onDestroy(() => {
-      this.resizeObserver?.disconnect();
-      window.removeEventListener('load', updateMeasurements);
+    onCleanup(() => {
+      resizeObserver.disconnect();
       window.removeEventListener('resize', updateMeasurements);
     });
   }
 
-  private initializeDotsActivation(): void {
-    this.cards().forEach((card, index) => {
+  private initializeDotsActivation(
+    cards: readonly ElementRef<HTMLElement>[],
+    onCleanup: (cleanupFn: () => void) => void,
+  ): void {
+    cards.forEach((card, index) => {
       card.nativeElement.dataset['index'] = `${index}`;
     });
     const updateActiveCard = (): void => {
       const viewportCenter = window.innerHeight / 2;
       let activeIndex = 0;
-      this.cards().forEach((card, index) => {
+      cards.forEach((card, index) => {
         const cardRect: DOMRect = card.nativeElement.getBoundingClientRect();
         const cardCenter = cardRect.top + cardRect.height / 2;
         if (cardCenter < viewportCenter) {
@@ -101,7 +104,7 @@ export class Experiences {
     window.addEventListener('scroll', updateActiveCard, { passive: true });
     window.addEventListener('resize', updateActiveCard);
 
-    this.destroyRef.onDestroy(() => {
+    onCleanup(() => {
       window.removeEventListener('scroll', updateActiveCard);
       window.removeEventListener('resize', updateActiveCard);
     });
