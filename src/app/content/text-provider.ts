@@ -7,6 +7,7 @@ import { SkillCategory } from './skill';
 import { NavLink } from './nav-link';
 import { LanguageStore } from '../core/language/language-store';
 import { Title } from './title';
+import { ContactContent } from './contact-content';
 
 @Injectable({
   providedIn: 'root',
@@ -65,6 +66,12 @@ export class TextProvider {
 
   public getTypewriterWords$(): Observable<string[]> {
     return this.typewriterWords$;
+  }
+
+  public getContactContent(): Signal<ContactContent> {
+    return toSignal(this.getLocalized<ContactContent>('contact.json'), {
+      initialValue: {} as ContactContent,
+    });
   }
 
   private getLocalized<T>(fileName: string): Observable<T> {

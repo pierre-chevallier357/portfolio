@@ -1,0 +1,141 @@
+@use 'slide-down' as *;
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+
+  &.in-view {
+    .contact-title {
+      @include slide-down-animation;
+      animation-delay: 200ms;
+    }
+
+    .divider {
+      @include slide-down-animation;
+      animation-delay: 400ms;
+    }
+
+    .contact-groups {
+      @include slide-down-animation;
+      animation-delay: 600ms;
+    }
+  }
+
+  .contact-title {
+    @include slide-down-hidden;
+    margin: 0;
+  }
+
+  // TODO remove
+  //.divider {
+  //  @include slide-down-hidden;
+  //  width: 4rem;
+  //  height: 2px;
+  //  margin: 0;
+  //  border: none;
+  //  background: var(--border-color);
+  //}
+
+  .contact-groups {
+    @include slide-down-hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15vw;
+    width: 100%;
+
+    .contact-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+
+      .group-title {
+        margin: 0;
+      }
+
+      .mail-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .copy-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.35rem;
+          border: none;
+          border-radius: 999px;
+          background: transparent;
+          color: inherit;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: var(--bg-color-hover);
+          }
+
+          .copy-icon {
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+      }
+
+      .social-medias-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    }
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    .link-icon {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section {
+    .contact-groups {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+  }
+}

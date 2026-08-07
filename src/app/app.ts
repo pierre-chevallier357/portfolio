@@ -5,10 +5,11 @@ import { Home } from './sections/home/home';
 import { About } from './sections/about/about';
 import { Skills } from './sections/skills/skills';
 import { Experiences } from './sections/experiences/experiences';
+import { Contact } from './sections/contact/contact';
 
 @Component({
   selector: 'portfolio-root',
-  imports: [AuraBackground, Header, Home, About, Skills, Experiences],
+  imports: [AuraBackground, Header, Home, About, Skills, Experiences, Contact],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

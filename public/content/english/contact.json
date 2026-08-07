@@ -1,0 +1,12 @@
+{
+  "mailTitle": "Mail",
+  "email": "example@example.com",
+  "copyLabel": "Copy to clipboard",
+  "copiedLabel": "Copied to clipboard",
+  "socialMediasTitle": "Social medias",
+  "socialLinks": [
+    { "name": "GitHub", "href": "https://github.com/your-username" },
+    { "name": "LinkedIn", "href": "https://www.linkedin.com/in/your-username" },
+    { "name": "Instagram", "href": "https://www.instagram.com/your-username" }
+  ]
+}
