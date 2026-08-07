@@ -30,8 +30,8 @@ export class Experiences {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
   protected readonly experiences: Signal<ExperienceContent> =
-    this.contentProvider.getExperienceContent();
-  protected readonly title: Signal<string> = this.contentProvider.getNavLinkText('experiences');
+    this.contentProvider.getExperiencesContent();
+  protected readonly title: Signal<string> = this.contentProvider.getSectionTitle('experiences');
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(

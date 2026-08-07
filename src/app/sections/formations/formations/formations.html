@@ -1,0 +1,54 @@
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="formations-section"
+         id="formations" portfolioInView>
+  <h1 class="formations-title">{{ title() }}</h1>
+
+  <div class="formation-categories">
+    <article class="formation-category-card">
+      <h2>{{ formationsContent().certificationsTitle }}</h2>
+
+      <ul class="formations">
+        @for (certification of formationsContent().certifications; track certification.title) {
+          <li class="formation">
+            <details>
+              <summary>
+                <span class="dropdown-title">
+                  <span class="formation-name">{{ certification.title }}</span>
+                  <span class="formation-info">{{ certification.issuer }} - {{ certification.year }}</span>
+                </span>
+                <svg aria-hidden="true" class="chevron" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <p class="formation-description">{{ certification.description }}</p>
+            </details>
+          </li>
+        }
+      </ul>
+    </article>
+
+    <article class="formation-category-card">
+      <h2>{{ formationsContent().educationTitle }}</h2>
+
+      <ul class="formations">
+        @for (education of formationsContent().education; track education.title) {
+          <li class="formation">
+            <details>
+              <summary>
+                <span class="dropdown-title">
+                  <span class="formation-name">{{ education.title }}</span>
+                  <span class="formation-info">{{ education.institution }} - {{ education.period }}</span>
+                </span>
+                <svg aria-hidden="true" class="chevron" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <p class="formation-description">{{ education.description }}</p>
+            </details>
+          </li>
+        }
+      </ul>
+    </article>
+  </div>
+</section>

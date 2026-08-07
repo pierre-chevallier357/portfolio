@@ -1,0 +1,32 @@
+{
+  "certificationsTitle": "Certifications",
+  "certifications": [
+    {
+      "title": "Certified Java Developer",
+      "issuer": "Oracle",
+      "year": "2021",
+      "description": "Demonstrated proficiency in Java programming and application development."
+    },
+    {
+      "title": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "year": "2023",
+      "description": "Validated expertise in designing and deploying scalable systems on AWS."
+    }
+  ],
+  "educationTitle": "Education",
+  "education": [
+    {
+      "title": "Bachelor of Science in Computer Science",
+      "institution": "University of Example",
+      "period": "2018 - 2020",
+      "description": "Focused on software development, algorithms, and data structures."
+    },
+    {
+      "title": "Master of Science in Artificial Intelligence",
+      "institution": "Institute of Advanced Studies",
+      "period": "2022 - 2024",
+      "description": "Specialized in machine learning, neural networks, and natural language processing."
+    }
+  ]
+}

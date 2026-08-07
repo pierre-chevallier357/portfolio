@@ -18,5 +18,5 @@ export class Home {
     this.languageStore.isFrench() ? 'Portrait de Pierre' : 'Portrait of Pierre',
   );
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
-  protected readonly aboutLabel: Signal<string> = this.contentProvider.getNavLinkText('about');
+  protected readonly aboutLabel: Signal<string> = this.contentProvider.getSectionTitle('about');
 }

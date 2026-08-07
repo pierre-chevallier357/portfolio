@@ -1,0 +1,32 @@
+{
+  "certificationsTitle": "Certifications",
+  "certifications": [
+    {
+      "title": "Développeur Java certifié",
+      "issuer": "Oracle",
+      "year": "2021",
+      "description": "Validation des compétences en programmation Java et en développement d’applications."
+    },
+    {
+      "title": "Architecte de solutions certifié AWS",
+      "issuer": "Amazon Web Services",
+      "year": "2023",
+      "description": "Validation de l’expertise dans la conception et le déploiement de systèmes évolutifs sur AWS."
+    }
+  ],
+  "educationTitle": "Formation académique",
+  "education": [
+    {
+      "title": "Licence en informatique",
+      "institution": "Université d’Exemple",
+      "period": "2018 - 2020",
+      "description": "Formation axée sur le développement logiciel, les algorithmes et les structures de données."
+    },
+    {
+      "title": "Master en intelligence artificielle",
+      "institution": "Institut des Études Avancées",
+      "period": "2022 - 2024",
+      "description": "Spécialisation en apprentissage automatique, réseaux de neurones et traitement du langage naturel."
+    }
+  ]
+}

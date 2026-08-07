@@ -16,7 +16,7 @@ export class Contact {
   private readonly platformId: object = inject(PLATFORM_ID);
   private readonly isBrowser: boolean = isPlatformBrowser(this.platformId);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
-  protected readonly title: Signal<string> = this.contentProvider.getNavLinkText('contact');
+  protected readonly title: Signal<string> = this.contentProvider.getSectionTitle('contact');
   protected readonly contactContent: Signal<ContactContent> =
     this.contentProvider.getContactContent();
   private copyResetTimeoutId: ReturnType<typeof setTimeout> | null = null;

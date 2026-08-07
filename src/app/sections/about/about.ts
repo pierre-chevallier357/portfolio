@@ -19,7 +19,7 @@ export class About {
   protected readonly paragraphs: Signal<string[]> = computed(() =>
     this.rawParagraphs().map((paragraph) => paragraph.replace('{{age}}', `${this.age}`)),
   );
-  protected readonly title: Signal<string> = this.contentProvider.getNavLinkText('about');
+  protected readonly title: Signal<string> = this.contentProvider.getSectionTitle('about');
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly portraitAlt: Signal<string> = computed(() =>
     this.languageStore.isFrench() ? 'Portrait de Pierre' : 'Portrait of Pierre',

@@ -10,6 +10,7 @@ import { HomeContent } from './home-content';
 import { ContactContent } from './contact-content';
 import { FooterContent } from './footer-content';
 import { AboutContent } from './about-content';
+import { FormationContent } from './formation-content';
 
 @Injectable({
   providedIn: 'root',
@@ -36,9 +37,15 @@ export class ContentProvider {
     });
   }
 
-  public getExperienceContent(): Signal<ExperienceContent> {
+  public getExperiencesContent(): Signal<ExperienceContent> {
     return toSignal(this.getLocalized<ExperienceContent>('experiences.json'), {
       initialValue: [],
+    });
+  }
+
+  public getFormationsContent(): Signal<FormationContent> {
+    return toSignal(this.getLocalized<FormationContent>('formations.json'), {
+      initialValue: {} as FormationContent,
     });
   }
 
@@ -54,7 +61,7 @@ export class ContentProvider {
     });
   }
 
-  public getNavLinkText(id: string): Signal<string> {
+  public getSectionTitle(id: string): Signal<string> {
     return toSignal(
       this.headerContent$.pipe(
         map((navLinks) => navLinks.find((navLink) => navLink.id === id)?.text ?? ''),
