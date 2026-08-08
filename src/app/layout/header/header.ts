@@ -26,7 +26,7 @@ import { HeaderContent } from '../../content/header-content';
 export class Header {
   protected readonly isMenuOpened: WritableSignal<boolean> = signal(false);
   private readonly platformId: object = inject(PLATFORM_ID);
-  private readonly isBrowser = isPlatformBrowser(this.platformId);
+  private readonly isBrowser: boolean = isPlatformBrowser(this.platformId);
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly logoAlt: Signal<string> = computed(() =>
     this.languageStore.isFrench() ? 'Dessin simplifié de Pierre' : 'Simplified drawing of Pierre',
@@ -41,7 +41,7 @@ export class Header {
   private readonly remSize: Signal<number> = computed(() =>
     parseFloat(getComputedStyle(document.documentElement).fontSize),
   );
-  private readonly scrollThresholdInPixels = this.isBrowser ? 5 * this.remSize() : 80; // 80 px is the fallback for SSR
+  private readonly scrollThresholdInPixels: number = this.isBrowser ? 5 * this.remSize() : 80; // 80 px is the fallback for SSR
   protected readonly hasScrolledAfterThreshold: Signal<boolean> = this.isBrowser
     ? toSignal(
         fromEvent(window, 'scroll').pipe(

@@ -30,7 +30,7 @@ export class Timeline {
   private readonly line: Signal<ElementRef<HTMLDivElement>> =
     viewChild.required<ElementRef<HTMLDivElement>>('line');
   private readonly platformId: object = inject(PLATFORM_ID);
-  private readonly isBrowser = isPlatformBrowser(this.platformId);
+  private readonly isBrowser: boolean = isPlatformBrowser(this.platformId);
   private readonly updateScrollValue: Signal<number> = toSignal(
     this.isBrowser
       ? fromEvent(window, 'scroll').pipe(
@@ -44,7 +44,7 @@ export class Timeline {
     this.updateScrollValue();
     if (!this.isBrowser) return 0;
     const rect: DOMRect = this.line().nativeElement.getBoundingClientRect();
-    const viewportCenter = (window.innerHeight ?? 0) / 2;
+    const viewportCenter: number = (window.innerHeight ?? 0) / 2;
     return Math.max(0, Math.min((viewportCenter - rect.top) / rect.height, 1));
   });
   protected readonly fillHeight: Signal<string> = computed(() => `${this.progress() * 100}%`);

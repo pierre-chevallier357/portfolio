@@ -1,11 +1,11 @@
-/** A soft radial-gradient blob that drifts across the hero canvas. */
+/** A soft radial-gradient blob that drifts across the canvas. */
 export class AuraDot {
-  x = 0;
-  y = 0;
-  radius = 0;
-  color = '';
-  private vx = 0;
-  private vy = 0;
+  x: number = 0;
+  y: number = 0;
+  radius: number = 0;
+  color: string = '';
+  private vx: number = 0;
+  private vy: number = 0;
 
   constructor(
     private readonly canvas: HTMLCanvasElement,

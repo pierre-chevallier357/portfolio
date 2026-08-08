@@ -10,7 +10,7 @@ Each dot gets random position, a fixed random radius (200–500px), and a small 
 
 ## Size
 
-Fixed per dot for its lifetime — set once in reset(), never grows/shrinks while animating (only changes if reset() is called again, e.g. on window resize when new dots are created).
+Fixed per dot for its lifetime — set once in reset(), never grows/shrinks while animating (only changes if reset() is called again, e.g. on window resize).
 
 ## Color
 

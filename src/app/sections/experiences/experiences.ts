@@ -69,7 +69,7 @@ export class Experiences {
       this.firstCardHeight.set(firstCard.offsetHeight);
     };
     updateMeasurements();
-    const resizeObserver = new ResizeObserver(() => {
+    const resizeObserver: ResizeObserver = new ResizeObserver(() => {
       updateMeasurements();
     });
     resizeObserver.observe(container);
@@ -91,7 +91,7 @@ export class Experiences {
     });
     const updateActiveCard = (): void => {
       const viewportCenter = window.innerHeight / 2;
-      let activeIndex = 0;
+      let activeIndex: number = 0;
       cards.forEach((card, index) => {
         const cardRect: DOMRect = card.nativeElement.getBoundingClientRect();
         const cardCenter = cardRect.top + cardRect.height / 2;

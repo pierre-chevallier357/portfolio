@@ -10,7 +10,7 @@ import {
 import { Meta, Title } from '@angular/platform-browser';
 import { Language } from './language';
 
-const STORAGE_KEY = 'language';
+const STORAGE_KEY: string = 'language';
 const DEFAULT_LANGUAGE: Language = 'fr';
 
 const TITLE_BY_LANGUAGE: Record<Language, string> = {

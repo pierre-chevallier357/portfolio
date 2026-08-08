@@ -5,7 +5,7 @@ import { Home } from './sections/home/home';
 import { About } from './sections/about/about';
 import { Skills } from './sections/skills/skills';
 import { Experiences } from './sections/experiences/experiences';
-import { Formations } from './sections/formations/formations/formations';
+import { Formations } from './sections/formations/formations';
 import { Contact } from './sections/contact/contact';
 import { Footer } from './layout/footer/footer';
 

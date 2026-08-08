@@ -14,10 +14,10 @@ import { isPlatformBrowser } from '@angular/common';
 import { AuraDot } from './aura-dot';
 import { ThemeStore } from '../../core/theme/theme-store';
 
-const DOTS_COLORS = ['#FF5E00', '#F2FF00', '#00E5FF', '#15FF00', '#FF00F7'] as const;
-const BACKGROUND_LIGHT_COLOR = '237, 231, 222';
-const BACKGROUND_DARK_COLOR = '35, 56, 49';
-const DOTS_COUNT = 12;
+const DOTS_COLORS: string[] = ['#FF5E00', '#F2FF00', '#00E5FF', '#15FF00', '#FF00F7'] as const;
+const BACKGROUND_LIGHT_COLOR: string = '237, 231, 222';
+const BACKGROUND_DARK_COLOR: string = '35, 56, 49';
+const DOTS_COUNT: number = 12;
 
 @Component({
   selector: 'portfolio-aura-background',
@@ -39,7 +39,7 @@ export class AuraBackground {
 
   constructor() {
     if (!isPlatformBrowser(this.platformId)) {
-      return; // Skip canvas animation during server-side rendering.
+      return;
     }
     afterNextRender(() => this.initializeCanvas());
   }

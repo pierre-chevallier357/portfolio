@@ -1,7 +1,7 @@
 import { Component, inject, Signal, signal, WritableSignal } from '@angular/core';
-import { InView } from '../../../shared/in-view/in-view';
-import { ContentProvider } from '../../../content/content-provider';
-import { FormationContent } from '../../../content/formation-content';
+import { InView } from '../../shared/in-view/in-view';
+import { ContentProvider } from '../../content/content-provider';
+import { FormationContent } from '../../content/formation-content';
 
 @Component({
   selector: 'portfolio-formations',
