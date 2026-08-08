@@ -53,6 +53,7 @@ export class Header {
     : signal(false);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
   protected readonly navLinks: Signal<HeaderContent> = this.contentProvider.getHeaderContent();
+  protected readonly homeSectionTitle: Signal<string> = this.contentProvider.getSectionTitle('home');
 
   protected toggleMenu(): void {
     this.isMenuOpened.update((isMenuOpened) => !isMenuOpened);

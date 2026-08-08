@@ -32,16 +32,6 @@
     margin: 0;
   }
 
-  // TODO remove
-  //.divider {
-  //  @include slide-down-hidden;
-  //  width: 4rem;
-  //  height: 2px;
-  //  margin: 0;
-  //  border: none;
-  //  background: var(--border-color);
-  //}
-
   .contact-groups {
     @include slide-down-hidden;
     display: flex;

@@ -1,6 +1,6 @@
 <header class="header">
   <nav [class.blurred]="hasScrolledAfterThreshold()" class="navbar">
-    <a class="logo-link" href="/">
+    <a class="logo-link" href="/" [title]="homeSectionTitle()">
       <img
         [alt]="logoAlt()"
         class="logo"
