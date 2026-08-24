@@ -28,7 +28,7 @@ export class About {
   private calculateAge(birthDate: Date): number {
     const today: Date = new Date();
     let age: number = today.getFullYear() - birthDate.getFullYear();
-    const monthDifference = today.getMonth() - birthDate.getMonth();
+    const monthDifference: number = today.getMonth() - birthDate.getMonth();
     if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
