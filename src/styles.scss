@@ -15,57 +15,31 @@
 }
 
 :root {
-  --pine-teal-50: #bbfef5;
-  --pine-teal-100: #76fcea;
-  --pine-teal-200: #32fbe0;
-  --pine-teal-300: #05e3c5;
-  --pine-teal-400: #039e8a;
-  --pine-teal-500: #025a4e;
-  --pine-teal-600: #024b41;
-  --pine-teal-700: #013c34;
-  --pine-teal-800: #012d27;
-  --pine-teal-900: #011e1a;
-  --pine-teal-950: #000f0d;
-  --pine-teal-500-transparent: #025a4e80;
+  --soft-linen-50: #fcfbfa;
+  --soft-linen-100: #f9f7f4;
+  --soft-linen-200: #f6f3ef;
+  --soft-linen-300: #f3efe9;
+  --soft-linen-400: #f0ebe4;
+  --soft-linen-500: #ede7de;
+  --soft-linen-600: #d2c3ad;
+  --soft-linen-700: #b79f7b;
+  --soft-linen-800: #947951;
+  --soft-linen-900: #635136;
+  --soft-linen-950: #31281b;
+  --soft-linen-200-transparent: #f6f3ef80;
 
-  --dusty-grape-50: #dfdcee;
-  --dusty-grape-100: #c0b9dd;
-  --dusty-grape-200: #a096cc;
-  --dusty-grape-300: #8073bc;
-  --dusty-grape-400: #6251a9;
-  --dusty-grape-500: #4e4187;
-  --dusty-grape-600: #413670;
-  --dusty-grape-700: #342b5a;
-  --dusty-grape-800: #272043;
-  --dusty-grape-900: #1a162d;
-  --dusty-grape-950: #0d0b16;
-  --dusty-grape-500-transparent: #4e418780;
-
-  --brilliant-azure-50: #ddebf9;
-  --brilliant-azure-100: #bbd6f3;
-  --brilliant-azure-200: #99c2ee;
-  --brilliant-azure-300: #76ade8;
-  --brilliant-azure-400: #5499e2;
-  --brilliant-azure-500: #3083dc;
-  --brilliant-azure-600: #216ec1;
-  --brilliant-azure-700: #1a589a;
-  --brilliant-azure-800: #144274;
-  --brilliant-azure-900: #0d2c4d;
-  --brilliant-azure-950: #071627;
-  --brilliant-azure-500-transparent: #3083dc80;
-
-  --blush-rose-50: #fbe2ea;
-  --blush-rose-100: #f6c5d5;
-  --blush-rose-200: #f2a8c0;
-  --blush-rose-300: #ee8cab;
-  --blush-rose-400: #e96f96;
-  --blush-rose-500: #e55381;
-  --blush-rose-600: #de2560;
-  --blush-rose-700: #b41b4c;
-  --blush-rose-800: #871439;
-  --blush-rose-900: #5a0d26;
-  --blush-rose-950: #2d0713;
-  --blush-rose-500-transparent: #e5538180;
+  --tiger-flame-50: #ffe3d9;
+  --tiger-flame-100: #ffc7b3;
+  --tiger-flame-200: #feab8d;
+  --tiger-flame-300: #fe8f67;
+  --tiger-flame-400: #fe7341;
+  --tiger-flame-500: #fe5a1d;
+  --tiger-flame-600: #e93f01;
+  --tiger-flame-700: #ba3201;
+  --tiger-flame-800: #8c2601;
+  --tiger-flame-900: #5d1900;
+  --tiger-flame-950: #2f0d00;
+  --tiger-flame-500-transparent: #fe5a1d80;
 
   --golden-orange-50: #ffefd0;
   --golden-orange-100: #ffdea1;
@@ -80,33 +54,119 @@
   --golden-orange-950: #261900;
   --golden-orange-500-transparent: #e5950080;
 
-  --soft-linen-50: #fcfbfa;
-  --soft-linen-100: #f9f7f4;
-  --soft-linen-200: #f6f3ef;
-  --soft-linen-300: #f3efe9;
-  --soft-linen-400: #f0ebe4;
-  --soft-linen-500: #ede7de;
-  --soft-linen-600: #d2c3ad;
-  --soft-linen-700: #b79f7b;
-  --soft-linen-800: #947951;
-  --soft-linen-900: #635136;
-  --soft-linen-950: #31281b;
-  --soft-linen-200-transparent: #f6f3efbf;
+  --bright-lemon-50: #fffcd9;
+  --bright-lemon-100: #fffab3;
+  --bright-lemon-200: #fef78d;
+  --bright-lemon-300: #fef467;
+  --bright-lemon-400: #fef141;
+  --bright-lemon-500: #feef1b;
+  --bright-lemon-600: #e9d901;
+  --bright-lemon-700: #baae01;
+  --bright-lemon-800: #8c8201;
+  --bright-lemon-900: #5d5700;
+  --bright-lemon-950: #2f2b00;
+  --bright-lemon-500-transparent: #feef1b80;
 
-  --pine-teal: var(--pine-teal-500);
-  --pine-teal-transparent: var(--pine-teal-500-transparent);
-  --dusty-grape: var(--dusty-grape-500);
-  --dusty-grape-transparent: var(--dusty-grape-500-transparent);
-  --brilliant-azure: var(--brilliant-azure-500);
-  --brilliant-azure-transparent: var(--brilliant-azure-500-transparent);
-  --blush-rose: var(--blush-rose-500);
-  --blush-rose-transparent: var(--blush-rose-500-transparent);
-  --golden-orange: var(--golden-orange-500);
-  --golden-orange-transparent: var(--golden-orange-500-transparent);
+  --yellow-green-50: #eef7dd;
+  --yellow-green-100: #ddeebb;
+  --yellow-green-200: #cce698;
+  --yellow-green-300: #bbde76;
+  --yellow-green-400: #aad654;
+  --yellow-green-500: #9acd32;
+  --yellow-green-600: #80ab29;
+  --yellow-green-700: #668921;
+  --yellow-green-800: #4d6719;
+  --yellow-green-900: #334411;
+  --yellow-green-950: #1a2208;
+  --yellow-green-500-transparent: #9acd3280;
+
+  --pine-teal-50: #bbfef5;
+  --pine-teal-100: #76fcea;
+  --pine-teal-200: #32fbe0;
+  --pine-teal-300: #05e3c5;
+  --pine-teal-400: #039e8a;
+  --pine-teal-500: #025a4e;
+  --pine-teal-600: #024b41;
+  --pine-teal-700: #013c34;
+  --pine-teal-800: #012d27;
+  --pine-teal-900: #011e1a;
+  --pine-teal-950: #000f0d;
+  --pine-teal-500-transparent: #025a4e80;
+
+  --brilliant-azure-50: #ddebf9;
+  --brilliant-azure-100: #bbd6f3;
+  --brilliant-azure-200: #99c2ee;
+  --brilliant-azure-300: #76ade8;
+  --brilliant-azure-400: #5499e2;
+  --brilliant-azure-500: #3083dc;
+  --brilliant-azure-600: #216ec1;
+  --brilliant-azure-700: #1a589a;
+  --brilliant-azure-800: #144274;
+  --brilliant-azure-900: #0d2c4d;
+  --brilliant-azure-950: #071627;
+  --brilliant-azure-500-transparent: #3083dc80;
+
+  --smart-blue-50: #dee4f3;
+  --smart-blue-100: #bcc9e8;
+  --smart-blue-200: #9baedc;
+  --smart-blue-300: #7a94d0;
+  --smart-blue-400: #5879c4;
+  --smart-blue-500: #3f62b2;
+  --smart-blue-600: #345194;
+  --smart-blue-700: #2a4176;
+  --smart-blue-800: #1f3059;
+  --smart-blue-900: #15203b;
+  --smart-blue-950: #0a101e;
+  --smart-blue-500-transparent: #3f62b280;
+
+  --dusty-grape-50: #dfdcee;
+  --dusty-grape-100: #c0b9dd;
+  --dusty-grape-200: #a096cc;
+  --dusty-grape-300: #8073bc;
+  --dusty-grape-400: #6251a9;
+  --dusty-grape-500: #4e4187;
+  --dusty-grape-600: #413670;
+  --dusty-grape-700: #342b5a;
+  --dusty-grape-800: #272043;
+  --dusty-grape-900: #1a162d;
+  --dusty-grape-950: #0d0b16;
+  --dusty-grape-500-transparent: #4e418780;
+
+  --blush-rose-50: #fbe2ea;
+  --blush-rose-100: #f6c5d5;
+  --blush-rose-200: #f2a8c0;
+  --blush-rose-300: #ee8cab;
+  --blush-rose-400: #e96f96;
+  --blush-rose-500: #e55381;
+  --blush-rose-600: #de2560;
+  --blush-rose-700: #b41b4c;
+  --blush-rose-800: #871439;
+  --blush-rose-900: #5a0d26;
+  --blush-rose-950: #2d0713;
+  --blush-rose-500-transparent: #e5538180;
+
   --soft-linen: var(--soft-linen-500);
-  --soft-linen-transparent: var(--soft-linen-200-transparent);
+  --tiger-flame: var(--tiger-flame-500);
+  --golden-orange: var(--golden-orange-500);
+  --bright-lemon: var(--bright-lemon-500);
+  --yellow-green: var(--yellow-green-500);
+  --pine-teal: var(--pine-teal-500);
+  --brilliant-azure: var(--brilliant-azure-500);
+  --smart-blue: var(--smart-blue-500);
+  --dusty-grape: var(--dusty-grape-500);
+  --blush-rose: var(--blush-rose-500);
 
-  color-scheme: light;
+  --soft-linen-transparent: var(--soft-linen-200-transparent);
+  --tiger-flame-transparent: var(--tiger-flame-500-transparent);
+  --golden-orange-transparent: var(--golden-orange-500-transparent);
+  --bright-lemon-transparent: var(--bright-lemon-500-transparent);
+  --yellow-green-transparent: var(--yellow-green-500-transparent);
+  --pine-teal-transparent: var(--pine-teal-500-transparent);
+  --brilliant-azure-transparent: var(--brilliant-azure-500-transparent);
+  --smart-blue-transparent: var(--smart-blue-500-transparent);
+  --dusty-grape-transparent: var(--dusty-grape-500-transparent);
+  --blush-rose-transparent: var(--blush-rose-500-transparent);
+
   --font-gt-planar: 'GT Planar';
   --font-acorn: 'Acorn';
   --font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -123,6 +183,7 @@
   --font-size-link: clamp(.875rem, .8rem + .3vw, 1.125rem);
   --font-size-small: clamp(.875rem, .8rem + .1vw, 1rem);
 
+  color-scheme: light;
   --text-color: var(--pine-teal-600); // TODO check it's good
   --text-color-hover: var(--pine-teal-900); // TODO check it's good
   --border-color: var(--pine-teal); // TODO check it's good

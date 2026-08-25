@@ -3,7 +3,7 @@
     "title": "Front-end",
     "description": "Développement d’interfaces modernes, performantes et responsives.\nExpérience sur les frameworks et bibliothèques web actuels.",
     "skills": [
-      { "name": "Angular", "level": 90, "color": "blush-rose" },
+      { "name": "Angular", "level": 90, "color": "tiger-flame" },
       { "name": "TypeScript", "level": 85, "color": "brilliant-azure" },
       { "name": "HTML5", "level": 95, "color": "golden-orange" },
       { "name": "SCSS", "level": 80, "color": "blush-rose" },
@@ -15,9 +15,9 @@
     "description": "Conception de services robustes et évolutifs.\nMise en œuvre d’APIs et intégration avec les bases de données.",
     "skills": [
       { "name": "Java", "level": 88, "color": "golden-orange" },
-      { "name": "Spring Boot", "level": 82, "color": "pine-teal" },
-      { "name": "REST APIs", "level": 90, "color": "soft-linen" },
-      { "name": "SQL", "level": 78, "color": "soft-linen" }
+      { "name": "Spring Boot", "level": 82, "color": "yellow-green" },
+      { "name": "REST APIs", "level": 90, "color": "pine-teal" },
+      { "name": "SQL", "level": 78, "color": "pine-teal" }
     ]
   },
   {
@@ -25,7 +25,7 @@
     "description": "Gestion des infrastructures et automatisation des déploiements.\nMise en place de pipelines CI/CD et surveillance des systèmes.",
     "skills": [
       { "name": "Docker", "level": 80, "color": "brilliant-azure" },
-      { "name": "Kubernetes", "level": 75, "color": "brilliant-azure" },
+      { "name": "Kubernetes", "level": 75, "color": "smart-blue" },
       { "name": "GitLab CI/CD", "level": 75, "color": "golden-orange" }
     ]
   },
@@ -35,7 +35,7 @@
     "skills": [
       { "name": "Jira", "level": 80, "color": "brilliant-azure" },
       { "name": "Git", "level": 75, "color": "golden-orange" },
-      { "name": "Méthodes agiles", "level": 75, "color": "soft-linen" },
+      { "name": "Méthodes agiles", "level": 75, "color": "pine-teal" },
       { "name": "Cycle en V", "level": 75, "color": "pine-teal" }
     ]
   }

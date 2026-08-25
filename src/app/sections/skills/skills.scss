@@ -78,51 +78,83 @@
             border-radius: inherit;
             transition: width 300ms ease-in-out;
 
-            &.pine-teal {
+            &.soft-linen {
               background: linear-gradient(
                 90deg,
-                var(--pine-teal-800) 0%,
-                var(--pine-teal-400) 100%
+                var(--soft-linen-900) 0%,
+                var(--soft-linen-700) 50%
               );
             }
 
-            &.dusty-grape {
+            &.tiger-flame {
               background: linear-gradient(
                 90deg,
-                var(--dusty-grape-800) 0%,
-                var(--dusty-grape-400) 100%
-              );
-            }
-
-            &.brilliant-azure {
-              background: linear-gradient(
-                90deg,
-                var(--brilliant-azure-800) 0%,
-                var(--brilliant-azure-400) 100%
-              );
-            }
-
-            &.blush-rose {
-              background: linear-gradient(
-                90deg,
-                var(--blush-rose-800) 0%,
-                var(--blush-rose-400) 100%
+                var(--tiger-flame-700) 0%,
+                var(--tiger-flame-500) 50%
               );
             }
 
             &.golden-orange {
               background: linear-gradient(
                 90deg,
-                var(--golden-orange-800) 0%,
-                var(--golden-orange-400) 100%
+                var(--golden-orange-600) 0%,
+                var(--golden-orange-400) 50%
               );
             }
 
-            &.soft-linen {
+            &.bright-lemon {
               background: linear-gradient(
                 90deg,
-                var(--soft-linen-800) 0%,
-                var(--soft-linen-400) 100% // TODO choose a darker color variant
+                var(--bright-lemon-700) 0%,
+                var(--bright-lemon-500) 50%
+              );
+            }
+
+            &.yellow-green {
+              background: linear-gradient(
+                90deg,
+                var(--yellow-green-700) 0%,
+                var(--yellow-green-500) 50%
+              );
+            }
+
+            &.pine-teal {
+              background: linear-gradient(
+                90deg,
+                var(--pine-teal-600) 0%,
+                var(--pine-teal-400) 50%
+              );
+            }
+
+            &.brilliant-azure {
+              background: linear-gradient(
+                90deg,
+                var(--brilliant-azure-700) 0%,
+                var(--brilliant-azure-500) 50%
+              );
+            }
+
+            &.smart-blue {
+              background: linear-gradient(
+                90deg,
+                var(--smart-blue-700) 0%,
+                var(--smart-blue-500) 50%
+              );
+            }
+
+            &.dusty-grape {
+              background: linear-gradient(
+                90deg,
+                var(--dusty-grape-600) 0%,
+                var(--dusty-grape-400) 50%
+              );
+            }
+
+            &.blush-rose {
+              background: linear-gradient(
+                90deg,
+                var(--blush-rose-700) 0%,
+                var(--blush-rose-500) 50%
               );
             }
           }

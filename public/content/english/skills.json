@@ -3,7 +3,7 @@
     "title": "Front-end",
     "description": "Development of modern, high-performance, and responsive user interfaces.\nExperience with current web frameworks and libraries.",
     "skills": [
-      { "name": "Angular", "level": 90, "color": "blush-rose" },
+      { "name": "Angular", "level": 90, "color": "tiger-flame" },
       { "name": "TypeScript", "level": 85, "color": "brilliant-azure" },
       { "name": "HTML5", "level": 95, "color": "golden-orange" },
       { "name": "SCSS", "level": 80, "color": "blush-rose" },
@@ -15,9 +15,9 @@
     "description": "Design of robust and scalable services.\nImplementation of APIs and integration with databases.",
     "skills": [
       { "name": "Java", "level": 88, "color": "golden-orange" },
-      { "name": "Spring Boot", "level": 82, "color": "pine-teal" },
-      { "name": "REST APIs", "level": 90, "color": "soft-linen" },
-      { "name": "SQL", "level": 78, "color": "soft-linen" }
+      { "name": "Spring Boot", "level": 82, "color": "yellow-green" },
+      { "name": "REST APIs", "level": 90, "color": "pine-teal" },
+      { "name": "SQL", "level": 78, "color": "pine-teal" }
     ]
   },
   {
@@ -25,7 +25,7 @@
     "description": "Infrastructure management and deployment automation.\nImplementation of CI/CD pipelines and system monitoring.",
     "skills": [
       { "name": "Docker", "level": 80, "color": "brilliant-azure" },
-      { "name": "Kubernetes", "level": 75, "color": "brilliant-azure" },
+      { "name": "Kubernetes", "level": 75, "color": "smart-blue" },
       { "name": "GitLab CI/CD", "level": 75, "color": "golden-orange" }
     ]
   },
@@ -35,7 +35,7 @@
     "skills": [
       { "name": "Jira", "level": 80, "color": "brilliant-azure" },
       { "name": "Git", "level": 75, "color": "golden-orange" },
-      { "name": "Agile Methodologies", "level": 75, "color": "soft-linen" },
+      { "name": "Agile Methodologies", "level": 75, "color": "pine-teal" },
       { "name": "V-Model", "level": 75, "color": "pine-teal" }
     ]
   }
