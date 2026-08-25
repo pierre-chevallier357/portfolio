@@ -1,7 +1,19 @@
+@use 'slide-down' as *;
+
 .footer {
   display: flex;
   justify-content: center;
-  margin: 1rem;
+
+  &.in-view {
+    .footer-line {
+      @include slide-down-animation;
+      @for $i from 3 through 1 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 200}ms;
+        }
+      }
+    }
+  }
 
   .footer-content {
     display: flex;
@@ -9,10 +21,9 @@
     align-items: center;
     gap: 0.5rem;
     width: 100%;
-    max-width: 40rem;
-    border-radius: 1.5rem;
-    background-color: var(--background-color-transparent);
+    background: linear-gradient(to bottom, transparent 0%, var(--background-color-transparent) 100%);
     padding: clamp(1.25rem, 0.8rem + 1vw, 2rem);
+    padding-top: 5rem;
     text-align: center;
 
     .footer-line {
@@ -29,8 +40,6 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    margin: 0.5rem;
-
     .footer-content {
       border-radius: 1rem;
       gap: 1rem;
