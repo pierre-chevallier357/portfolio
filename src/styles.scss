@@ -209,10 +209,10 @@
   --text-color-hover: var(--pine-teal-900);
   --border-color: var(--pine-teal);
   --gradient-color: var(--pine-teal-800), var(--pine-teal-400);
-  --bg-color: var(--soft-linen);
-  --bg-color-rgb: var(--soft-linen-rgb);
-  --bg-color-hover: var(--pine-teal-transparent);
-  --bg-color-transparent: var(--soft-linen-transparent);
+  --background-color: var(--soft-linen);
+  --background-color-rgb: var(--soft-linen-rgb);
+  --background-color-hover: var(--pine-teal-transparent);
+  --background-color-transparent: var(--soft-linen-transparent);
 }
 
 :root[data-theme='dark'] {
@@ -221,10 +221,10 @@
   --text-color-hover: var(--soft-linen-100);
   --border-color: var(--soft-linen);
   --gradient-color: var(--soft-linen-200), var(--soft-linen-600);
-  --bg-color: var(--pine-teal);
-  --bg-color-rgb: var(--pine-teal-rgb);
-  --bg-color-hover: var(--soft-linen-transparent);
-  --bg-color-transparent: var(--pine-teal-transparent);
+  --background-color: var(--pine-teal);
+  --background-color-rgb: var(--pine-teal-rgb);
+  --background-color-hover: var(--soft-linen-transparent);
+  --background-color-transparent: var(--pine-teal-transparent);
 }
 
 html {
@@ -246,7 +246,7 @@ html {
 
 body {
   font-family: var(--font-family-body);
-  background-color: var(--bg-color);
+  background-color: var(--background-color);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

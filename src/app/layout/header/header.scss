@@ -22,7 +22,7 @@
       inset: 0;
       border-radius: inherit;
       z-index: -1;
-      background-color: var(--bg-color-transparent);
+      background-color: var(--background-color-transparent);
       backdrop-filter: blur(20px) saturate(1.7);
       -webkit-backdrop-filter: blur(20px) saturate(1.7);
     }
@@ -190,7 +190,7 @@
         height: 100dvh;
         width: 100%;
         flex-direction: column;
-        background-color: var(--bg-color);
+        background-color: var(--background-color);
         text-align: center;
         transition: 0.3s;
         z-index: 1;
