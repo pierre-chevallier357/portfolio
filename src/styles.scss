@@ -27,6 +27,7 @@
   --soft-linen-900: #635136;
   --soft-linen-950: #31281b;
   --soft-linen-200-transparent: #f6f3ef80;
+  --soft-linen-500-rgb: 237, 231, 222;
 
   --tiger-flame-50: #ffe3d9;
   --tiger-flame-100: #ffc7b3;
@@ -40,6 +41,7 @@
   --tiger-flame-900: #5d1900;
   --tiger-flame-950: #2f0d00;
   --tiger-flame-500-transparent: #fe5a1d80;
+  --tiger-flame-500-rgb: 254, 90, 29;
 
   --golden-orange-50: #ffefd0;
   --golden-orange-100: #ffdea1;
@@ -53,6 +55,7 @@
   --golden-orange-900: #4d3200;
   --golden-orange-950: #261900;
   --golden-orange-500-transparent: #e5950080;
+  --golden-orange-500-rgb: 229, 149, 0;
 
   --bright-lemon-50: #fffcd9;
   --bright-lemon-100: #fffab3;
@@ -66,6 +69,7 @@
   --bright-lemon-900: #5d5700;
   --bright-lemon-950: #2f2b00;
   --bright-lemon-500-transparent: #feef1b80;
+  --bright-lemon-500-rgb: 254, 239, 27;
 
   --yellow-green-50: #eef7dd;
   --yellow-green-100: #ddeebb;
@@ -79,6 +83,7 @@
   --yellow-green-900: #334411;
   --yellow-green-950: #1a2208;
   --yellow-green-500-transparent: #9acd3280;
+  --yellow-green-500-rgb: 154, 205, 50;
 
   --pine-teal-50: #bbfef5;
   --pine-teal-100: #76fcea;
@@ -92,6 +97,7 @@
   --pine-teal-900: #011e1a;
   --pine-teal-950: #000f0d;
   --pine-teal-500-transparent: #025a4e80;
+  --pine-teal-500-rgb: 2, 90, 78;
 
   --brilliant-azure-50: #ddebf9;
   --brilliant-azure-100: #bbd6f3;
@@ -105,6 +111,7 @@
   --brilliant-azure-900: #0d2c4d;
   --brilliant-azure-950: #071627;
   --brilliant-azure-500-transparent: #3083dc80;
+  --brilliant-azure-500-rgb: 48, 131, 220;
 
   --smart-blue-50: #dee4f3;
   --smart-blue-100: #bcc9e8;
@@ -118,6 +125,7 @@
   --smart-blue-900: #15203b;
   --smart-blue-950: #0a101e;
   --smart-blue-500-transparent: #3f62b280;
+  --smart-blue-500-rgb: 63, 98, 178;
 
   --dusty-grape-50: #dfdcee;
   --dusty-grape-100: #c0b9dd;
@@ -131,6 +139,7 @@
   --dusty-grape-900: #1a162d;
   --dusty-grape-950: #0d0b16;
   --dusty-grape-500-transparent: #4e418780;
+  --dusty-grape-500-rgb: 78, 65, 135;
 
   --blush-rose-50: #fbe2ea;
   --blush-rose-100: #f6c5d5;
@@ -144,6 +153,7 @@
   --blush-rose-900: #5a0d26;
   --blush-rose-950: #2d0713;
   --blush-rose-500-transparent: #e5538180;
+  --blush-rose-500-rgb: 229, 83, 129;
 
   --soft-linen: var(--soft-linen-500);
   --tiger-flame: var(--tiger-flame-500);
@@ -167,6 +177,17 @@
   --dusty-grape-transparent: var(--dusty-grape-500-transparent);
   --blush-rose-transparent: var(--blush-rose-500-transparent);
 
+  --soft-linen-rgb: var(--soft-linen-500-rgb);
+  --tiger-flame-rgb: var(--tiger-flame-500-rgb);
+  --golden-orange-rgb: var(--golden-orange-500-rgb);
+  --bright-lemon-rgb: var(--bright-lemon-500-rgb);
+  --yellow-green-rgb: var(--yellow-green-500-rgb);
+  --pine-teal-rgb: var(--pine-teal-500-rgb);
+  --brilliant-azure-rgb: var(--brilliant-azure-500-rgb);
+  --smart-blue-rgb: var(--smart-blue-500-rgb);
+  --dusty-grape-rgb: var(--dusty-grape-500-rgb);
+  --blush-rose-rgb: var(--blush-rose-500-rgb);
+
   --font-gt-planar: 'GT Planar';
   --font-acorn: 'Acorn';
   --font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -184,26 +205,26 @@
   --font-size-small: clamp(.875rem, .8rem + .1vw, 1rem);
 
   color-scheme: light;
-  --text-color: var(--pine-teal-600); // TODO check it's good
-  --text-color-hover: var(--pine-teal-900); // TODO check it's good
-  --border-color: var(--pine-teal); // TODO check it's good
+  --text-color: var(--pine-teal-600);
+  --text-color-hover: var(--pine-teal-900);
+  --border-color: var(--pine-teal);
   --gradient-color: var(--pine-teal-800), var(--pine-teal-400);
   --bg-color: var(--soft-linen);
-  --bg-color-rgb: 237, 231, 222;
-  --bg-color-hover: var(--pine-teal-transparent); // TODO check it's good
-  --bg-color-transparent: var(--soft-linen-transparent); // TODO check it's good
+  --bg-color-rgb: var(--soft-linen-rgb);
+  --bg-color-hover: var(--pine-teal-transparent);
+  --bg-color-transparent: var(--soft-linen-transparent);
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --text-color: var(--soft-linen); // TODO check it's good
-  --text-color-hover: var(--soft-linen-600); // TODO check it's good
-  --border-color: var(--soft-linen-400); // TODO check it's good
-  --gradient-color: var(--soft-linen-800), var(--soft-linen-400);
+  --text-color: var(--soft-linen-400);
+  --text-color-hover: var(--soft-linen-100);
+  --border-color: var(--soft-linen);
+  --gradient-color: var(--soft-linen-200), var(--soft-linen-600);
   --bg-color: var(--pine-teal);
-  --bg-color-rgb: 35, 56, 49;
-  --bg-color-hover: var(--soft-linen-transparent); // TODO check it's good
-  --bg-color-transparent: var(--pine-teal-transparent); // TODO check it's good
+  --bg-color-rgb: var(--pine-teal-rgb);
+  --bg-color-hover: var(--soft-linen-transparent);
+  --bg-color-transparent: var(--pine-teal-transparent);
 }
 
 html {
