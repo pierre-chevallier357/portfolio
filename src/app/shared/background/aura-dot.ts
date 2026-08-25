@@ -47,7 +47,7 @@ export class AuraDot {
   }
 
   /** Paints the dot as a radial gradient fading into the given background color. */
-  public draw(ctx: CanvasRenderingContext2D, backgroundRgb: string): void {
+  public draw(ctx: CanvasRenderingContext2D, backgroundColor: string): void {
     const gradient: CanvasGradient = ctx.createRadialGradient(
       this.x,
       this.y,
@@ -60,7 +60,7 @@ export class AuraDot {
     // Hold the full color further out before fading, so the pastel tones read
     // clearly instead of thinning out immediately from the center.
     gradient.addColorStop(0.5, this.color);
-    gradient.addColorStop(1, `rgba(${backgroundRgb}, 0)`);
+    gradient.addColorStop(1, backgroundColor);
 
     ctx.save();
     // "multiply" keeps the pastel hues visible against the light background

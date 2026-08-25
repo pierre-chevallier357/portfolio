@@ -10,13 +10,13 @@ import {
   Signal,
   viewChild,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { AuraDot } from './aura-dot';
-import { ThemeStore } from '../../core/theme/theme-store';
+import {isPlatformBrowser} from '@angular/common';
+import {AuraDot} from './aura-dot';
+import {ThemeStore} from '../../core/theme/theme-store';
 
 const DOTS_COLORS: string[] = ['#FF5E00', '#F2FF00', '#00E5FF', '#15FF00', '#FF00F7'] as const;
-const BACKGROUND_LIGHT_COLOR: string = '237, 231, 222'; // --soft-linen-rgb
-const BACKGROUND_DARK_COLOR: string = '2, 90, 78'; // --pine-teal-rgb
+const BACKGROUND_LIGHT_COLOR: string = '#ede7de';
+const BACKGROUND_DARK_COLOR: string = '#025a4e';
 const DOTS_COUNT: number = 12;
 
 @Component({

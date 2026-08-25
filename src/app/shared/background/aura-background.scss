@@ -32,9 +32,9 @@
     height: 100%;
     pointer-events: none;
     background-image: linear-gradient(
-      rgba(var(--background-color-rgb), 0) 0%,
-      rgba(var(--background-color-rgb), 0.4) 50%,
-      rgb(var(--background-color-rgb)) 100%
+      rgb(from var(--background-color) r g b / 0) 0%,
+      rgb(from var(--background-color) r g b / 0.4) 50%,
+      var(--background-color) 100%
     );
   }
 }

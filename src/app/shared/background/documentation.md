@@ -18,7 +18,7 @@ Also fixed per dot — one pastel color chosen at creation, never transitions or
 
 ## Fading
 
-The "fade" is purely spatial, not temporal. Each dot is drawn every frame as a radial gradient: solid color from center to 50% of its radius, then fading to transparent (matching the background RGB) at the edge — so it always looks like a soft glowing blob, with multiply blend mode used to keep pastel tones visible on the light background instead of washing out.
+The "fade" is purely spatial, not temporal. Each dot is drawn every frame as a radial gradient: solid color from center to 50% of its radius, then fading to transparent (matching the background) at the edge — so it always looks like a soft glowing blob, with multiply blend mode used to keep pastel tones visible on the light background instead of washing out.
 
 ## Summary
 
