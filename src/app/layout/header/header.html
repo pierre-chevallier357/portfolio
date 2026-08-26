@@ -1,14 +1,7 @@
 <header class="header">
   <nav [class.blurred]="hasScrolledAfterThreshold()" class="navbar">
-    <a class="logo-link" href="/" [title]="homeSectionTitle()">
-      <img
-        [alt]="logoAlt()"
-        class="logo"
-        height="48"
-        ngSrc="images/header/logo.png"
-        priority
-        width="48"
-      />
+    <a [title]="homeSectionTitle()" class="logo-link" href="/">
+      <img [alt]="logoAlt()" class="logo" height="48" ngSrc="images/header/logo.png" priority width="48"/>
       <span class="navbar-title">Pierre Chevallier</span>
     </a>
 
@@ -28,6 +21,7 @@
           </a>
         </li>
       }
+      <li aria-hidden="true" class="separator"></li>
       <li class="navbar-item">
         <portfolio-language-toggle (clicked)="closeMenu()"/>
       </li>

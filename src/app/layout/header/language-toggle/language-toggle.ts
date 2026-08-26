@@ -1,4 +1,15 @@
-import { Component, computed, inject, output, OutputEmitterRef, Signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  ElementRef,
+  inject,
+  output,
+  OutputEmitterRef,
+  Signal,
+  signal,
+  viewChild,
+  WritableSignal,
+} from '@angular/core';
 import { LanguageStore } from '../../../core/language/language-store';
 import { Language } from '../../../core/language/language';
 
@@ -7,16 +18,28 @@ import { Language } from '../../../core/language/language';
   templateUrl: './language-toggle.html',
   styleUrl: './language-toggle.scss',
 })
+// TODO renommer en "language-switcher" pour être cohérent avec le nom de la classe et du fichier
 export class LanguageToggle {
   public readonly clicked: OutputEmitterRef<void> = output<void>();
-  protected readonly label: Signal<string> = computed(() =>
-    this.language() === 'fr' ? 'English' : 'Français',
-  );
+  protected readonly popover: Signal<ElementRef<HTMLDivElement> | undefined> =
+    viewChild<ElementRef<HTMLDivElement>>('popover');
+  protected readonly showPopover: WritableSignal<boolean> = signal(false);
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly language: Signal<Language> = this.languageStore.language.asReadonly();
+  protected readonly ariaLabel: Signal<string> = computed(() =>
+    this.language()?.code === 'fr' ? 'Changer de langue' : 'Change language',
+  );
+  protected readonly languages: Language[] = this.languageStore.languages;
+  protected readonly selectedLanguage: WritableSignal<Language> = signal(
+    this.languageStore.DEFAULT_LANGUAGE,
+  );
 
-  protected toggleLanguage(): void {
+  // TODO do it so that on click outside the page it closes the popover
+  protected selectLanguage(language: Language): void {
+    this.selectedLanguage.set(language);
+    this.languageStore.setLanguage(language);
+    this.popover()?.nativeElement.hidePopover();
+    this.showPopover.set(false);
     this.clicked.emit();
-    this.languageStore.toggleLanguage();
   }
 }

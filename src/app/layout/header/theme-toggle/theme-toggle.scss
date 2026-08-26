@@ -2,30 +2,41 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 0.9rem;
-  border: 0.125rem solid var(--border-color);
+  padding: 0;
+  border: 0.125rem solid transparent;
   border-radius: 1.5rem;
   background-color: transparent;
   color: var(--text-color);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
-  font-size: clamp(.5rem, .3rem + .5vw, 1.125rem);
-  height: clamp(2rem, 1rem + 1.8vw, 3rem);
+  --size-desktop: clamp(1rem, 1rem + 0.5vw, 2.25rem);
+  height: var(--size-desktop);
+  width: var(--size-desktop);
+  justify-content: center;
 
   &:hover {
-    background-color: var(--background-color-hover);
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    -o-transform: scale(1.15);
+    transform: scale(1.15);
   }
 
   svg {
-    width: 1.4rem;
-    height: 1.4rem;
+    height: var(--size-desktop);
+    width: var(--size-desktop);
   }
 }
 
 @media screen and (max-width: 768px) {
   .theme-toggle {
-    font-size: 1rem;
-    height: auto;
+    --size-mobile: 2rem;
+    height: var(--size-mobile);
+    width: var(--size-mobile);
+
+    svg {
+      height: var(--size-mobile);
+      width: var(--size-mobile);
+    }
   }
 }

@@ -19,7 +19,7 @@ export class ContentProvider {
   private readonly httpClient: HttpClient = inject(HttpClient);
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   private readonly languageFolder: Signal<string> = computed(() =>
-    this.languageStore.language() === 'fr' ? 'french' : 'english',
+    this.languageStore.language()?.code === 'fr' ? 'french' : 'english',
   );
   private readonly headerContent$: Observable<HeaderContent> = this.getLocalized<HeaderContent>(
     'header.json',

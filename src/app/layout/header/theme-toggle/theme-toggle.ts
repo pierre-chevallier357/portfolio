@@ -20,13 +20,6 @@ export class ThemeToggle {
     }
     return isFrench ? 'Activer le mode sombre' : 'Switch to dark mode';
   });
-  protected readonly label: Signal<string> = computed(() => {
-    const isFrench: boolean = this.languageStore.isFrench();
-    if (this.theme() === 'dark') {
-      return isFrench ? 'Mode clair' : 'Light mode';
-    }
-    return isFrench ? 'Mode sombre' : 'Dark mode';
-  });
 
   protected toggleTheme(): void {
     this.clicked.emit();

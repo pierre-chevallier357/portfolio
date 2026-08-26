@@ -1,1 +1,4 @@
-export type Language = 'fr' | 'en';
+export interface Language {
+  code: string;
+  label: string;
+}

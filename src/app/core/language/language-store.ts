@@ -11,14 +11,13 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Language } from './language';
 
 const STORAGE_KEY: string = 'language';
-const DEFAULT_LANGUAGE: Language = 'fr';
 
-const TITLE_BY_LANGUAGE: Record<Language, string> = {
+const TITLE_BY_LANGUAGE: Record<string, string> = {
   fr: 'Pierre Chevallier',
   en: 'Pierre Chevallier',
 };
 
-const DESCRIPTION_BY_LANGUAGE: Record<Language, string> = {
+const DESCRIPTION_BY_LANGUAGE: Record<string, string> = {
   fr: 'Portfolio de Pierre Chevallier',
   en: 'Portfolio of Pierre Chevallier',
 };
@@ -28,7 +27,12 @@ const DESCRIPTION_BY_LANGUAGE: Record<Language, string> = {
 })
 export class LanguageStore {
   public readonly language: WritableSignal<Language> = signal<Language>(this.getStoredLanguage());
-  public readonly isFrench: Signal<boolean> = computed(() => this.language() === 'fr');
+  public readonly languages: Language[] = [
+    { code: 'fr', label: 'Français' },
+    { code: 'en', label: 'English' },
+  ];
+  public readonly isFrench: Signal<boolean> = computed(() => this.language()?.code === 'fr');
+  public readonly DEFAULT_LANGUAGE: Language = { code: 'fr', label: 'Français' };
   private readonly titleService: Title = inject(Title);
   private readonly metaService: Meta = inject(Meta);
 
@@ -36,30 +40,33 @@ export class LanguageStore {
     effect(() => {
       const language: Language = this.language();
       if (this.isBrowser()) {
-        document.documentElement.setAttribute('lang', language);
+        document.documentElement.setAttribute('lang', language?.code);
       }
-      this.titleService.setTitle(TITLE_BY_LANGUAGE[language]);
+      this.titleService.setTitle(TITLE_BY_LANGUAGE[language?.code]);
       this.metaService.updateTag({
         name: 'description',
-        content: DESCRIPTION_BY_LANGUAGE[language],
+        content: DESCRIPTION_BY_LANGUAGE[language?.code],
       });
     });
   }
 
-  public toggleLanguage(): void {
-    const nextLanguage: Language = this.language() === 'fr' ? 'en' : 'fr';
-    this.language.set(nextLanguage);
+  public setLanguage(language: Language): void {
+    this.language.set(language);
     if (this.isBrowser()) {
-      window.localStorage.setItem(STORAGE_KEY, nextLanguage);
+      window.localStorage.setItem(STORAGE_KEY, language.code);
     }
   }
 
   private getStoredLanguage(): Language {
     if (!this.isBrowser()) {
-      return DEFAULT_LANGUAGE;
+      return this.DEFAULT_LANGUAGE;
     }
     const stored: string | null = window.localStorage.getItem(STORAGE_KEY);
-    return stored === 'fr' || stored === 'en' ? stored : DEFAULT_LANGUAGE;
+    return stored === 'fr'
+      ? { code: 'fr', label: 'Français' }
+      : stored === 'en'
+        ? { code: 'en', label: 'English' }
+        : this.DEFAULT_LANGUAGE;
   }
 
   private isBrowser(): boolean {
