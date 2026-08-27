@@ -9,6 +9,7 @@
   width: 4px;
   background: var(--background-color);
   border-radius: 999px;
+  box-shadow: var(--shadow);
   overflow: visible;
   transition: height 2s ease;
 
@@ -39,7 +40,6 @@
 
   &-active {
     background: var(--text-color);
-    border-color: var(--text-color);
-    box-shadow: 0 0 15px var(--text-color);
+    box-shadow: var(--shadow);
   }
 }

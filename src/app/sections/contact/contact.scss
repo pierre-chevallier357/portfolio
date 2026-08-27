@@ -68,7 +68,8 @@
           transition: background-color 0.2s ease;
 
           &:hover {
-            background-color: var(--background-color-hover);
+            background-color: var(--button-background-color-hover);
+            color: var(--text-color-hover);
           }
 
           .copy-icon {

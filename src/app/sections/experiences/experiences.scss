@@ -42,13 +42,13 @@
       gap: 2rem;
       padding: 1.75rem;
       border-radius: 1rem;
-      background: var(--background-color-transparent);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      background: var(--surface-color-1);
+      box-shadow: var(--shadow);
+      border: var(--edge-highlight);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
       }
 
       .content {
@@ -73,7 +73,9 @@
           .chip {
             padding: 0.45rem 0.9rem;
             border-radius: 999px;
-            background: var(--background-color-transparent);
+            background: var(--surface-color-2);
+            box-shadow: var(--shadow);
+            border: var(--edge-highlight);
             font-size: var(--font-size-small);
             font-weight: 600;
           }

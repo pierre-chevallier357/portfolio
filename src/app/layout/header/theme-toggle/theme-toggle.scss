@@ -16,6 +16,7 @@
   justify-content: center;
 
   &:hover {
+    color: var(--text-color-hover);
     -webkit-transform: scale(1.15);
     -ms-transform: scale(1.15);
     -o-transform: scale(1.15);

@@ -22,7 +22,9 @@
       inset: 0;
       border-radius: inherit;
       z-index: -1;
-      background-color: var(--background-color-transparent);
+      background-color: var(--surface-color-1);
+      box-shadow: var(--shadow);
+      border: var(--edge-highlight);
       backdrop-filter: blur(20px) saturate(1.7);
       -webkit-backdrop-filter: blur(20px) saturate(1.7);
     }

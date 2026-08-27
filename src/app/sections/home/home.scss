@@ -110,7 +110,8 @@
     justify-self: center;
 
     &:hover {
-      background-color: var(--background-color-hover);
+      background-color: var(--button-background-color-hover);
+      color: var(--text-color-hover);
     }
   }
 
