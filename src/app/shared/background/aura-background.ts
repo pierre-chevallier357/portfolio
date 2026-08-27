@@ -16,7 +16,7 @@ import {ThemeStore} from '../../core/theme/theme-store';
 
 const DOTS_COLORS: string[] = ['#ff5e00', '#f2ff00', '#00e5ff', '#15ff00', '#ff00f7'];
 const BACKGROUND_LIGHT_COLOR: string = '#ede7de';
-const BACKGROUND_DARK_COLOR: string = '#025a4e';
+const BACKGROUND_DARK_COLOR: string = '#013c34';
 const DOTS_COUNT: number = 12;
 
 @Component({

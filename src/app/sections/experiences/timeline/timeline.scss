@@ -12,17 +12,18 @@
   overflow: visible;
   transition: height 2s ease;
 
-  &__fill {
+  &-fill {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 0;
-    background: linear-gradient(
-      to bottom,
-      var(--gradient-color)
-    );
+    background: linear-gradient(to bottom, var(--evergreen-800), var(--evergreen-400));
     transition: height 0.2s ease;
+  }
+
+  :host-context([data-theme='dark']) &-fill {
+    background: linear-gradient(to bottom, var(--soft-linen-200), var(--soft-linen-600));
   }
 }
 
@@ -36,7 +37,7 @@
   transform: translate(-50%, -50%);
   transition: all 0.3s ease;
 
-  &--active {
+  &-active {
     background: var(--text-color);
     border-color: var(--text-color);
     box-shadow: 0 0 15px var(--text-color);

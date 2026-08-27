@@ -16,8 +16,8 @@
     "skills": [
       { "name": "Java", "level": 88, "color": "golden-orange" },
       { "name": "Spring Boot", "level": 82, "color": "yellow-green" },
-      { "name": "REST APIs", "level": 90, "color": "pine-teal" },
-      { "name": "SQL", "level": 78, "color": "pine-teal" }
+      { "name": "REST APIs", "level": 90, "color": "default" },
+      { "name": "SQL", "level": 78, "color": "default" }
     ]
   },
   {
@@ -35,8 +35,8 @@
     "skills": [
       { "name": "Jira", "level": 80, "color": "brilliant-azure" },
       { "name": "Git", "level": 75, "color": "golden-orange" },
-      { "name": "Méthodes agiles", "level": 75, "color": "pine-teal" },
-      { "name": "Cycle en V", "level": 75, "color": "pine-teal" }
+      { "name": "Méthodes agiles", "level": 75, "color": "default" },
+      { "name": "Cycle en V", "level": 75, "color": "default" }
     ]
   }
 ]

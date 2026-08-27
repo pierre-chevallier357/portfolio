@@ -1,18 +1,9 @@
 export type SkillsContent = SkillCategory[];
 
-export enum SkillColor {
-  PineTeal = 'pine-teal',
-  DustyGrape = 'dusty-grape',
-  BrilliantAzure = 'brilliant-azure',
-  BlushRose = 'blush-rose',
-  GoldenOrange = 'golden-orange',
-  SoftLinen = 'soft-linen',
-}
-
 export interface Skill {
   name: string;
   level: number;
-  color: SkillColor;
+  color: string;
 }
 
 export interface SkillCategory {

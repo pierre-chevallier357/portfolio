@@ -1,14 +1,11 @@
 .self-writing-text {
   color: transparent;
   background-clip: text;
+  background-image: linear-gradient(to bottom, var(--brilliant-azure-600), var(--brilliant-azure-950));
+}
 
-  &.dark {
-    background-image: linear-gradient(to bottom, var(--blush-rose-200), var(--blush-rose-500));
-  }
-
-  &.light {
-    background-image: linear-gradient(to bottom, var(--brilliant-azure-600), var(--brilliant-azure-950));
-  }
+:host-context([data-theme='dark']) .self-writing-text {
+  background-image: linear-gradient(to bottom, var(--brilliant-azure-100), var(--brilliant-azure-300));
 }
 
 .vertical-bar {

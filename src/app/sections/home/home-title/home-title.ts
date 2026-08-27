@@ -2,7 +2,6 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Component, computed, inject, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { SelfWritingText } from '../self-writing-text/self-writing-text';
-import { ThemeStore } from '../../../core/theme/theme-store';
 import { LanguageStore } from '../../../core/language/language-store';
 import { ContentProvider } from '../../../content/content-provider';
 import { HomeContent } from '../../../content/home-content';
@@ -14,7 +13,6 @@ import { HomeContent } from '../../../content/home-content';
   styleUrl: './home-title.scss',
 })
 export class HomeTitle {
-  protected readonly isDarkMode: Signal<boolean> = inject(ThemeStore).isDarkMode;
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
   protected readonly homeTitle: Signal<HomeContent> = this.contentProvider.getHomeContent();

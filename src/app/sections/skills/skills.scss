@@ -78,12 +78,12 @@
             border-radius: inherit;
             transition: width 0.3s ease-in-out;
 
-            &.soft-linen {
-              background: linear-gradient(
-                90deg,
-                var(--soft-linen-900) 0%,
-                var(--soft-linen-700) 50%
-              );
+            &.default {
+              background: linear-gradient(90deg, var(--evergreen-600) 0%, var(--evergreen-400) 50%);
+            }
+
+            :host-context([data-theme='dark']) &.default {
+              background: linear-gradient(90deg, var(--soft-linen-700) 0%, var(--soft-linen-500) 50%);
             }
 
             &.tiger-flame {
