@@ -16,21 +16,21 @@
   justify-content: center;
   anchor-name: --language-button;
 
-  &:hover {
-    color: var(--text-color-hover);
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
-    transform: scale(1.15);
-  }
-
   svg {
     height: var(--size-desktop);
     width: var(--size-desktop);
+
+    &:hover {
+      color: var(--text-color-hover);
+      -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+      -o-transform: scale(1.15);
+      transform: scale(1.15);
+    }
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .language-button {
     --size-mobile: 2rem;
     height: var(--size-mobile);
@@ -43,13 +43,10 @@
   }
 }
 
-.popover {
-  position: absolute;
+.popover:popover-open {
+  position: fixed;
   position-anchor: --language-button;
-  top: anchor(bottom);
-  left: anchor(center);
-  translate: -50%;
-  z-index: 2;
+  position-area: bottom center;
   margin-top: 0.5rem;
   padding: 0.5rem;
   border: none;

@@ -1,4 +1,4 @@
-<button (click)="showPopover.set(!showPopover())" [attr.aria-label]="ariaLabel()" [title]="ariaLabel()"
+<button [attr.aria-label]="ariaLabel()" [title]="ariaLabel()"
         class="language-button" popovertarget="language-popover" type="button">
   <svg fill="currentColor" viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -6,14 +6,11 @@
   </svg>
 </button>
 
-@if (showPopover()) {
-  <div #popover class="popover" id="language-popover" popover>
-    @for (language of languages; track language.code) {
-      <button (click)="selectLanguage(language)"
-              [class.popover-option-active]="selectedLanguage().code === language.code"
-              class="popover-option" type="button">
-        {{ language.label }}
-      </button>
-    }
-  </div>
-}
+<div #popover class="popover" id="language-popover" popover>
+  @for (language of languages; track language.code) {
+    <button (click)="selectLanguage(language)" [class.popover-option-active]="selectedLanguage().code === language.code"
+            class="popover-option" type="button">
+      {{ language.label }}
+    </button>
+  }
+</div>

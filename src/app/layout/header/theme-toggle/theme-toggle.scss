@@ -15,21 +15,21 @@
   width: var(--size-desktop);
   justify-content: center;
 
-  &:hover {
-    color: var(--text-color-hover);
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
-    transform: scale(1.15);
-  }
-
   svg {
     height: var(--size-desktop);
     width: var(--size-desktop);
+
+    &:hover {
+      color: var(--text-color-hover);
+      -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+      -o-transform: scale(1.15);
+      transform: scale(1.15);
+    }
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .theme-button {
     --size-mobile: 2rem;
     height: var(--size-mobile);

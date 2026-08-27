@@ -22,7 +22,6 @@ export class LanguageSwitcher {
   public readonly clicked: OutputEmitterRef<void> = output<void>();
   protected readonly popover: Signal<ElementRef<HTMLDivElement> | undefined> =
     viewChild<ElementRef<HTMLDivElement>>('popover');
-  protected readonly showPopover: WritableSignal<boolean> = signal(false);
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly language: Signal<Language> = this.languageStore.language.asReadonly();
   protected readonly ariaLabel: Signal<string> = computed(() =>
@@ -33,12 +32,10 @@ export class LanguageSwitcher {
     this.languageStore.DEFAULT_LANGUAGE,
   );
 
-  // TODO do it so that on click outside the page it closes the popover
   protected selectLanguage(language: Language): void {
     this.selectedLanguage.set(language);
     this.languageStore.setLanguage(language);
     this.popover()?.nativeElement.hidePopover();
-    this.showPopover.set(false);
     this.clicked.emit();
   }
 }
