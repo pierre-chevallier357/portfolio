@@ -8,18 +8,17 @@ import {
   Signal,
   signal,
   viewChild,
-  WritableSignal,
+  WritableSignal
 } from '@angular/core';
 import { LanguageStore } from '../../../core/language/language-store';
 import { Language } from '../../../core/language/language';
 
 @Component({
-  selector: 'portfolio-language-toggle',
-  templateUrl: './language-toggle.html',
-  styleUrl: './language-toggle.scss',
+  selector: 'portfolio-language-switcher',
+  templateUrl: './language-switcher.html',
+  styleUrl: './language-switcher.scss',
 })
-// TODO renommer en "language-switcher" pour être cohérent avec le nom de la classe et du fichier
-export class LanguageToggle {
+export class LanguageSwitcher {
   public readonly clicked: OutputEmitterRef<void> = output<void>();
   protected readonly popover: Signal<ElementRef<HTMLDivElement> | undefined> =
     viewChild<ElementRef<HTMLDivElement>>('popover');

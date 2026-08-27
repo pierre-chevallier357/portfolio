@@ -12,14 +12,14 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { fromEvent, map } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 import { LanguageStore } from '../../core/language/language-store';
-import { LanguageToggle } from './language-toggle/language-toggle';
+import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { ThemeToggle } from './theme-toggle/theme-toggle';
 import { ContentProvider } from '../../content/content-provider';
 import { HeaderContent } from '../../content/header-content';
 
 @Component({
   selector: 'portfolio-header',
-  imports: [NgOptimizedImage, LanguageToggle, ThemeToggle],
+  imports: [NgOptimizedImage, LanguageSwitcher, ThemeToggle],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
@@ -53,7 +53,8 @@ export class Header {
     : signal(false);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
   protected readonly navLinks: Signal<HeaderContent> = this.contentProvider.getHeaderContent();
-  protected readonly homeSectionTitle: Signal<string> = this.contentProvider.getSectionTitle('home');
+  protected readonly homeSectionTitle: Signal<string> =
+    this.contentProvider.getSectionTitle('home');
 
   protected toggleMenu(): void {
     this.isMenuOpened.update((isMenuOpened) => !isMenuOpened);

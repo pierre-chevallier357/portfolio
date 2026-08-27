@@ -1,4 +1,4 @@
-.theme-toggle {
+.theme-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -30,7 +30,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .theme-toggle {
+  .theme-button {
     --size-mobile: 2rem;
     height: var(--size-mobile);
     width: var(--size-mobile);
