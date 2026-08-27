@@ -22,7 +22,7 @@
 .name {
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to bottom, var(--blush-rose-700), var(--blush-rose-950));
+  background-image: linear-gradient(to bottom, var(--blush-rose-600), var(--blush-rose-950));
 }
 
 :host-context([data-theme='dark']) .name {
