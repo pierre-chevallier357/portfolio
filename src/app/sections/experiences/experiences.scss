@@ -44,8 +44,7 @@
       border-radius: 1rem;
       background: var(--background-color-transparent);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease,
-      box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
         transform: translateY(-4px);
