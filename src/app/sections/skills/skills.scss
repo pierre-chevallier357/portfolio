@@ -80,7 +80,7 @@
             transition: width 0.3s ease-in-out;
 
             &.default {
-              background: linear-gradient(90deg, var(--evergreen-600) 0%, var(--evergreen-400) 50%);
+              background: linear-gradient(90deg, var(--pine-teal-600) 0%, var(--pine-teal-400) 50%);
             }
 
             :host-context([data-theme='dark']) &.default {

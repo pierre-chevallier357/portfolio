@@ -112,6 +112,7 @@
     &:hover {
       background-color: var(--button-background-color-hover);
       color: var(--text-color-hover);
+      border: 0.125rem solid var(--text-color-hover);
     }
   }
 
