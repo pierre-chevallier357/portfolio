@@ -7,10 +7,9 @@
 .line {
   position: relative;
   width: 0.25rem;
-  background: linear-gradient(to bottom, var(--soft-linen-200), var(--soft-linen-600));
+  background: var(--background-color);
   border-radius: 1rem;
-  box-shadow: var(--shadow);
-  border: var(--edge-highlight);
+  box-shadow: 0 0 1rem rgb(from var(--pine-teal-950) r g b / 0.5);
   overflow: visible;
   transition: height 2s ease;
 
@@ -30,7 +29,7 @@
 }
 
 :host-context([data-theme='dark']) .line {
-  background: linear-gradient(to bottom, var(--pine-teal-800), var(--pine-teal-400));
+  background: var(--pine-teal-400);
 }
 
 .dot {
@@ -40,13 +39,15 @@
   height: 1.25rem;
   border-radius: 50%;
   background: var(--background-color);
-  border: var(--edge-highlight);
   transform: translate(-50%, -50%);
   transition: all 0.3s ease;
 
   &-active {
-    background: var(--text-color);
-    border: var(--edge-highlight);
-    box-shadow: var(--shadow);
+    background: var(--text-color) !important;
+    box-shadow: 0 0 1rem rgb(from var(--pine-teal-950) r g b / 0.8);
   }
+}
+
+:host-context([data-theme='dark']) .dot {
+  background: var(--pine-teal-400);
 }
