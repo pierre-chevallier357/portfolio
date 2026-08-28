@@ -94,10 +94,10 @@
 
       &.opened .line {
         &:nth-child(1) {
-          -webkit-transform: translateY(0.8125rem) rotate(45deg);
-          -ms-transform: translateY(0.8125rem) rotate(45deg);
-          -o-transform: translateY(0.8125rem) rotate(45deg);
-          transform: translateY(0.8125rem) rotate(45deg);
+          -webkit-transform: translateY(0.765rem) rotate(45deg);
+          -ms-transform: translateY(0.765rem) rotate(45deg);
+          -o-transform: translateY(0.765rem) rotate(45deg);
+          transform: translateY(0.765rem) rotate(45deg);
         }
 
         &:nth-child(2) {
@@ -105,10 +105,10 @@
         }
 
         &:nth-child(3) {
-          -webkit-transform: translateY(-0.8125rem) rotate(-45deg);
-          -ms-transform: translateY(-0.8125rem) rotate(-45deg);
-          -o-transform: translateY(-0.8125rem) rotate(-45deg);
-          transform: translateY(-0.8125rem) rotate(-45deg);
+          -webkit-transform: translateY(-0.765rem) rotate(-45deg);
+          -ms-transform: translateY(-0.765rem) rotate(-45deg);
+          -o-transform: translateY(-0.765rem) rotate(-45deg);
+          transform: translateY(-0.765rem) rotate(-45deg);
         }
       }
     }
