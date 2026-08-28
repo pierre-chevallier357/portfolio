@@ -23,10 +23,10 @@
 
   .experiences-container {
     @include slide-down-hidden;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 5rem 1fr;
     gap: 2rem;
   }
 
@@ -48,7 +48,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-0.25rem);
       }
 
       .content {
@@ -72,7 +72,7 @@
 
           .chip {
             padding: 0.45rem 0.9rem;
-            border-radius: 999px;
+            border-radius: 2rem;
             background: var(--surface-color-2);
             box-shadow: var(--shadow);
             border: var(--edge-highlight);
@@ -86,26 +86,26 @@
         flex-shrink: 0;
 
         img {
-          width: 90px;
-          height: 90px;
+          width: 5.625rem;
+          height: 5.625rem;
           object-fit: contain;
         }
       }
     }
   }
 
-  @media (max-width: 900px) {
+  @media screen and (max-width: 56.25rem) {
     .experiences-container {
-      grid-template-columns: 40px 1fr;
+      grid-template-columns: 2.5rem 1fr;
 
       .logo-container img {
-        width: 70px;
-        height: 70px;
+        width: 4.375rem;
+        height: 4.375rem;
       }
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 48rem) {
     .experience-card {
       flex-direction: column-reverse;
       align-items: flex-start;
@@ -116,9 +116,9 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @media screen and (max-width: 37.5rem) {
     .experiences-container {
-      grid-template-columns: 25px 1fr;
+      grid-template-columns: 1.5rem 1fr;
       gap: 1rem;
 
       .experience-card {
@@ -128,7 +128,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .experiences-section {
     justify-items: center;
     gap: 2rem;

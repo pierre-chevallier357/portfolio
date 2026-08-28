@@ -6,10 +6,11 @@
 
 .line {
   position: relative;
-  width: 4px;
-  background: var(--background-color);
-  border-radius: 999px;
+  width: 0.25rem;
+  background: linear-gradient(to bottom, var(--soft-linen-200), var(--soft-linen-600));
+  border-radius: 1rem;
   box-shadow: var(--shadow);
+  border: var(--edge-highlight);
   overflow: visible;
   transition: height 2s ease;
 
@@ -20,6 +21,7 @@
     right: 0;
     height: 0;
     background: linear-gradient(to bottom, var(--pine-teal-800), var(--pine-teal-400));
+    border: var(--edge-highlight);
     transition: height 0.2s ease;
   }
 
@@ -28,18 +30,24 @@
   }
 }
 
+:host-context([data-theme='dark']) .line {
+  background: linear-gradient(to bottom, var(--pine-teal-800), var(--pine-teal-400));
+}
+
 .dot {
   position: absolute;
   left: 50%;
-  width: 21px;
-  height: 21px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   background: var(--background-color);
+  border: var(--edge-highlight);
   transform: translate(-50%, -50%);
   transition: all 0.3s ease;
 
   &-active {
     background: var(--text-color);
+    border: var(--edge-highlight);
     box-shadow: var(--shadow);
   }
 }

@@ -26,7 +26,7 @@
     width: 100%;
     position: relative;
     font-size: var(--font-size-huge);
-    letter-spacing: -2px;
+    letter-spacing: -0.125rem;
     margin: 0 0 2rem;
     grid-area: title;
     text-align: start;
@@ -52,7 +52,7 @@
       transition: all 0.1s ease-in-out;
 
       &:hover {
-        filter: drop-shadow(0 0 10px white);
+        filter: drop-shadow(0 0 0.625rem white);
         scale: 1.15;
       }
 
@@ -70,7 +70,7 @@
           }
 
           50% {
-            transform: translateY(-16px) rotate(-8deg);
+            transform: translateY(-1rem) rotate(-8deg);
           }
         }
       }
@@ -89,7 +89,7 @@
           }
 
           50% {
-            transform: translateY(16px) rotate(8deg);
+            transform: translateY(1rem) rotate(8deg);
           }
         }
       }
@@ -134,13 +134,13 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 62rem) {
   .home-title {
-    letter-spacing: -4px;
+    letter-spacing: -0.25rem;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   :host {
     min-height: auto;
     padding: 4rem 1rem 3rem;

@@ -12,7 +12,7 @@
     align-items: center;
     margin: 1rem;
     border-radius: 3rem;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
     --pad: clamp(1rem, 0.4rem + 1vw, 1.5rem);
     padding: var(--pad) calc(var(--pad) * 1.2);
 
@@ -40,7 +40,7 @@
       position: relative;
       @include slide-down-animation;
       animation-delay: 200ms;
-      font-size: clamp(.5rem, .5rem + .5vw, 1.125rem);
+      font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1.125rem);
 
       .logo {
         border-radius: 50%;
@@ -153,11 +153,11 @@
       }
 
       .separator {
-        width: 1px;
+        width: 0.0625rem;
         height: 2.5rem;
-        background: currentColor;
-        opacity: 0.2;
-        flex: 0 0 1px;
+        background-color: rgb(from currentColor r g b / 0.5);
+        opacity: 0.5;
+        flex: 0 0 0.0625rem;
       }
     }
 
@@ -173,7 +173,7 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 62.5rem) {
   .header {
     .navbar {
       --pad: 1rem;
@@ -232,7 +232,7 @@
         }
 
         .separator {
-          height: 1px;
+          height: 0.0625rem;
           width: 50%;
           rotate: 180deg;
           margin: 1.5rem 0;

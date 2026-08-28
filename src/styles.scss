@@ -172,16 +172,16 @@
   --font-family-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-family-title: var(--font-acorn), var(--font-family-fallback);
   --font-family-body: var(--font-gt-planar), var(--font-family-fallback);
-  --font-size-body: clamp(1rem, 1rem + .5vw, 1.3rem);
+  --font-size-body: clamp(1rem, 1rem + 0.5vw, 1.3rem);
   --font-size-h1: clamp(3rem, 0.5rem + 2vw, 5rem);
   --font-size-h2: clamp(1.5rem, 0.5rem + 1vw, 2.5rem);
-  --font-size-h3: clamp(1.4rem, 0.5rem + .9vw, 2rem);
-  --font-size-h4: clamp(1.3rem, 0.5rem + .8vw, 1.5rem);
-  --font-size-h5: clamp(1.2rem, 0.5rem + .7vw, 1.25rem);
-  --font-size-h6: clamp(1.1rem, 0.5rem + .6vw, 1.125rem);
-  --font-size-huge: clamp(3rem, .5rem + 5vw, 10rem);
-  --font-size-link: clamp(.875rem, .8rem + .3vw, 1.125rem);
-  --font-size-small: clamp(.875rem, .8rem + .1vw, 1rem);
+  --font-size-h3: clamp(1.4rem, 0.5rem + 0.9vw, 2rem);
+  --font-size-h4: clamp(1.3rem, 0.5rem + 0.8vw, 1.5rem);
+  --font-size-h5: clamp(1.2rem, 0.5rem + 0.7vw, 1.25rem);
+  --font-size-h6: clamp(1.1rem, 0.5rem + 0.6vw, 1.125rem);
+  --font-size-huge: clamp(3rem, 0.5rem + 5vw, 10rem);
+  --font-size-link: clamp(0.875rem, 0.8rem + 0.3vw, 1.125rem);
+  --font-size-small: clamp(0.875rem, 0.8rem + 0.1vw, 1rem);
 
   color-scheme: light;
   --text-color: var(--pine-teal);
@@ -193,7 +193,7 @@
   --surface-color-2: rgb(from var(--soft-linen-500) r g b / 40%);
   --surface-color-3: rgb(from var(--soft-linen-500) r g b / 30%);
   --shadow: 0 0.625rem 1.875rem rgb(from var(--pine-teal-950) r g b / 12%);
-  --edge-highlight: 1px solid rgb(from var(--soft-linen-950) r g b/ 10%);
+  --edge-highlight: 0.125rem solid rgb(from var(--soft-linen-950) r g b/ 10%);
 }
 
 :root[data-theme='dark'] {
@@ -206,8 +206,8 @@
   --surface-color-1: rgb(from var(--pine-teal-500) r g b / 50%);
   --surface-color-2: rgb(from var(--pine-teal-400) r g b / 40%);
   --surface-color-3: rgb(from var(--pine-teal-300) r g b / 30%);
-  --shadow: 0 0.625rem 1.875rem rgb(from var(--soft-linen-50) r g b / 12%);
-  --edge-highlight: 1px solid rgb(from var(--pine-teal-50) r g b/ 12%);
+  --shadow: 0 0.625rem 1.875rem rgb(from var(--pine-teal-950) r g b / 12%);
+  --edge-highlight: 0.125rem solid rgb(from var(--pine-teal-50) r g b/ 12%);
 }
 
 html {
@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   text-align: center;
   font-size: var(--font-size-h1);
-  letter-spacing: -2px;
+  letter-spacing: -0.125rem;
 }
 
 h2 {

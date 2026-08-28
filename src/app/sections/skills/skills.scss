@@ -68,9 +68,9 @@
           }
 
           .progress-bar {
-            height: 10px;
+            height: 0.625rem;
             overflow: hidden;
-            border-radius: 999px;
+            border-radius: 1rem;
             background-color: var(--surface-color-2);
           }
 
@@ -165,7 +165,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .skills-section {
     justify-items: center;
     gap: 2rem;
@@ -173,7 +173,7 @@
     text-align: center;
 
     .cards-container {
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(23.75rem, 1fr));
     }
   }
 }
