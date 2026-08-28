@@ -194,6 +194,14 @@
   --surface-color-3: rgb(from var(--soft-linen-500) r g b / 30%);
   --shadow: 0 0.625rem 1.875rem rgb(from var(--pine-teal-950) r g b / 12%);
   --edge-highlight: 0.125rem solid rgb(from var(--soft-linen-950) r g b/ 10%);
+
+  h1 {
+    color: var(--pine-teal-700);
+  }
+
+  h2 {
+    color: var(--pine-teal-600);
+  }
 }
 
 :root[data-theme='dark'] {
@@ -208,6 +216,14 @@
   --surface-color-3: rgb(from var(--pine-teal-300) r g b / 30%);
   --shadow: 0 0.625rem 1.875rem rgb(from var(--pine-teal-950) r g b / 12%);
   --edge-highlight: 0.125rem solid rgb(from var(--pine-teal-50) r g b/ 12%);
+
+  h1 {
+    color: var(--soft-linen-100);
+  }
+
+  h2 {
+    color: var(--soft-linen-300);
+  }
 }
 
 html {
