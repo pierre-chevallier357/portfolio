@@ -14,6 +14,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { AuraDot } from './aura-dot';
 import { ThemeStore } from '../../core/theme/theme-store';
 
+// TODO check for color accessibility with this background color (mix of all dots colors) #1F1E1D
 const DOTS_COLORS: string[] = ['#ff5e00', '#f2ff00', '#00e5ff', '#15ff00', '#ff00f7'];
 const BACKGROUND_LIGHT_COLOR: string = '#ede7de';
 const BACKGROUND_DARK_COLOR: string = '#025a4e';

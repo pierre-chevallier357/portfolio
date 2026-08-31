@@ -3,7 +3,7 @@
 .about-section {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 4rem;
+  gap: 4rem; // TODO Add a better page structure for About and remove this
   align-items: center;
   margin: 0 auto;
   width: 80vw;
@@ -31,7 +31,6 @@
 
     .about-title {
       @include slide-down-hidden;
-      margin-bottom: 1.5rem;
     }
 
     .about-text {
@@ -62,7 +61,12 @@
 @media screen and (max-width: 56.25rem) {
   .about-section {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2rem; // TODO Add a better page structure for About and remove this
+    width: 90vw;
+
+    .about-title {
+      margin-bottom: 1rem;
+    }
 
     .picture-frame {
       max-width: 80vw;

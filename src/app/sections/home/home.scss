@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(90vh - 5rem);
   align-items: center;
   justify-content: center;
 }
@@ -145,7 +145,7 @@
 @media screen and (max-width: 48rem) {
   :host {
     min-height: auto;
-    padding: 4rem 1rem 3rem;
+    padding: 1rem;
   }
 
   .home-section {

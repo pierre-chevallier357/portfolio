@@ -193,7 +193,7 @@
   --surface-color-2: rgb(from var(--soft-linen-500) r g b / 40%);
   --surface-color-3: rgb(from var(--soft-linen-500) r g b / 30%);
   --shadow: 0 0.625rem 1.875rem rgb(from var(--pine-teal-950) r g b / 12%);
-  --edge-highlight: 0.125rem solid rgb(from var(--soft-linen-950) r g b/ 10%);
+  --edge-highlight: 0.0625rem solid rgb(from var(--soft-linen-950) r g b/ 10%);
 
   h1 {
     color: var(--pine-teal-700);
