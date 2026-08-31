@@ -179,21 +179,19 @@
   --font-size-h4: clamp(1.3rem, 0.5rem + 0.8vw, 1.5rem);
   --font-size-h5: clamp(1.2rem, 0.5rem + 0.7vw, 1.25rem);
   --font-size-h6: clamp(1.1rem, 0.5rem + 0.6vw, 1.125rem);
-  --font-size-huge: clamp(3rem, 0.5rem + 5vw, 10rem);
   --font-size-link: clamp(0.875rem, 0.8rem + 0.3vw, 1.125rem);
   --font-size-small: clamp(0.875rem, 0.8rem + 0.1vw, 1rem);
 
   color-scheme: light;
   --text-color: var(--pine-teal);
   --text-color-hover: var(--pine-teal-900);
-  --border-color: var(--pine-teal);
   --background-color: var(--soft-linen);
   --button-background-color-hover: var(--pine-teal-transparent);
   --surface-color-1: rgb(from var(--soft-linen-500) r g b / 50%);
   --surface-color-2: rgb(from var(--soft-linen-500) r g b / 40%);
   --surface-color-3: rgb(from var(--soft-linen-500) r g b / 30%);
   --shadow: 0 0.625rem 1.875rem rgb(from var(--pine-teal-950) r g b / 12%);
-  --edge-highlight: 0.0625rem solid rgb(from var(--soft-linen-950) r g b/ 10%);
+  --border: 0.0625rem solid rgb(from var(--soft-linen-950) r g b/ 10%);
 
   h1 {
     color: var(--pine-teal-700);
@@ -208,14 +206,13 @@
   color-scheme: dark;
   --text-color: var(--soft-linen);
   --text-color-hover: var(--soft-linen-100);
-  --border-color: var(--soft-linen);
   --background-color: var(--pine-teal);
   --button-background-color-hover: var(--soft-linen-transparent);
   --surface-color-1: rgb(from var(--pine-teal-500) r g b / 50%);
   --surface-color-2: rgb(from var(--pine-teal-400) r g b / 40%);
   --surface-color-3: rgb(from var(--pine-teal-300) r g b / 30%);
   --shadow: 0 0.625rem 1.875rem rgb(from var(--pine-teal-950) r g b / 12%);
-  --edge-highlight: 0.125rem solid rgb(from var(--pine-teal-50) r g b/ 12%);
+  --border: 0.125rem solid rgb(from var(--pine-teal-50) r g b/ 12%);
 
   h1 {
     color: var(--soft-linen-100);

@@ -26,7 +26,7 @@
     @include slide-down-hidden;
     width: 100%;
     position: relative;
-    font-size: var(--font-size-huge);
+    font-size: clamp(3rem, 0.5rem + 5vw, 10rem);
     letter-spacing: -0.125rem;
     margin: 0 0 2rem;
     grid-area: title;
@@ -102,7 +102,7 @@
     @include slide-down-hidden;
     grid-area: about;
     text-decoration: none;
-    border: 0.125rem solid var(--border-color);
+    border: 0.125rem solid var(--text-color);
     border-radius: 2rem;
     background-color: transparent;
     font-weight: bold;

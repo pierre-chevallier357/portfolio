@@ -34,7 +34,7 @@
       padding: 1.5rem;
       background: var(--surface-color-1);
       box-shadow: var(--shadow);
-      border: var(--edge-highlight);
+      border: var(--border);
       border-radius: 1rem;
 
       h2 {
@@ -53,7 +53,7 @@
           border-radius: 0.75rem;
           background: var(--surface-color-2);
           box-shadow: var(--shadow);
-          border: var(--edge-highlight);
+          border: var(--border);
           padding: 0.5rem 1rem;
 
           details summary {

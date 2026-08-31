@@ -24,7 +24,7 @@
       z-index: -1;
       background-color: var(--surface-color-1);
       box-shadow: var(--shadow);
-      border: var(--edge-highlight);
+      border: var(--border);
       backdrop-filter: blur(20px) saturate(1.7);
       -webkit-backdrop-filter: blur(20px) saturate(1.7);
     }
