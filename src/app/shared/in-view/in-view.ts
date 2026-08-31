@@ -6,9 +6,9 @@ import {
   inject,
   output,
   OutputEmitterRef,
-  PLATFORM_ID,
+  PLATFORM_ID
 } from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 /**
  * Emits `inView` once when the host element first becomes visible in the
@@ -33,15 +33,12 @@ export class InView {
   }
 
   private observeVisibility(): void {
-    this.observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          this.inView.emit();
-          this.observer?.disconnect();
-        }
-      },
-      { threshold: 0.25 },
-    );
+    this.observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        this.inView.emit();
+        this.observer?.disconnect();
+      }
+    });
     this.observer.observe(this.elementRef.nativeElement);
     this.destroyRef.onDestroy(() => this.observer?.disconnect());
   }

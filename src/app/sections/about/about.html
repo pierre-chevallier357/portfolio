@@ -1,12 +1,14 @@
 <section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="about-section" id="about"
          portfolioInView>
+  <h1 class="about-title">{{ title() }}</h1>
   <div class="about-content">
-    <h1 class="about-title">{{ title() }}</h1>
-    @for (paragraph of paragraphs(); track $index) {
-      <p [innerHTML]="paragraph" class="about-text"></p>
-    }
+    <article class="paragraphs">
+      @for (paragraph of paragraphs(); track $index) {
+        <p [innerHTML]="paragraph" class="paragraph"></p>
+      }
+    </article>
+    <figure class="picture-frame">
+      <img [alt]="portraitAlt()" class="profile-picture" fill ngSrc="images/home/profile-picture.jpg"/>
+    </figure>
   </div>
-  <figure class="picture-frame">
-    <img [alt]="portraitAlt()" class="profile-picture" fill ngSrc="images/home/profile-picture.jpg"/>
-  </figure>
 </section>
