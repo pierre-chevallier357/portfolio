@@ -6,6 +6,7 @@
   align-items: center;
   margin: 0 auto;
   width: 80vw;
+  scroll-margin-top: 7rem;
 
   &.in-view {
     .skills-title {
@@ -176,6 +177,8 @@
 
 @media screen and (max-width: 48rem) {
   .skills-section {
+    scroll-margin-top: 6rem;
+
     .skills-title {
       margin-bottom: 1rem;
     }

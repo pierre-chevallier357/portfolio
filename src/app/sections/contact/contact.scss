@@ -8,6 +8,7 @@
   width: 80vw;
   margin: 0 auto;
   text-align: center;
+  scroll-margin-top: 7rem;
 
   &.in-view {
     .contact-title {
@@ -129,6 +130,7 @@
 
 @media screen and (max-width: 48rem) {
   .contact-section {
+    scroll-margin-top: 6rem;
     gap: 0;
 
     .contact-title {

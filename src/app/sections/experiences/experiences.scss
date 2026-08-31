@@ -3,6 +3,9 @@
 .experiences-section {
   margin: 0 auto;
   width: 80vw;
+  scroll-margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
 
   &.in-view {
     .experiences-title {
@@ -130,6 +133,7 @@
 @media screen and (max-width: 56.25rem) {
   .experiences-section {
     width: 90vw;
+    scroll-margin-top: 6rem;
 
     .experiences-title {
       margin-bottom: 1rem;

@@ -20,6 +20,7 @@
   margin: 10vh auto;
   width: 80vw;
   column-gap: 3rem;
+  scroll-margin-top: 14rem;
 
   .home-title {
     @include slide-down-hidden;
@@ -160,6 +161,7 @@
     width: auto;
     text-align: center;
     column-gap: 0;
+    scroll-margin-top: 8rem;
 
     .home-title {
       margin: 0;

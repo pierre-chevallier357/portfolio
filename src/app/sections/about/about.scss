@@ -6,6 +6,7 @@
   align-items: center;
   margin: 0 auto;
   width: 80vw;
+  scroll-margin-top: 7rem;
 
   .about-title {
     @include slide-down-hidden;
@@ -70,6 +71,7 @@
   .about-section {
     grid-template-columns: 1fr;
     width: 90vw;
+    scroll-margin-top: 6rem;
 
     .about-title {
       margin-bottom: 1rem;
