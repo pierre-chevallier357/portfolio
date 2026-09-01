@@ -2,11 +2,11 @@
          id="formations" portfolioInView>
   <h1 class="formations-title">{{ title() }}</h1>
 
-  <div class="formation-content">
-    <article class="card">
+  <div class="formations-content">
+    <article class="formations-card">
       <h2>{{ formationsContent().certificationsTitle }}</h2>
 
-      <ul class="formations">
+      <ul class="formations-list">
         @for (certification of formationsContent().certifications; track certification.title) {
           <li class="formation">
             <details>
@@ -27,10 +27,10 @@
       </ul>
     </article>
 
-    <article class="card">
+    <article class="formations-card">
       <h2>{{ formationsContent().educationTitle }}</h2>
 
-      <ul class="formations">
+      <ul class="formations-list">
         @for (education of formationsContent().education; track education.title) {
           <li class="formation">
             <details>

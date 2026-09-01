@@ -1,5 +1,5 @@
 @use 'slide-down' as *;
-@use 'surface' as *;
+@use 'card' as *;
 
 .in-view {
   @include reveal-stagger((
@@ -15,24 +15,24 @@
   grid-template-columns: 5rem 1fr;
   gap: 2rem;
 
-  .cards {
+  .experiences-cards-list {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 
-    .card {
+    .experiences-card {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 2rem;
-      @include surface;
+      @include card;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
         transform: translateY(-0.25rem);
       }
 
-      .content {
+      .experiences-card-content {
         flex: 1;
 
         h2 {
@@ -52,7 +52,7 @@
 
 
           .chip {
-            @include surface(0.45rem 0.9rem, 2rem, var(--surface-color-2));
+            @include card(0.5rem 1rem, 2rem, var(--surface-color-2));
             font-size: var(--font-size-small);
             font-weight: 600;
           }

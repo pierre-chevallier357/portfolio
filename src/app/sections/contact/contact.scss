@@ -1,5 +1,5 @@
 @use 'slide-down' as *;
-@use 'surface' as *;
+@use 'card' as *;
 
 .in-view {
   @include reveal-stagger((
@@ -16,14 +16,14 @@
   gap: 15vw;
   justify-content: center;
 
-  .contact-group {
+  .contact-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    @include surface;
+    @include card;
 
-    .group-title {
+    .contact-card-title {
       margin: 0;
     }
 

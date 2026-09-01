@@ -6,10 +6,10 @@
     <portfolio-timeline [dotsCount]="experiences().length" [height]="timelineHeight()"
                         [top]="timelineStartingPosition()"></portfolio-timeline>
 
-    <div class="cards">
+    <div class="experiences-cards-list">
       @for (experience of experiences(); track experience.id) {
-        <article #card class="card">
-          <div class="content">
+        <article #card class="experiences-card">
+          <div class="experiences-card-content">
             <h2>{{ experience.title }}</h2>
             <p>{{ experience.description }}</p>
             <div class="chips">

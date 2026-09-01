@@ -3,8 +3,8 @@
   <h1 class="contact-title">{{ title() }}</h1>
 
   <div class="contact-content">
-    <div class="contact-group">
-      <h2 class="group-title">{{ contactContent().mailTitle }}</h2>
+    <div class="contact-card">
+      <h2 class="contact-card-title">{{ contactContent().mailTitle }}</h2>
       <div class="mail-row">
         <a [href]="'mailto:' + contactContent().email" class="contact-link">
           <svg aria-hidden="true" class="link-icon" fill="none" viewBox="0 0 24 24">
@@ -35,8 +35,8 @@
       </span>
     </div>
 
-    <div class="contact-group">
-      <h2 class="group-title">{{ contactContent().socialMediasTitle }}</h2>
+    <div class="contact-card">
+      <h2 class="contact-card-title">{{ contactContent().socialMediasTitle }}</h2>
       <ul class="social-medias-list">
         @for (link of contactContent().socialLinks; track link.name) {
           <li>

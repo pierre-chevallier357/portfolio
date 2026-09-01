@@ -1,5 +1,5 @@
 @use 'slide-down' as *;
-@use 'surface' as *;
+@use 'card' as *;
 
 .in-view {
   @include reveal-stagger((
@@ -14,17 +14,17 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 
-  .card {
-    @include surface;
+  .skills-card {
+    @include card;
 
-    .card-header {
+    .skills-card-header {
       margin-bottom: 1.5rem;
 
       h2 {
         margin: 0 0 0.75rem;
       }
 
-      .card-description {
+      .skills-card-description {
         margin: 0;
         line-height: 1.5;
         white-space: pre-line;

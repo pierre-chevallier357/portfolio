@@ -2,7 +2,7 @@
          portfolioInView>
   <h1 class="about-title">{{ title() }}</h1>
   <div class="about-content">
-    <article class="paragraphs">
+    <article class="about-card">
       @for (paragraph of paragraphs(); track $index) {
         <p [innerHTML]="paragraph" class="paragraph"></p>
       }

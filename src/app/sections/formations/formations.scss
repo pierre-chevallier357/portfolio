@@ -1,28 +1,28 @@
 @use 'slide-down' as *;
-@use 'surface' as *;
+@use 'card' as *;
 
 .in-view {
   @include reveal-stagger((
     '.formations-title': 200ms,
-    '.formation-content': 600ms,
+    '.formations-content': 600ms,
   ));
 }
 
-.formation-content {
+.formations-content {
   @include slide-down-hidden;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
 
-  .card {
-    @include surface;
+  .formations-card {
+    @include card;
 
     h2 {
       margin: 0 0 1rem;
     }
 
-    .formations {
+    .formations-list {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
@@ -31,7 +31,7 @@
       padding: 0;
 
       .formation {
-        @include surface(0.5rem 1rem, 0.75rem, var(--surface-color-2));
+        @include card(0.5rem 1rem, 0.75rem, var(--surface-color-2));
 
         details summary {
           cursor: pointer;

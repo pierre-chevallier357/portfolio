@@ -1,5 +1,5 @@
 @use 'slide-down' as *;
-@use 'surface' as *;
+@use 'card' as *;
 
 .in-view {
   @include reveal-stagger((
@@ -15,11 +15,11 @@
   align-items: center;
   gap: 4rem;
 
-  .paragraphs {
+  .about-card {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    @include surface;
+    @include card;
 
     .paragraph {
       @include slide-down-hidden;
