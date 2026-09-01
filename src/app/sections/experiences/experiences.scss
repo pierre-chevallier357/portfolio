@@ -12,10 +12,6 @@
   }
 }
 
-.experiences-title {
-  @include slide-down-hidden;
-}
-
 .experiences-content {
   @include slide-down-hidden;
   margin: 0 auto;
@@ -118,12 +114,6 @@
     .card {
       padding: 1.25rem;
     }
-  }
-}
-
-@media screen and (max-width: 56.25rem) {
-  .experiences-title {
-    margin-bottom: 1rem;
   }
 }
 

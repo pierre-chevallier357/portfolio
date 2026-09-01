@@ -12,10 +12,6 @@
   }
 }
 
-.skills-title {
-  @include slide-down-hidden;
-}
-
 .skills-content {
   @include slide-down-hidden;
   display: grid;
@@ -161,10 +157,6 @@
 }
 
 @media screen and (max-width: 48rem) {
-  .skills-title {
-    margin-bottom: 1rem;
-  }
-
   .skills-content {
     grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
   }
