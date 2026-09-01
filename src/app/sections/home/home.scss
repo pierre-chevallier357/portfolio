@@ -23,7 +23,6 @@
   scroll-margin-top: 14rem;
 
   .home-title {
-    @include slide-down-hidden;
     width: 100%;
     position: relative;
     font-size: clamp(3rem, 0.5rem + 5vw, 10rem);
@@ -120,20 +119,11 @@
   }
 
   &.in-view {
-    .home-title {
-      @include slide-down-animation;
-      animation-delay: 200ms;
-    }
-
-    .portrait {
-      @include slide-down-animation;
-      animation-delay: 600ms;
-    }
-
-    .about-link {
-      @include slide-down-animation;
-      animation-delay: 1000ms;
-    }
+    @include reveal-stagger((
+      '.home-title': 200ms,
+      '.portrait': 600ms,
+      '.about-link': 1000ms,
+    ));
   }
 }
 

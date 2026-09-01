@@ -1,15 +1,11 @@
 @use 'slide-down' as *;
+@use 'surface' as *;
 
 .in-view {
-  .formations-title {
-    @include slide-down-animation;
-    animation-delay: 200ms;
-  }
-
-  .formation-content {
-    @include slide-down-animation;
-    animation-delay: 600ms;
-  }
+  @include reveal-stagger((
+    '.formations-title': 200ms,
+    '.formation-content': 600ms,
+  ));
 }
 
 .formation-content {
@@ -19,12 +15,8 @@
   gap: 1.5rem;
   width: 100%;
 
-  .formation-category-card {
-    padding: 1.5rem;
-    background: var(--surface-color-1);
-    box-shadow: var(--shadow);
-    border: var(--border);
-    border-radius: 1rem;
+  .card {
+    @include surface;
 
     h2 {
       margin: 0 0 1rem;
@@ -39,11 +31,7 @@
       padding: 0;
 
       .formation {
-        border-radius: 0.75rem;
-        background: var(--surface-color-2);
-        box-shadow: var(--shadow);
-        border: var(--border);
-        padding: 0.5rem 1rem;
+        @include surface(0.5rem 1rem, 0.75rem, var(--surface-color-2));
 
         details summary {
           cursor: pointer;

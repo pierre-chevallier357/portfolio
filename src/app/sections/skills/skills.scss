@@ -1,15 +1,11 @@
 @use 'slide-down' as *;
+@use 'surface' as *;
 
 .in-view {
-  .skills-title {
-    @include slide-down-animation;
-    animation-delay: 200ms;
-  }
-
-  .skills-content {
-    @include slide-down-animation;
-    animation-delay: 600ms;
-  }
+  @include reveal-stagger((
+    '.skills-title': 200ms,
+    '.skills-content': 600ms,
+  ));
 }
 
 .skills-content {
@@ -19,11 +15,7 @@
   gap: 1.5rem;
 
   .card {
-    padding: 1.5rem;
-    border-radius: 1rem;
-    background: var(--surface-color-1);
-    box-shadow: var(--shadow);
-    border: var(--border);
+    @include surface;
 
     .card-header {
       margin-bottom: 1.5rem;

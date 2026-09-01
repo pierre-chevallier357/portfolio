@@ -19,3 +19,12 @@
   animation-duration: 1s;
   animation-fill-mode: both;
 }
+
+@mixin reveal-stagger($delays) {
+  @each $selector, $delay in $delays {
+    #{$selector} {
+      @include slide-down-animation;
+      animation-delay: $delay;
+    }
+  }
+}

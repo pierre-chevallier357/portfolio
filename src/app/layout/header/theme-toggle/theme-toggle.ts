@@ -6,7 +6,6 @@ import { Theme } from '../../../core/theme/theme';
 @Component({
   selector: 'portfolio-theme-toggle',
   templateUrl: './theme-toggle.html',
-  styleUrl: './theme-toggle.scss',
 })
 export class ThemeToggle {
   public readonly clicked: OutputEmitterRef<void> = output<void>();

@@ -1,0 +1,7 @@
+@mixin surface($padding: 1.5rem, $radius: 1rem, $background: var(--surface-color-1)) {
+  padding: $padding;
+  background: $background;
+  box-shadow: var(--shadow);
+  border: var(--border);
+  border-radius: $radius;
+}
