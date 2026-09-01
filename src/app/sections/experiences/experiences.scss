@@ -1,43 +1,34 @@
 @use 'slide-down' as *;
 
-.experiences-section {
-  margin: 0 auto;
-  width: 80vw;
-  scroll-margin-top: 7rem;
-  display: flex;
-  flex-direction: column;
-
-  &.in-view {
-    .experiences-title {
-      @include slide-down-animation;
-      animation-delay: 200ms;
-    }
-
-    .experiences-container {
-      @include slide-down-animation;
-      animation-delay: 600ms;
-    }
-  }
-
+.in-view {
   .experiences-title {
-    @include slide-down-hidden;
-    font-family: var(--font-family-title);
+    @include slide-down-animation;
+    animation-delay: 200ms;
   }
 
-  .experiences-container {
-    @include slide-down-hidden;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 5rem 1fr;
-    gap: 2rem;
+  .experiences-content {
+    @include slide-down-animation;
+    animation-delay: 600ms;
   }
+}
+
+.experiences-title {
+  @include slide-down-hidden;
+}
+
+.experiences-content {
+  @include slide-down-hidden;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 2rem;
 
   .cards {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 
-    .experience-card {
+    .card {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -95,48 +86,44 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 56.25rem) {
-    .experiences-container {
-      grid-template-columns: 2.5rem 1fr;
+@media screen and (max-width: 56.25rem) {
+  .experiences-content {
+    grid-template-columns: 2.5rem 1fr;
 
-      .logo-container img {
-        width: 4.375rem;
-        height: 4.375rem;
-      }
+    .logo-container img {
+      width: 4.375rem;
+      height: 4.375rem;
     }
   }
+}
 
-  @media screen and (max-width: 48rem) {
-    .experience-card {
-      flex-direction: column-reverse;
-      align-items: flex-start;
+@media screen and (max-width: 48rem) {
+  .card {
+    flex-direction: column-reverse;
+    align-items: flex-start;
 
-      .logo-container {
-        align-self: center;
-      }
+    .logo-container {
+      align-self: center;
     }
   }
+}
 
-  @media screen and (max-width: 37.5rem) {
-    .experiences-container {
-      grid-template-columns: 1.5rem 1fr;
-      gap: 1rem;
+@media screen and (max-width: 37.5rem) {
+  .experiences-content {
+    grid-template-columns: 1.5rem 1fr;
+    gap: 1rem;
 
-      .experience-card {
-        padding: 1.25rem;
-      }
+    .card {
+      padding: 1.25rem;
     }
   }
 }
 
 @media screen and (max-width: 56.25rem) {
-  .experiences-section {
-    width: 90vw;
-    scroll-margin-top: 6rem;
-
-    .experiences-title {
-      margin-bottom: 1rem;
-    }
+  .experiences-title {
+    margin-bottom: 1rem;
   }
 }
+

@@ -1,14 +1,14 @@
-<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="experiences-section"
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="page-section"
          id="experiences" portfolioInView>
   <h1 class="experiences-title">{{ title() }}</h1>
 
-  <div #cardsContainer class="experiences-container">
+  <div #cardsContainer class="experiences-content">
     <portfolio-timeline [dotsCount]="experiences().length" [height]="timelineHeight()"
                         [top]="timelineStartingPosition()"></portfolio-timeline>
 
     <div class="cards">
       @for (experience of experiences(); track experience.id) {
-        <article #card class="experience-card">
+        <article #card class="card">
           <div class="content">
             <h2>{{ experience.title }}</h2>
             <p>{{ experience.description }}</p>

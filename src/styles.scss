@@ -293,3 +293,17 @@ a {
     color: var(--text-color-hover);
   }
 }
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 80vw;
+  scroll-margin-top: 7rem;
+
+  @media screen and (max-width: 62.5rem) {
+    width: 90vw;
+    scroll-margin-top: 6rem;
+  }
+}

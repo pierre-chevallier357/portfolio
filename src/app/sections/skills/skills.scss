@@ -1,190 +1,171 @@
 @use 'slide-down' as *;
 
-.skills-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  width: 80vw;
-  scroll-margin-top: 7rem;
-
-  &.in-view {
-    .skills-title {
-      @include slide-down-animation;
-      animation-delay: 200ms;
-    }
-
-    .cards-container {
-      @include slide-down-animation;
-      animation-delay: 600ms;
-    }
-  }
-
+.in-view {
   .skills-title {
-    @include slide-down-hidden;
+    @include slide-down-animation;
+    animation-delay: 200ms;
   }
 
-  .cards-container {
-    @include slide-down-hidden;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-
-    .skill-card {
-      padding: 1.5rem;
-      border-radius: 1rem;
-      background: var(--surface-color-1);
-      box-shadow: var(--shadow);
-      border: var(--border);
-
-      .card-header {
-        margin-bottom: 1.5rem;
-
-        h2 {
-          margin: 0 0 0.75rem;
-        }
-
-        .card-description {
-          margin: 0;
-          line-height: 1.5;
-          white-space: pre-line;
-        }
-      }
-
-      .skills-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-
-        .skill-item {
-          display: flex;
-          flex-direction: column;
-          gap: 0.4rem;
-
-          .skill-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            span:first-child {
-              font-weight: 500;
-            }
-          }
-
-          .progress-bar {
-            height: 0.625rem;
-            overflow: hidden;
-            border-radius: 1rem;
-            background-color: var(--surface-color-2);
-          }
-
-          .progress-bar-fill {
-            height: 100%;
-            border-radius: inherit;
-            transition: width 0.3s ease-in-out;
-
-            &.default {
-              background: linear-gradient(90deg, var(--pine-teal-600) 0%, var(--pine-teal-400) 50%);
-            }
-
-            :host-context([data-theme='dark']) &.default {
-              background: linear-gradient(90deg, var(--soft-linen-700) 0%, var(--soft-linen-500) 50%);
-            }
-
-            &.tiger-flame {
-              background: linear-gradient(
-                90deg,
-                var(--tiger-flame-700) 0%,
-                var(--tiger-flame-500) 50%
-              );
-            }
-
-            &.golden-orange {
-              background: linear-gradient(
-                90deg,
-                var(--golden-orange-600) 0%,
-                var(--golden-orange-400) 50%
-              );
-            }
-
-            &.bright-lemon {
-              background: linear-gradient(
-                90deg,
-                var(--bright-lemon-700) 0%,
-                var(--bright-lemon-500) 50%
-              );
-            }
-
-            &.yellow-green {
-              background: linear-gradient(
-                90deg,
-                var(--yellow-green-700) 0%,
-                var(--yellow-green-500) 50%
-              );
-            }
-
-            &.pine-teal {
-              background: linear-gradient(
-                90deg,
-                var(--pine-teal-600) 0%,
-                var(--pine-teal-400) 50%
-              );
-            }
-
-            &.brilliant-azure {
-              background: linear-gradient(
-                90deg,
-                var(--brilliant-azure-700) 0%,
-                var(--brilliant-azure-500) 50%
-              );
-            }
-
-            &.smart-blue {
-              background: linear-gradient(
-                90deg,
-                var(--smart-blue-700) 0%,
-                var(--smart-blue-500) 50%
-              );
-            }
-
-            &.dusty-grape {
-              background: linear-gradient(
-                90deg,
-                var(--dusty-grape-600) 0%,
-                var(--dusty-grape-400) 50%
-              );
-            }
-
-            &.blush-rose {
-              background: linear-gradient(
-                90deg,
-                var(--blush-rose-700) 0%,
-                var(--blush-rose-500) 50%
-              );
-            }
-          }
-        }
-      }
-    }
+  .skills-content {
+    @include slide-down-animation;
+    animation-delay: 600ms;
   }
 }
 
-@media screen and (max-width: 56.25rem) {
-  .skills-section {
-    width: 90vw;
+.skills-title {
+  @include slide-down-hidden;
+}
+
+.skills-content {
+  @include slide-down-hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: var(--surface-color-1);
+    box-shadow: var(--shadow);
+    border: var(--border);
+
+    .card-header {
+      margin-bottom: 1.5rem;
+
+      h2 {
+        margin: 0 0 0.75rem;
+      }
+
+      .card-description {
+        margin: 0;
+        line-height: 1.5;
+        white-space: pre-line;
+      }
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        .skill-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          span:first-child {
+            font-weight: 500;
+          }
+        }
+
+        .progress-bar {
+          height: 0.625rem;
+          overflow: hidden;
+          border-radius: 1rem;
+          background-color: var(--surface-color-2);
+        }
+
+        .progress-bar-fill {
+          height: 100%;
+          border-radius: inherit;
+          transition: width 0.3s ease-in-out;
+
+          &.default {
+            background: linear-gradient(90deg, var(--pine-teal-600) 0%, var(--pine-teal-400) 50%);
+          }
+
+          :host-context([data-theme='dark']) &.default {
+            background: linear-gradient(90deg, var(--soft-linen-700) 0%, var(--soft-linen-500) 50%);
+          }
+
+          &.tiger-flame {
+            background: linear-gradient(
+              90deg,
+              var(--tiger-flame-700) 0%,
+              var(--tiger-flame-500) 50%
+            );
+          }
+
+          &.golden-orange {
+            background: linear-gradient(
+              90deg,
+              var(--golden-orange-600) 0%,
+              var(--golden-orange-400) 50%
+            );
+          }
+
+          &.bright-lemon {
+            background: linear-gradient(
+              90deg,
+              var(--bright-lemon-700) 0%,
+              var(--bright-lemon-500) 50%
+            );
+          }
+
+          &.yellow-green {
+            background: linear-gradient(
+              90deg,
+              var(--yellow-green-700) 0%,
+              var(--yellow-green-500) 50%
+            );
+          }
+
+          &.pine-teal {
+            background: linear-gradient(
+              90deg,
+              var(--pine-teal-600) 0%,
+              var(--pine-teal-400) 50%
+            );
+          }
+
+          &.brilliant-azure {
+            background: linear-gradient(
+              90deg,
+              var(--brilliant-azure-700) 0%,
+              var(--brilliant-azure-500) 50%
+            );
+          }
+
+          &.smart-blue {
+            background: linear-gradient(
+              90deg,
+              var(--smart-blue-700) 0%,
+              var(--smart-blue-500) 50%
+            );
+          }
+
+          &.dusty-grape {
+            background: linear-gradient(
+              90deg,
+              var(--dusty-grape-600) 0%,
+              var(--dusty-grape-400) 50%
+            );
+          }
+
+          &.blush-rose {
+            background: linear-gradient(
+              90deg,
+              var(--blush-rose-700) 0%,
+              var(--blush-rose-500) 50%
+            );
+          }
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 48rem) {
-  .skills-section {
-    scroll-margin-top: 6rem;
+  .skills-title {
+    margin-bottom: 1rem;
+  }
 
-    .skills-title {
-      margin-bottom: 1rem;
-    }
-
-    .cards-container {
-      grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
-    }
+  .skills-content {
+    grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
   }
 }

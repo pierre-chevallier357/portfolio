@@ -1,8 +1,8 @@
-<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="contact-section" id="contact"
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="page-section" id="contact"
          portfolioInView>
   <h1 class="contact-title">{{ title() }}</h1>
 
-  <div class="contact-groups">
+  <div class="contact-content">
     <div class="contact-group">
       <h2 class="group-title">{{ contactContent().mailTitle }}</h2>
       <div class="mail-row">
@@ -13,7 +13,8 @@
           </svg>
           <span>{{ contactContent().email }}</span>
         </a>
-        <button (click)="copyEmail()" [attr.aria-label]="contactContent().copyLabel" [title]="contactContent().copyLabel" class="copy-button" type="button">
+        <button (click)="copyEmail()" [attr.aria-label]="contactContent().copyLabel"
+                [title]="contactContent().copyLabel" class="copy-button" type="button">
           @if (copied()) {
             <svg aria-hidden="true" class="copy-icon" fill="none" viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
