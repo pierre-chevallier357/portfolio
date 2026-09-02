@@ -24,8 +24,10 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to bottom, var(--blush-rose-600), var(--blush-rose-900));
+  text-shadow: none;
 }
 
 :host-context([data-theme='dark']) .name {
   background-image: linear-gradient(to bottom, var(--blush-rose-300), var(--blush-rose-600));
+  text-shadow: none;
 }

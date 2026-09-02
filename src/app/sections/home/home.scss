@@ -112,6 +112,7 @@
     width: fit-content;
     justify-self: center;
     box-shadow: var(--shadow);
+    text-shadow: 0 0 0.125rem var(--background-color);
 
     &:hover {
       background-color: var(--button-background-color-hover);

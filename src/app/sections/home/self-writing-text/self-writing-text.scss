@@ -2,10 +2,12 @@
   color: transparent;
   background-clip: text;
   background-image: linear-gradient(to bottom, var(--brilliant-azure-600), var(--brilliant-azure-900));
+  text-shadow: none;
 }
 
 :host-context([data-theme='dark']) .self-writing-text {
   background-image: linear-gradient(to bottom, var(--brilliant-azure-300), var(--brilliant-azure-600));
+  text-shadow: none;
 }
 
 .vertical-bar {
