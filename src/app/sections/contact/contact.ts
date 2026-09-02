@@ -1,8 +1,17 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, inject, PLATFORM_ID, Signal, signal, WritableSignal } from '@angular/core';
+import {
+  Component,
+  computed,
+  inject,
+  PLATFORM_ID,
+  Signal,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { InView } from '../../shared/in-view/in-view';
 import { ContentProvider } from '../../content/content-provider';
 import { ContactContent } from '../../content/contact-content';
+import { LanguageStore } from '../../core/language/language-store';
 
 @Component({
   selector: 'portfolio-contact',
@@ -19,6 +28,13 @@ export class Contact {
   protected readonly title: Signal<string> = this.contentProvider.getSectionTitle('contact');
   protected readonly contactContent: Signal<ContactContent> =
     this.contentProvider.getContactContent();
+  private readonly languageStore: LanguageStore = inject(LanguageStore);
+  protected readonly resumeUrl: Signal<string> = computed(
+    () => `resume/resume-${this.languageStore.language()?.code ?? 'en'}.pdf`,
+  );
+  protected readonly resumeFileName: Signal<string> = computed(
+    () => `Pierre-Chevallier-CV-${this.languageStore.language()?.code ?? 'en'}.pdf`,
+  );
   private copyResetTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
   protected async copyEmail(): Promise<void> {

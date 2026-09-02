@@ -3,6 +3,8 @@
   "email": "example@example.com",
   "copyLabel": "Copier dans le presse-papiers",
   "copiedLabel": "Copié dans le presse-papiers",
+  "resumeTitle": "CV",
+  "downloadResumeLabel": "Télécharger mon CV",
   "socialMediasTitle": "Réseaux sociaux",
   "socialLinks": [
     { "name": "GitHub", "href": "https://github.com/your-username" },

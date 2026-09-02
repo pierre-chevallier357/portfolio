@@ -5,6 +5,8 @@ export interface ContactContent {
   copiedLabel: string;
   email: string;
   socialLinks: SocialLink[];
+  resumeTitle: string;
+  downloadResumeLabel: string;
 }
 
 export interface SocialLink {

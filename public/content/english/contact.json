@@ -3,6 +3,8 @@
   "email": "example@example.com",
   "copyLabel": "Copy to clipboard",
   "copiedLabel": "Copied to clipboard",
+  "resumeTitle": "Resume",
+  "downloadResumeLabel": "Download my resume",
   "socialMediasTitle": "Social medias",
   "socialLinks": [
     { "name": "GitHub", "href": "https://github.com/your-username" },
