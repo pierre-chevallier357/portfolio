@@ -1,4 +1,5 @@
 @use 'slide-down' as *;
+@use 'hover-translate' as *;
 
 :host {
   position: relative;
@@ -99,6 +100,7 @@
 
   .about-link {
     @include slide-down-hidden;
+    @include hover-translate;
     grid-area: about;
     text-decoration: none;
     border: 0.125rem solid var(--text-color);

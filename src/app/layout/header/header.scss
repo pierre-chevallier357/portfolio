@@ -1,5 +1,5 @@
 @use 'slide-down' as *;
-@use 'hover-scale' as *;
+@use 'hover-translate' as *;
 
 .header {
   position: sticky;
@@ -49,12 +49,12 @@
         width: clamp(2rem, 1rem + 1.8vw, 3rem);
         position: relative;
         transition: all 0.1s ease-in-out;
-        @include hover-scale;
+        @include hover-translate;
       }
 
       .navbar-title {
         transition: all 0.1s ease-in-out;
-        @include hover-scale;
+        @include hover-translate;
       }
     }
 
@@ -124,7 +124,7 @@
           transition: all 0.1s ease-in-out;
           position: relative;
           z-index: 1;
-          @include hover-scale;
+          @include hover-translate;
         }
       }
 

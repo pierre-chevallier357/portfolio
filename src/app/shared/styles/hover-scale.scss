@@ -1,5 +1,0 @@
-@mixin hover-scale($scale: 1.05) {
-  &:hover {
-    transform: scale($scale);
-  }
-}

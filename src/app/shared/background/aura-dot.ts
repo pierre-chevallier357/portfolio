@@ -18,10 +18,10 @@ export class AuraDot {
   public reset(): void {
     this.x = Math.random() * this.canvas.width;
     this.y = Math.random() * this.canvas.height;
-    this.radius = Math.random() * 300 + 200;
+    this.radius = Math.random() * 300 + 200; // Random radius between 200 and 500
     this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
-    this.vx = (Math.random() - 0.5) * 12;
-    this.vy = (Math.random() - 0.5) * 12;
+    this.vx = (Math.random() - 0.5) * 12; // Random velocity between -6 px and 6 px for x direction
+    this.vy = (Math.random() - 0.5) * 12; // Random velocity between -6 px and 6 px for y direction
   }
 
   /**

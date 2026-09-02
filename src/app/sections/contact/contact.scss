@@ -1,5 +1,6 @@
 @use 'slide-down' as *;
 @use 'card' as *;
+@use 'hover-translate' as *;
 
 .in-view {
   @include reveal-stagger((
@@ -33,6 +34,7 @@
       gap: 0.5rem;
 
       .copy-button {
+        @include hover-translate;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -41,7 +43,6 @@
         border-radius: 1rem;
         background: transparent;
         color: inherit;
-        cursor: pointer;
         transition: background-color 0.2s ease;
 
         &:hover {
@@ -67,6 +68,7 @@
     }
 
     .contact-link {
+      @include hover-translate;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;

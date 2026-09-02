@@ -1,4 +1,4 @@
-@use 'hover-scale' as *;
+@use 'hover-translate' as *;
 
 .page-section {
   display: flex;
@@ -46,7 +46,7 @@
   svg {
     height: var(--size-desktop);
     width: var(--size-desktop);
-    @include hover-scale(1.15);
+    @include hover-translate;
 
     &:hover {
       color: var(--text-color-hover);

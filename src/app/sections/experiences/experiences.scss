@@ -28,10 +28,6 @@
       @include card;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-      &:hover {
-        transform: translateY(-0.25rem);
-      }
-
       .experiences-card-content {
         flex: 1;
 
