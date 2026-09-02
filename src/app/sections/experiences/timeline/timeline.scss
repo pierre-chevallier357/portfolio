@@ -43,11 +43,15 @@
   transition: all 0.2s ease;
 
   &-active {
-    background: var(--text-color) !important;
+    background: var(--text-color);
     box-shadow: 0 0 1rem rgb(from var(--pine-teal-950) r g b / 0.8);
   }
 }
 
 :host-context([data-theme='dark']) .dot {
   background: var(--pine-teal-400);
+}
+
+:host-context([data-theme='dark']) .dot-active {
+  background: var(--text-color);
 }
