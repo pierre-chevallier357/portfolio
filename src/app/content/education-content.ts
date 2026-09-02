@@ -1,4 +1,4 @@
-export interface FormationContent {
+export interface EducationContent {
   certificationsTitle: string;
   certifications: Certification[];
   educationTitle: string;

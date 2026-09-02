@@ -36,7 +36,7 @@ src/app/
 ├── content/     # Loads the text content of the website from JSON files and provides them to the app.
 ├── core/        # Holds singleton services, guards, interceptors, and app-wide infrastructure.
 ├── layout/      # Defines the application's structural UI (header, footer, navigation, shells).
-├── sections/    # Page sections: home, about, skills, experiences, formations, contact.
+├── sections/    # Page sections: home, about, skills, experiences, education, contact.
 └── shared/      # Reusable directives, animations, components, pipes, and style utilities.
 
 public/

@@ -10,7 +10,7 @@ import { HomeContent } from './home-content';
 import { ContactContent } from './contact-content';
 import { FooterContent } from './footer-content';
 import { AboutContent } from './about-content';
-import { FormationContent } from './formation-content';
+import { EducationContent } from './education-content';
 
 @Injectable({
   providedIn: 'root',
@@ -43,9 +43,9 @@ export class ContentProvider {
     });
   }
 
-  public getFormationsContent(): Signal<FormationContent> {
-    return toSignal(this.getLocalized<FormationContent>('formations.json'), {
-      initialValue: {} as FormationContent,
+  public getEducationContent(): Signal<EducationContent> {
+    return toSignal(this.getLocalized<EducationContent>('education.json'), {
+      initialValue: {} as EducationContent,
     });
   }
 

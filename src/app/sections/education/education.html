@@ -1,0 +1,54 @@
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="page-section"
+         id="education" portfolioInView>
+  <h1 class="education-title">{{ title() }}</h1>
+
+  <div class="education-content">
+    <article class="education-card">
+      <h2>{{ educationContent().certificationsTitle }}</h2>
+
+      <ul class="education-list">
+        @for (certification of educationContent().certifications; track certification.title) {
+          <li class="education">
+            <details>
+              <summary>
+                <span class="dropdown-title">
+                  <span class="education-name">{{ certification.title }}</span>
+                  <span class="education-info">{{ certification.issuer }} - {{ certification.year }}</span>
+                </span>
+                <svg aria-hidden="true" class="chevron" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <p class="education-description">{{ certification.description }}</p>
+            </details>
+          </li>
+        }
+      </ul>
+    </article>
+
+    <article class="education-card">
+      <h2>{{ educationContent().educationTitle }}</h2>
+
+      <ul class="education-list">
+        @for (education of educationContent().education; track education.title) {
+          <li class="education">
+            <details>
+              <summary>
+                <span class="dropdown-title">
+                  <span class="education-name">{{ education.title }}</span>
+                  <span class="education-info">{{ education.institution }} - {{ education.period }}</span>
+                </span>
+                <svg aria-hidden="true" class="chevron" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <p class="education-description">{{ education.description }}</p>
+            </details>
+          </li>
+        }
+      </ul>
+    </article>
+  </div>
+</section>
