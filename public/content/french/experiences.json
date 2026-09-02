@@ -11,7 +11,7 @@
     "id": 2,
     "company": "DataSphere",
     "logo": "assets/logos/datasphere.svg",
-    "title": "Développeur Full Stack",
+    "title": "Développeur Full-Stack",
     "description": "Conception de services web et d’API REST pour des applications de gestion. Participation aux choix techniques et aux revues de code.",
     "technologies": ["Angular", "Node.js", "NestJS", "PostgreSQL"]
   },
