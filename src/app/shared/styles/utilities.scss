@@ -37,16 +37,15 @@
   color: var(--text-color);
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
   --size-desktop: clamp(1rem, 1rem + 0.5vw, 2.25rem);
   height: var(--size-desktop);
   width: var(--size-desktop);
   justify-content: center;
+  @include hover-translate;
 
   svg {
     height: var(--size-desktop);
     width: var(--size-desktop);
-    @include hover-translate;
 
     &:hover {
       color: var(--text-color-hover);

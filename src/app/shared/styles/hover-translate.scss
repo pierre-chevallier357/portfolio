@@ -1,5 +1,5 @@
 @mixin hover-translate($translateY: 0.1rem) {
-  transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-out;
   cursor: pointer;
 
   &:hover {

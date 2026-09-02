@@ -26,7 +26,6 @@
       align-items: center;
       gap: 2rem;
       @include card;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       .experiences-card-content {
         flex: 1;

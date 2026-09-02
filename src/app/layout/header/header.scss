@@ -13,7 +13,6 @@
     align-items: center;
     margin: 1rem;
     border-radius: 3rem;
-    transition: all 0.2s linear;
     --pad: clamp(1rem, 0.4rem + 1vw, 1.5rem);
     padding: var(--pad) calc(var(--pad) * 1.2);
 
@@ -37,7 +36,6 @@
       gap: clamp(0.8rem, 0.3rem + 1vw, 1.5rem);
       margin-right: 1.5rem;
       font-weight: bold;
-      transition: all 0.1s ease-in-out;
       position: relative;
       @include slide-down-animation;
       animation-delay: 200ms;
@@ -48,12 +46,10 @@
         height: auto;
         width: clamp(2rem, 1rem + 1.8vw, 3rem);
         position: relative;
-        transition: all 0.1s ease-in-out;
         @include hover-translate;
       }
 
       .navbar-title {
-        transition: all 0.1s ease-in-out;
         @include hover-translate;
       }
     }
@@ -121,7 +117,6 @@
         .navbar-link {
           text-decoration: none;
           font-weight: bold;
-          transition: all 0.1s ease-in-out;
           position: relative;
           z-index: 1;
           @include hover-translate;

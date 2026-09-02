@@ -40,7 +40,7 @@
   border-radius: 50%;
   background: var(--background-color);
   transform: translate(-50%, -50%);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 
   &-active {
     background: var(--text-color) !important;
