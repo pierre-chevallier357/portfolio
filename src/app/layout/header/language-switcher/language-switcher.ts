@@ -6,9 +6,7 @@ import {
   output,
   OutputEmitterRef,
   Signal,
-  signal,
   viewChild,
-  WritableSignal
 } from '@angular/core';
 import { LanguageStore } from '../../../core/language/language-store';
 import { Language } from '../../../core/language/language';
@@ -28,12 +26,8 @@ export class LanguageSwitcher {
     this.language()?.code === 'fr' ? 'Changer de langue' : 'Change language',
   );
   protected readonly languages: Language[] = this.languageStore.languages;
-  protected readonly selectedLanguage: WritableSignal<Language> = signal(
-    this.languageStore.DEFAULT_LANGUAGE,
-  );
 
   protected selectLanguage(language: Language): void {
-    this.selectedLanguage.set(language);
     this.languageStore.setLanguage(language);
     this.popover()?.nativeElement.hidePopover();
     this.clicked.emit();

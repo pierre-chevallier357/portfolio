@@ -1,12 +1,4 @@
-import {
-  computed,
-  effect,
-  inject,
-  Injectable,
-  Signal,
-  signal,
-  WritableSignal,
-} from '@angular/core';
+import { computed, effect, inject, Injectable, Signal, signal, WritableSignal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Language } from './language';
 
@@ -32,7 +24,7 @@ export class LanguageStore {
     { code: 'en', label: 'English' },
   ];
   public readonly isFrench: Signal<boolean> = computed(() => this.language()?.code === 'fr');
-  public readonly DEFAULT_LANGUAGE: Language = { code: 'fr', label: 'Français' };
+  private readonly DEFAULT_LANGUAGE: Language = { code: 'fr', label: 'Français' };
   private readonly titleService: Title = inject(Title);
   private readonly metaService: Meta = inject(Meta);
 
@@ -62,11 +54,14 @@ export class LanguageStore {
       return this.DEFAULT_LANGUAGE;
     }
     const stored: string | null = window.localStorage.getItem(STORAGE_KEY);
-    return stored === 'fr'
-      ? { code: 'fr', label: 'Français' }
-      : stored === 'en'
-        ? { code: 'en', label: 'English' }
-        : this.DEFAULT_LANGUAGE;
+    switch (stored) {
+      case 'fr':
+        return { code: 'fr', label: 'Français' };
+      case 'en':
+        return { code: 'en', label: 'English' };
+      default:
+        return this.DEFAULT_LANGUAGE;
+    }
   }
 
   private isBrowser(): boolean {
