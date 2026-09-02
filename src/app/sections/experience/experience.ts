@@ -16,12 +16,12 @@ import { ExperienceContent } from '../../content/experience-content';
 import { ContentProvider } from '../../content/content-provider';
 
 @Component({
-  selector: 'portfolio-experiences',
+  selector: 'portfolio-experience',
   imports: [InView, Timeline],
-  templateUrl: './experiences.html',
-  styleUrl: './experiences.scss',
+  templateUrl: './experience.html',
+  styleUrl: './experience.scss',
 })
-export class Experiences {
+export class Experience {
   protected readonly cards: Signal<readonly ElementRef<HTMLElement>[]> =
     viewChildren<ElementRef<HTMLElement>>('card');
   protected readonly cardsContainer: Signal<ElementRef<HTMLElement>> =
@@ -29,9 +29,9 @@ export class Experiences {
   protected readonly activeIndex: WritableSignal<number> = signal(0);
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
-  protected readonly experiences: Signal<ExperienceContent> =
-    this.contentProvider.getExperiencesContent();
-  protected readonly title: Signal<string> = this.contentProvider.getSectionTitle('experiences');
+  protected readonly experience: Signal<ExperienceContent> =
+    this.contentProvider.getExperienceContent();
+  protected readonly title: Signal<string> = this.contentProvider.getSectionTitle('experience');
   private readonly cardsContainerHeight: WritableSignal<number> = signal(0);
   private readonly firstCardHeight: WritableSignal<number> = signal(0);
   protected readonly timelineHeight: Signal<number> = computed(

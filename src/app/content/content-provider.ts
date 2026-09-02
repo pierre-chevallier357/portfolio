@@ -1,16 +1,16 @@
-import { HttpClient } from '@angular/common/http';
-import { computed, inject, Injectable, Signal } from '@angular/core';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { map, Observable, shareReplay, switchMap } from 'rxjs';
-import { ExperienceContent } from './experience-content';
-import { SkillsContent } from './skills-content';
-import { HeaderContent } from './header-content';
-import { LanguageStore } from '../core/language/language-store';
-import { HomeContent } from './home-content';
-import { ContactContent } from './contact-content';
-import { FooterContent } from './footer-content';
-import { AboutContent } from './about-content';
-import { EducationContent } from './education-content';
+import {HttpClient} from '@angular/common/http';
+import {computed, inject, Injectable, Signal} from '@angular/core';
+import {toObservable, toSignal} from '@angular/core/rxjs-interop';
+import {map, Observable, shareReplay, switchMap} from 'rxjs';
+import {ExperienceContent} from './experience-content';
+import {SkillsContent} from './skills-content';
+import {HeaderContent} from './header-content';
+import {LanguageStore} from '../core/language/language-store';
+import {HomeContent} from './home-content';
+import {ContactContent} from './contact-content';
+import {FooterContent} from './footer-content';
+import {AboutContent} from './about-content';
+import {EducationContent} from './education-content';
 
 @Injectable({
   providedIn: 'root',
@@ -31,36 +31,6 @@ export class ContentProvider {
     shareReplay(1),
   );
 
-  public getHomeContent(): Signal<HomeContent> {
-    return toSignal(this.getLocalized<HomeContent>('home.json'), {
-      initialValue: {} as HomeContent,
-    });
-  }
-
-  public getExperiencesContent(): Signal<ExperienceContent> {
-    return toSignal(this.getLocalized<ExperienceContent>('experiences.json'), {
-      initialValue: [],
-    });
-  }
-
-  public getEducationContent(): Signal<EducationContent> {
-    return toSignal(this.getLocalized<EducationContent>('education.json'), {
-      initialValue: {} as EducationContent,
-    });
-  }
-
-  public getSkillsContent(): Signal<SkillsContent> {
-    return toSignal(this.getLocalized<SkillsContent>('skills.json'), {
-      initialValue: [],
-    });
-  }
-
-  public getHeaderContent(): Signal<HeaderContent> {
-    return toSignal(this.headerContent$, {
-      initialValue: [],
-    });
-  }
-
   public getSectionTitle(id: string): Signal<string> {
     return toSignal(
       this.headerContent$.pipe(
@@ -70,14 +40,44 @@ export class ContentProvider {
     );
   }
 
+  public getHeaderContent(): Signal<HeaderContent> {
+    return toSignal(this.headerContent$, {
+      initialValue: [],
+    });
+  }
+
+  public getHomeContent(): Signal<HomeContent> {
+    return toSignal(this.getLocalized<HomeContent>('home.json'), {
+      initialValue: {} as HomeContent,
+    });
+  }
+
+  public getTypewriterContent$(): Observable<string[]> {
+    return this.typewriterWords$;
+  }
+
   public getAboutContent(): Signal<AboutContent> {
     return toSignal(this.getLocalized<AboutContent>('about.json'), {
       initialValue: [],
     });
   }
 
-  public getTypewriterContent$(): Observable<string[]> {
-    return this.typewriterWords$;
+  public getSkillsContent(): Signal<SkillsContent> {
+    return toSignal(this.getLocalized<SkillsContent>('skills.json'), {
+      initialValue: [],
+    });
+  }
+
+  public getExperienceContent(): Signal<ExperienceContent> {
+    return toSignal(this.getLocalized<ExperienceContent>('experience.json'), {
+      initialValue: [],
+    });
+  }
+
+  public getEducationContent(): Signal<EducationContent> {
+    return toSignal(this.getLocalized<EducationContent>('education.json'), {
+      initialValue: {} as EducationContent,
+    });
   }
 
   public getContactContent(): Signal<ContactContent> {

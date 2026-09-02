@@ -2,7 +2,7 @@
 
 Personal portfolio website of **Pierre Chevallier**, built with Angular.
 
-It features several sections: Home, About, Skills, Professional Experience, Education, and Contact, available in both **English and French**.
+It features several sections: Home, About, Skills, Experience, Education, and Contact, available in both **English and French**.
 
 ![Website preview](public/images/website-preview.png "Website preview")
 
@@ -36,7 +36,7 @@ src/app/
 ├── content/     # Loads the text content of the website from JSON files and provides them to the app.
 ├── core/        # Holds singleton services, guards, interceptors, and app-wide infrastructure.
 ├── layout/      # Defines the application's structural UI (header, footer, navigation, shells).
-├── sections/    # Page sections: home, about, skills, experiences, education, contact.
+├── sections/    # Page sections: home, about, skills, experience, education, contact.
 └── shared/      # Reusable directives, animations, components, pipes, and style utilities.
 
 public/

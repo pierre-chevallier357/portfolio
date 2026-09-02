@@ -1,0 +1,29 @@
+<section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="page-section"
+         id="experience" portfolioInView>
+  <h1 class="experience-title">{{ title() }}</h1>
+
+  <div #cardsContainer class="experience-content">
+    <portfolio-timeline [dotsCount]="experience().length" [height]="timelineHeight()"
+                        [top]="timelineStartingPosition()"></portfolio-timeline>
+
+    <div class="experience-card-list">
+      @for (exp of experience(); track exp.id) {
+        <article #card class="experience-card">
+          <div class="experience-card-content">
+            <h2>{{ exp.title }}</h2>
+            <p>{{ exp.description }}</p>
+            <div class="chips">
+              @for (tech of exp.technologies; track tech) {
+                <span class="chip">{{ tech }}</span>
+              }
+            </div>
+          </div>
+          <div class="logo-container">
+            <!-- TODO Add width and height based on the image size -->
+            <img [alt]="exp.company + ' logo'" [src]="exp.logo">
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -3,31 +3,31 @@
 
 .in-view {
   @include reveal-stagger((
-    '.experiences-title': 200ms,
-    '.experiences-content': 600ms,
+    '.experience-title': 200ms,
+    '.experience-content': 600ms,
   ));
 }
 
-.experiences-content {
+.experience-content {
   @include slide-down-hidden;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 5rem 1fr;
   gap: 2rem;
 
-  .experiences-cards-list {
+  .experience-card-list {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 
-    .experiences-card {
+    .experience-card {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 2rem;
       @include card;
 
-      .experiences-card-content {
+      .experience-card-content {
         flex: 1;
 
         h2 {
@@ -68,7 +68,7 @@
 }
 
 @media screen and (max-width: 56.25rem) {
-  .experiences-content {
+  .experience-content {
     grid-template-columns: 2.5rem 1fr;
 
     .logo-container img {
@@ -90,7 +90,7 @@
 }
 
 @media screen and (max-width: 37.5rem) {
-  .experiences-content {
+  .experience-content {
     grid-template-columns: 1.5rem 1fr;
     gap: 1rem;
 
