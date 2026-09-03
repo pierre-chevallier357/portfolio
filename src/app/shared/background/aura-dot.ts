@@ -63,9 +63,6 @@ export class AuraDot {
     gradient.addColorStop(1, backgroundColor);
 
     ctx.save();
-    // "multiply" keeps the pastel hues visible against the light background
-    // instead of washing out, as plain alpha blending would on a light bg.
-    ctx.globalCompositeOperation = 'multiply';
     ctx.beginPath();
     ctx.fillStyle = gradient;
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);

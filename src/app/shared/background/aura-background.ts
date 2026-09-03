@@ -8,7 +8,7 @@ import {
   NgZone,
   PLATFORM_ID,
   Signal,
-  viewChild,
+  viewChild
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AuraDot } from './aura-dot';
@@ -82,7 +82,7 @@ export class AuraBackground {
 
     const animate = (): void => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.globalCompositeOperation = this.themeStore.isDarkMode() ? 'source-over' : 'lighten';
+      ctx.globalCompositeOperation = 'source-over'; // Paint on top, latest paint wins, no blending
       for (const dot of this.dots) {
         dot.update();
         dot.draw(ctx, this.backgroundColor());

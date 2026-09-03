@@ -8,7 +8,7 @@
 
 <div #popover class="popover" id="language-popover" popover>
   @for (lang of languages; track lang.code) {
-    <button (click)="selectLanguage(lang)" [class.popover-option-active]="language().code === lang.code"
+    <button (click)="selectLanguage(lang)" [class.popover-option-active]="language()?.code === lang?.code"
             class="popover-option" type="button">
       {{ lang.label }}
     </button>
