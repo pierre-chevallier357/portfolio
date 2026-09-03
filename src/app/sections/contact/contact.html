@@ -5,7 +5,7 @@
   <div class="contact-content">
     <div class="contact-card">
       <h2 class="contact-card-title">{{ contactContent().resumeTitle }}</h2>
-      <a [download]="resumeFileName()" [href]="resumeUrl()" class="resume-button">
+      <a [download]="resumeFileName()" [href]="resumeUrl()" class="contact-button">
         <svg aria-hidden="true" class="link-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
           <path d="M0 0h24v24H0z" fill="none" stroke="none"/>
@@ -19,14 +19,16 @@
 
     <div class="contact-card">
       <h2 class="contact-card-title">{{ contactContent().mailTitle }}</h2>
+      <a [href]="'mailto:' + contactContent().email" class="contact-link">
+        <svg aria-hidden="true" class="link-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+          <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/>
+          <path d="M3 7l9 6l9 -6"/>
+        </svg>
+        <span>{{ contactContent().emailMeLabel }}</span>
+      </a>
       <div class="mail-row">
-        <a [href]="'mailto:' + contactContent().email" class="contact-link">
-          <svg aria-hidden="true" class="link-icon" fill="none" viewBox="0 0 24 24">
-            <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2"/>
-          </svg>
-          <span>{{ contactContent().email }}</span>
-        </a>
+        <span class="email-address">{{ contactContent().email }}</span>
         <button (click)="copyEmail()" [attr.aria-label]="contactContent().copyLabel"
                 [title]="contactContent().copyLabel" class="copy-button" type="button">
           @if (copied()) {

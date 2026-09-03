@@ -1,5 +1,6 @@
 {
   "mailTitle": "Mail",
+  "emailMeLabel": "Envoyez-moi un email",
   "email": "example@example.com",
   "copyLabel": "Copier dans le presse-papiers",
   "copiedLabel": "Copié dans le presse-papiers",

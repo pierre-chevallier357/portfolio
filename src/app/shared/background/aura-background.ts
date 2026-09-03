@@ -8,7 +8,7 @@ import {
   NgZone,
   PLATFORM_ID,
   Signal,
-  viewChild
+  viewChild,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AuraDot } from './aura-dot';

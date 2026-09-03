@@ -1,5 +1,6 @@
 {
   "mailTitle": "Mail",
+  "emailMeLabel": "Email me",
   "email": "example@example.com",
   "copyLabel": "Copy to clipboard",
   "copiedLabel": "Copied to clipboard",

@@ -1,5 +1,6 @@
 export interface ContactContent {
   mailTitle: string;
+  emailMeLabel: string;
   socialMediasTitle: string;
   copyLabel: string;
   copiedLabel: string;
