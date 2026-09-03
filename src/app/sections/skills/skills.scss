@@ -1,5 +1,6 @@
 @use 'slide-down' as *;
 @use 'card' as *;
+@use 'hover-translate' as *;
 
 .in-view {
   @include reveal-stagger((
@@ -37,9 +38,50 @@
       gap: 1rem;
 
       .skill-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
+        @include card(0.5rem 1rem, 0.75rem, var(--surface-color-2));
+        @include hover-translate(0.15rem);
+
+        summary {
+          cursor: pointer;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          padding: 0.5rem 0;
+
+          &::-webkit-details-marker {
+            display: none;
+          }
+
+          .skill-summary-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            min-width: 0;
+          }
+
+          .chevron {
+            flex-shrink: 0;
+            width: 2rem;
+            height: 2rem;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        &[open] summary {
+          padding-bottom: 0.25rem;
+
+          .chevron {
+            transform: rotate(180deg);
+          }
+        }
+
+        .skill-description {
+          margin: 0 0 0.75rem;
+          line-height: 1.6;
+        }
 
         .skill-header {
           display: flex;
@@ -55,7 +97,8 @@
           height: 0.625rem;
           overflow: hidden;
           border-radius: 1rem;
-          background-color: var(--surface-color-2);
+          background-color: var(--surface-color-1);
+          box-shadow: inset var(--shadow);
         }
 
         .progress-bar-fill {

@@ -1,42 +1,206 @@
 [
   {
+    "title": "Principal",
+    "description": "Les technologies principales sur lesquelles je m’appuie le plus, sur toute la stack.",
+    "skills": [
+      {
+        "name": "Angular",
+        "level": 90,
+        "color": "tiger-flame",
+        "description": "Mon framework principal pour construire des applications web modernes, orientées composants, en mettant l’accent sur la performance et la maintenabilité."
+      },
+      {
+        "name": "Java",
+        "level": 88,
+        "color": "golden-orange",
+        "description": "La base de la plupart des systèmes back-end que j’ai développés, des services REST aux applications d’entreprise."
+      },
+      {
+        "name": "Spring Boot",
+        "level": 82,
+        "color": "yellow-green",
+        "description": "Mon framework de prédilection pour construire rapidement des services Java prêts pour la production, avec un minimum de configuration."
+      },
+      {
+        "name": "TypeScript",
+        "level": 85,
+        "color": "brilliant-azure",
+        "description": "Utilisé quotidiennement pour apporter un typage statique et un meilleur outillage au JavaScript, notamment avec Angular."
+      }
+    ]
+  },
+  {
     "title": "Front-end",
     "description": "Développement d’interfaces modernes, performantes et responsives.\nExpérience sur les frameworks et bibliothèques web actuels.",
     "skills": [
-      { "name": "Angular", "level": 90, "color": "tiger-flame" },
-      { "name": "TypeScript", "level": 85, "color": "brilliant-azure" },
-      { "name": "HTML5", "level": 95, "color": "golden-orange" },
-      { "name": "SCSS", "level": 80, "color": "blush-rose" },
-      { "name": "RxJS", "level": 75, "color": "dusty-grape" }
+      {
+        "name": "Angular",
+        "level": 90,
+        "color": "tiger-flame",
+        "description": "Construction d’applications web modernes, performantes et responsives avec une architecture orientée composants."
+      },
+      {
+        "name": "TypeScript",
+        "level": 85,
+        "color": "brilliant-azure",
+        "description": "Ajout d’un typage statique au JavaScript pour des refactorings plus sûrs, une meilleure autocomplétion et moins d’erreurs à l’exécution."
+      },
+      {
+        "name": "HTML5",
+        "level": 95,
+        "color": "golden-orange",
+        "description": "Rédaction d’un balisage sémantique et accessible, base de chaque interface que je construis."
+      },
+      {
+        "name": "SCSS",
+        "level": 80,
+        "color": "blush-rose",
+        "description": "Structuration de feuilles de style maintenables avec variables, mixins et imbrication pour des design systems cohérents."
+      },
+      {
+        "name": "RxJS",
+        "level": 75,
+        "color": "dusty-grape",
+        "description": "Gestion des flux de données asynchrones et des états UI complexes avec la programmation réactive."
+      }
     ]
   },
   {
     "title": "Back-end",
     "description": "Conception de services robustes et évolutifs.\nMise en œuvre d’APIs et intégration avec les bases de données.",
     "skills": [
-      { "name": "Java", "level": 88, "color": "golden-orange" },
-      { "name": "Spring Boot", "level": 82, "color": "yellow-green" },
-      { "name": "REST APIs", "level": 90, "color": "default" },
-      { "name": "SQL", "level": 78, "color": "default" }
+      {
+        "name": "Java",
+        "level": 88,
+        "color": "golden-orange",
+        "description": "Conception de services back-end orientés objet robustes et d’APIs pour des applications d’entreprise."
+      },
+      {
+        "name": "Spring Boot",
+        "level": 82,
+        "color": "yellow-green",
+        "description": "Construction et configuration rapides de services REST, de la sécurité et des couches d’accès aux données, prêts pour la production."
+      },
+      {
+        "name": "REST APIs",
+        "level": 90,
+        "color": "default",
+        "description": "Conception d’APIs HTTP claires, bien documentées et versionnées, faciles à consommer et à maintenir."
+      },
+      {
+        "name": "SQL",
+        "level": 78,
+        "color": "default",
+        "description": "Écriture de requêtes efficaces et conception de schémas relationnels pour un stockage de données fiable."
+      }
     ]
   },
   {
     "title": "DevOps",
     "description": "Gestion des infrastructures et automatisation des déploiements.\nMise en place de pipelines CI/CD et surveillance des systèmes.",
     "skills": [
-      { "name": "Docker", "level": 80, "color": "brilliant-azure" },
-      { "name": "Kubernetes", "level": 75, "color": "smart-blue" },
-      { "name": "GitLab CI/CD", "level": 75, "color": "golden-orange" }
+      {
+        "name": "Docker",
+        "level": 80,
+        "color": "brilliant-azure",
+        "description": "Conteneurisation des applications pour des environnements cohérents et reproductibles, du développement à la production."
+      },
+      {
+        "name": "Kubernetes",
+        "level": 75,
+        "color": "smart-blue",
+        "description": "Orchestration de charges de travail conteneurisées, gestion de la montée en charge, des déploiements et de la découverte de services."
+      },
+      {
+        "name": "GitLab CI/CD",
+        "level": 75,
+        "color": "golden-orange",
+        "description": "Automatisation des pipelines de build, de test et de déploiement pour livrer plus vite et plus fiablement."
+      }
+    ]
+  },
+  {
+    "title": "Soft skills",
+    "description": "Qualités relationnelles et organisationnelles qui soutiennent le travail technique.\nAider les équipes à collaborer et à livrer efficacement.",
+    "skills": [
+      {
+        "name": "Communication",
+        "level": 90,
+        "color": "blush-rose",
+        "description": "Expliquer des concepts techniques clairement, à des publics techniques comme non techniques."
+      },
+      {
+        "name": "Travail d’équipe",
+        "level": 88,
+        "color": "smart-blue",
+        "description": "Collaborer étroitement avec les développeurs, designers et product owners pour atteindre des objectifs communs."
+      },
+      {
+        "name": "Résolution de problèmes",
+        "level": 92,
+        "color": "tiger-flame",
+        "description": "Décomposer des problèmes complexes de manière méthodique pour trouver des solutions pragmatiques et efficaces."
+      },
+      {
+        "name": "Adaptabilité",
+        "level": 85,
+        "color": "yellow-green",
+        "description": "S’adapter rapidement à de nouveaux outils, exigences et contraintes sans perdre en efficacité."
+      },
+      {
+        "name": "Autonomie",
+        "level": 87,
+        "color": "dusty-grape",
+        "description": "Prendre en charge des tâches de l’analyse à la livraison avec un minimum de supervision."
+      }
+    ]
+  },
+  {
+    "title": "Langues",
+    "description": "Langues parlées utilisées au quotidien et dans un cadre professionnel.",
+    "skills": [
+      {
+        "name": "Français",
+        "level": 100,
+        "color": "brilliant-azure",
+        "description": "Langue maternelle, utilisée au quotidien et dans un cadre professionnel."
+      },
+      {
+        "name": "Anglais",
+        "level": 85,
+        "color": "golden-orange",
+        "description": "Courant à l’écrit comme à l’oral, utilisé quotidiennement pour la documentation technique et la collaboration."
+      }
     ]
   },
   {
     "title": "Autres",
     "description": "Compétences variées et outils complémentaires.\nExpérience sur différents aspects du développement et de l’infrastructure.",
     "skills": [
-      { "name": "Jira", "level": 80, "color": "brilliant-azure" },
-      { "name": "Git", "level": 75, "color": "golden-orange" },
-      { "name": "Méthodes agiles", "level": 75, "color": "default" },
-      { "name": "Cycle en V", "level": 75, "color": "default" }
+      {
+        "name": "Jira",
+        "level": 80,
+        "color": "brilliant-azure",
+        "description": "Suivi des tâches, sprints et backlogs pour garder des projets agiles organisés et transparents."
+      },
+      {
+        "name": "Git",
+        "level": 75,
+        "color": "golden-orange",
+        "description": "Gestion du contrôle de source avec des stratégies de branches adaptées au travail en équipe."
+      },
+      {
+        "name": "Méthodes agiles",
+        "level": 75,
+        "color": "default",
+        "description": "Travailler par cycles itératifs avec des retours réguliers pour livrer continuellement de la valeur."
+      },
+      {
+        "name": "Cycle en V",
+        "level": 75,
+        "color": "default",
+        "description": "Suivre un processus de développement structuré, guidé par la vérification, pour les systèmes critiques."
+      }
     ]
   }
 ]

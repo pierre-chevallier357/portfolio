@@ -4,6 +4,7 @@ export interface Skill {
   name: string;
   level: number;
   color: string;
+  description: string;
 }
 
 export interface SkillCategory {

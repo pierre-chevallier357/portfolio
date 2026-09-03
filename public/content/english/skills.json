@@ -1,42 +1,206 @@
 [
   {
+    "title": "Main",
+    "description": "The core technologies I rely on most, across the stack.",
+    "skills": [
+      {
+        "name": "Angular",
+        "level": 90,
+        "color": "tiger-flame",
+        "description": "My primary framework for building modern, component-driven single-page applications with a strong focus on performance and maintainability."
+      },
+      {
+        "name": "Java",
+        "level": 88,
+        "color": "golden-orange",
+        "description": "The backbone of most back-end systems I've built, from REST services to enterprise applications."
+      },
+      {
+        "name": "Spring Boot",
+        "level": 82,
+        "color": "yellow-green",
+        "description": "My go-to framework for quickly building production-ready Java services with minimal boilerplate."
+      },
+      {
+        "name": "TypeScript",
+        "level": 85,
+        "color": "brilliant-azure",
+        "description": "Used daily to bring type safety and better tooling to JavaScript codebases, especially within Angular."
+      }
+    ]
+  },
+  {
     "title": "Front-end",
     "description": "Development of modern, high-performance, and responsive user interfaces.\nExperience with current web frameworks and libraries.",
     "skills": [
-      { "name": "Angular", "level": 90, "color": "tiger-flame" },
-      { "name": "TypeScript", "level": 85, "color": "brilliant-azure" },
-      { "name": "HTML5", "level": 95, "color": "golden-orange" },
-      { "name": "SCSS", "level": 80, "color": "blush-rose" },
-      { "name": "RxJS", "level": 75, "color": "dusty-grape" }
+      {
+        "name": "Angular",
+        "level": 90,
+        "color": "tiger-flame",
+        "description": "Building modern, high-performance and responsive single-page applications with a component-based architecture."
+      },
+      {
+        "name": "TypeScript",
+        "level": 85,
+        "color": "brilliant-azure",
+        "description": "Adding static typing to JavaScript for safer refactors, better autocompletion and fewer runtime errors."
+      },
+      {
+        "name": "HTML5",
+        "level": 95,
+        "color": "golden-orange",
+        "description": "Writing semantic, accessible markup as the foundation of every interface I build."
+      },
+      {
+        "name": "SCSS",
+        "level": 80,
+        "color": "blush-rose",
+        "description": "Structuring maintainable stylesheets with variables, mixins and nesting for consistent design systems."
+      },
+      {
+        "name": "RxJS",
+        "level": 75,
+        "color": "dusty-grape",
+        "description": "Managing asynchronous data streams and complex UI state with reactive programming patterns."
+      }
     ]
   },
   {
     "title": "Back-end",
     "description": "Design of robust and scalable services.\nImplementation of APIs and integration with databases.",
     "skills": [
-      { "name": "Java", "level": 88, "color": "golden-orange" },
-      { "name": "Spring Boot", "level": 82, "color": "yellow-green" },
-      { "name": "REST APIs", "level": 90, "color": "default" },
-      { "name": "SQL", "level": 78, "color": "default" }
+      {
+        "name": "Java",
+        "level": 88,
+        "color": "golden-orange",
+        "description": "Designing robust, object-oriented back-end services and APIs for enterprise-grade applications."
+      },
+      {
+        "name": "Spring Boot",
+        "level": 82,
+        "color": "yellow-green",
+        "description": "Rapidly building and configuring production-ready REST services, security and data access layers."
+      },
+      {
+        "name": "REST APIs",
+        "level": 90,
+        "color": "default",
+        "description": "Designing clean, well-documented and versioned HTTP APIs that are easy to consume and maintain."
+      },
+      {
+        "name": "SQL",
+        "level": 78,
+        "color": "default",
+        "description": "Writing efficient queries and designing relational schemas for reliable data storage."
+      }
     ]
   },
   {
     "title": "DevOps",
     "description": "Infrastructure management and deployment automation.\nImplementation of CI/CD pipelines and system monitoring.",
     "skills": [
-      { "name": "Docker", "level": 80, "color": "brilliant-azure" },
-      { "name": "Kubernetes", "level": 75, "color": "smart-blue" },
-      { "name": "GitLab CI/CD", "level": 75, "color": "golden-orange" }
+      {
+        "name": "Docker",
+        "level": 80,
+        "color": "brilliant-azure",
+        "description": "Containerizing applications for consistent, reproducible environments across development and production."
+      },
+      {
+        "name": "Kubernetes",
+        "level": 75,
+        "color": "smart-blue",
+        "description": "Orchestrating containerized workloads, handling scaling, deployments and service discovery."
+      },
+      {
+        "name": "GitLab CI/CD",
+        "level": 75,
+        "color": "golden-orange",
+        "description": "Automating build, test and deployment pipelines to ship code faster and more reliably."
+      }
+    ]
+  },
+  {
+    "title": "Soft skills",
+    "description": "Interpersonal and organizational strengths that support technical work.\nHelping teams collaborate and deliver effectively.",
+    "skills": [
+      {
+        "name": "Communication",
+        "level": 90,
+        "color": "blush-rose",
+        "description": "Explaining technical concepts clearly to both technical and non-technical audiences."
+      },
+      {
+        "name": "Teamwork",
+        "level": 88,
+        "color": "smart-blue",
+        "description": "Collaborating closely with developers, designers and product owners to deliver shared goals."
+      },
+      {
+        "name": "Problem solving",
+        "level": 92,
+        "color": "tiger-flame",
+        "description": "Breaking down complex issues methodically to find pragmatic, effective solutions."
+      },
+      {
+        "name": "Adaptability",
+        "level": 85,
+        "color": "yellow-green",
+        "description": "Quickly adjusting to new tools, requirements and constraints without losing momentum."
+      },
+      {
+        "name": "Autonomy",
+        "level": 87,
+        "color": "dusty-grape",
+        "description": "Taking ownership of tasks from analysis to delivery with minimal supervision."
+      }
+    ]
+  },
+  {
+    "title": "Languages",
+    "description": "Spoken languages used for everyday and professional communication.",
+    "skills": [
+      {
+        "name": "French",
+        "level": 100,
+        "color": "brilliant-azure",
+        "description": "Native language, used for everyday and professional communication."
+      },
+      {
+        "name": "English",
+        "level": 85,
+        "color": "golden-orange",
+        "description": "Fluent in both written and spoken English, used daily for technical documentation and collaboration."
+      }
     ]
   },
   {
     "title": "Other",
     "description": "Various skills and complementary tools.\nExperience across different aspects of software development and infrastructure.",
     "skills": [
-      { "name": "Jira", "level": 80, "color": "brilliant-azure" },
-      { "name": "Git", "level": 75, "color": "golden-orange" },
-      { "name": "Agile Methodologies", "level": 75, "color": "default" },
-      { "name": "V-Model", "level": 75, "color": "default" }
+      {
+        "name": "Jira",
+        "level": 80,
+        "color": "brilliant-azure",
+        "description": "Tracking tasks, sprints and backlogs to keep agile projects organized and transparent."
+      },
+      {
+        "name": "Git",
+        "level": 75,
+        "color": "golden-orange",
+        "description": "Managing source control with branching strategies suited to team workflows."
+      },
+      {
+        "name": "Agile Methodologies",
+        "level": 75,
+        "color": "default",
+        "description": "Working in iterative cycles with regular feedback loops to continuously deliver value."
+      },
+      {
+        "name": "V-Model",
+        "level": 75,
+        "color": "default",
+        "description": "Following a structured, verification-driven development process for critical systems."
+      }
     ]
   }
 ]
