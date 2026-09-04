@@ -1,7 +1,5 @@
 <footer (inView)="isInView.set(true)" [class.in-view]="isInView()" class="footer" portfolioInView>
-  <div class="footer-content">
-    <p class="footer-line">{{ footerContent().copyright }} {{ currentYear }} {{ footerContent().allRightsReserved }}</p>
-    <p class="footer-line">{{ footerContent().madeWithLove }}</p>
-    <p class="footer-line">{{ footerContent().bestPractices }}</p>
-  </div>
+  <p class="footer-line">{{ footerContent().copyright }} {{ currentYear }} {{ footerContent().allRightsReserved }}</p>
+  <p class="footer-line">{{ footerContent().madeWithLove }}</p>
+  <p class="footer-line">{{ footerContent().bestPractices }}</p>
 </footer>
