@@ -1,0 +1,15 @@
+<section [attr.aria-label]="experience().company" class="experience-item-section">
+  <header class="experience-item-header">
+    <h3 class="experience-item-name">{{ experience().company }}</h3>
+  </header>
+
+  <div #missionsContainer class="experience-item-body">
+    <portfolio-timeline [dotPositions]="dotPositions()" [height]="timelineHeight()"
+                        [top]="timelineStartingPosition()"></portfolio-timeline>
+    <div class="experience-item-missions">
+      @for (mission of experience().missions; track mission.id) {
+        <portfolio-mission-item [mission]="mission"/>
+      }
+    </div>
+  </div>
+</section>

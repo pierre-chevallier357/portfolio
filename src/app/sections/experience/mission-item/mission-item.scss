@@ -4,7 +4,7 @@
   display: block;
 }
 
-.entry-meta {
+.mission-meta-info {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -15,32 +15,32 @@
   text-transform: uppercase;
   color: var(--pine-teal-700);
 
-  .entry-separator {
+  .meta-info-separator {
     opacity: 0.6;
   }
 }
 
-:host-context([data-theme='dark']) .entry-meta {
+:host-context([data-theme='dark']) .mission-meta-info {
   color: var(--soft-linen-300);
 }
 
-.entry-card {
+.mission-card {
   position: relative;
   margin-bottom: 2rem;
   @include card;
 
-  .entry-role {
+  .mission-role-company {
     margin: 1.75rem 0 0.75rem;
     font-size: var(--font-size-h4);
   }
 
-  .entry-summary {
+  .mission-summary {
     margin: 0 0 1.25rem;
     padding: 0.75rem 1rem;
     line-height: 1.6;
   }
 
-  .entry-tech {
+  .mission-technologies {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -48,14 +48,14 @@
     padding: 0;
     list-style: none;
 
-    .tech-badge {
+    .tech-chip {
       @include card(0.5rem 0.8rem, 2rem, var(--surface-color-2));
       font-size: var(--font-size-small);
       font-weight: 600;
     }
   }
 
-  .entry-details {
+  .mission-details {
     border-top: var(--border);
     padding-top: 0.75rem;
 
@@ -83,20 +83,20 @@
       transform: rotate(180deg);
     }
 
-    .entry-description {
+    .mission-description {
       margin: 0.75rem 0 0;
       line-height: 1.7;
     }
   }
 
-  :host-context([data-theme='dark']) .entry-details summary {
+  :host-context([data-theme='dark']) .mission-details summary {
     color: var(--soft-linen-300);
   }
 }
 
 @media screen and (max-width: 37.5rem) {
-  .entry-card {
-    .entry-role {
+  .mission-card {
+    .mission-role-company {
       margin-top: 2.25rem;
     }
   }

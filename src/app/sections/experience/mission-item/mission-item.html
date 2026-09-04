@@ -1,0 +1,26 @@
+<p #metaInfo class="mission-meta-info">
+  <span>{{ mission().period }}</span>
+  <span aria-hidden="true" class="meta-info-separator">|</span>
+  <span>{{ mission().location }}</span>
+</p>
+<article class="mission-card">
+  <h3 class="mission-role-company">{{ mission().role }} | {{ mission().company }}</h3>
+  <p class="mission-summary">{{ mission().summary }}</p>
+  <ul aria-label="Technologies" class="mission-technologies">
+    @for (tech of mission().technologies; track tech) {
+      <li>
+        <span class="tech-chip">{{ tech }}</span>
+      </li>
+    }
+  </ul>
+  <details class="mission-details">
+    <summary>
+      <span>{{ seeMoreLabel() }}</span>
+      <svg aria-hidden="true" class="chevron" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </summary>
+    <p class="mission-description">{{ mission().description }}</p>
+  </details>
+</article>

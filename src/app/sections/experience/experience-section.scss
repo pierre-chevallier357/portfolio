@@ -2,12 +2,12 @@
 
 .in-view {
   @include reveal-stagger((
-    '.experience-title': 200ms,
-    '.experience-content': 600ms,
+    '.experience-section-title': 200ms,
+    '.experience-section-content': 600ms,
   ));
 }
 
-.experience-content {
+.experience-section-content {
   @include slide-down-hidden;
   margin: 0 auto;
   width: 100%;

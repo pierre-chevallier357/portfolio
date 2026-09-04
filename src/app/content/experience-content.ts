@@ -1,6 +1,6 @@
-export type ExperienceContent = ExperienceEntry[];
+export type ExperienceContent = Experience[];
 
-export interface ExperienceEntry {
+export interface Experience {
   id: number;
   company: string;
   missions: Mission[];
