@@ -31,13 +31,13 @@
         flex: 1;
 
         h2 {
-          margin-bottom: 0.75rem;
+          margin: 0.5rem 0 0.75rem;
           font-weight: 700;
         }
 
         p {
           line-height: 1.7;
-          margin-bottom: 1rem;
+          margin: 0 0 1rem;
         }
 
         .chips {
@@ -47,7 +47,7 @@
 
 
           .chip {
-            @include card(0.5rem 1rem, 2rem, var(--surface-color-2));
+            @include card(0.5rem 0.8rem, 2rem, var(--surface-color-2));
             font-size: var(--font-size-small);
             font-weight: 600;
           }
