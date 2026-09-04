@@ -33,9 +33,7 @@ export class ContentProvider {
 
   public getSectionTitle(id: string): Signal<string> {
     return toSignal(
-      this.headerContent$.pipe(
-        map((navLinks) => navLinks.find((navLink) => navLink.id === id)?.text ?? ''),
-      ),
+      this.headerContent$.pipe(map((titles) => titles.find((t) => t.id === id)?.text ?? '')),
       { initialValue: '' },
     );
   }

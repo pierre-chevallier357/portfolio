@@ -1,6 +1,6 @@
-export type HeaderContent = NavLink[];
+export type HeaderContent = HeaderNavLink[];
 
-export interface NavLink {
+export interface HeaderNavLink {
   id: string;
   href: string;
   text: string;
