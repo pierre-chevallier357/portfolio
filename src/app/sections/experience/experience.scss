@@ -79,7 +79,7 @@
 }
 
 @media screen and (max-width: 48rem) {
-  .card {
+  .experience-card {
     flex-direction: column-reverse;
     align-items: flex-start;
 
@@ -94,7 +94,7 @@
     grid-template-columns: 1.5rem 1fr;
     gap: 1rem;
 
-    .card {
+    .experience-card {
       padding: 1.25rem;
     }
   }
