@@ -182,8 +182,8 @@
   --font-size-h4: clamp(1.3rem, 0.5rem + 0.8vw, 1.5rem);
   --font-size-h5: clamp(1.2rem, 0.5rem + 0.7vw, 1.25rem);
   --font-size-h6: clamp(1.1rem, 0.5rem + 0.6vw, 1.125rem);
-  --font-size-link: clamp(0.875rem, 0.8rem + 0.3vw, 1.125rem);
-  --font-size-small: clamp(0.875rem, 0.8rem + 0.1vw, 1rem);
+  --font-size-small: clamp(0.875rem, 0.8rem + 0.3vw, 1.125rem);
+  --font-size-extra-small: clamp(0.875rem, 0.8rem + 0.1vw, 1rem);
 
   color-scheme: light;
   --text-color: var(--pine-teal);
@@ -295,7 +295,7 @@ h6 {
 }
 
 a {
-  font-size: var(--font-size-link);
+  font-size: var(--font-size-small);
   color: var(--text-color);
 
   &:hover {

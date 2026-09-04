@@ -4,7 +4,7 @@
   <span>{{ mission().location }}</span>
 </p>
 <article class="mission-card">
-  <h3 class="mission-role-company">{{ mission().role }} | {{ mission().company }}</h3>
+  <h3 class="mission-title">{{ mission().role }} | {{ mission().company }}</h3>
   <p class="mission-summary">{{ mission().summary }}</p>
   <ul aria-label="Technologies" class="mission-technologies">
     @for (tech of mission().technologies; track tech) {

@@ -5,18 +5,11 @@
 .experience-item-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%;
 
-  .experience-item-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-
-    .experience-item-name {
-      margin: 0;
-    }
+  .experience-item-title {
+    margin: 0;
   }
 
   .experience-item-body {

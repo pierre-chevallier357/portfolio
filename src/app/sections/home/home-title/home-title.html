@@ -9,8 +9,7 @@
   <portfolio-self-writing-text/>
 </span>
 
-<!-- Hidden ghost stack: one variant per possible typed phrase, used only to reserve this
-     heading's longest height so the typewriter effect never shifts the layout. -->
+<!-- Hidden ghost element used to reserve this heading's maximum height so the typewriter effect never shifts the whole layout. -->
 <span aria-hidden="true" class="ghost">
   @for (phrase of ghostPhrases(); track $index) {
     <span class="ghost-variant">
