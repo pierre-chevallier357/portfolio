@@ -4,12 +4,12 @@
 
 .in-view {
   @include reveal-stagger((
-    '.education-title': 200ms,
-    '.education-content': 600ms,
+    '.education-section-title': 200ms,
+    '.education-section-content': 600ms,
   ));
 }
 
-.education-content {
+.education-section-content {
   @include slide-down-hidden;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@
 }
 
 @media screen and (max-width: 48rem) {
-  .education-content {
+  .education-section-content {
     width: 100%;
     max-width: none;
   }

@@ -1,16 +1,16 @@
-import {HttpClient} from '@angular/common/http';
-import {computed, inject, Injectable, Signal} from '@angular/core';
-import {toObservable, toSignal} from '@angular/core/rxjs-interop';
-import {map, Observable, shareReplay, switchMap} from 'rxjs';
-import {ExperienceContent} from './experience-content';
-import {SkillsContent} from './skills-content';
-import {HeaderContent} from './header-content';
-import {LanguageStore} from '../core/language/language-store';
-import {HomeContent} from './home-content';
-import {ContactContent} from './contact-content';
-import {FooterContent} from './footer-content';
-import {AboutContent} from './about-content';
-import {EducationContent} from './education-content';
+import { HttpClient } from '@angular/common/http';
+import { computed, inject, Injectable, Signal } from '@angular/core';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { map, Observable, shareReplay, switchMap } from 'rxjs';
+import { ExperienceContent } from './experience-content';
+import { SkillsContent } from './skills-content';
+import { HeaderContent } from './header-content';
+import { LanguageStore } from '../core/language/language-store';
+import { HomeContent } from './home-content';
+import { ContactContent } from './contact-content';
+import { FooterContent } from './footer-content';
+import { AboutContent } from './about-content';
+import { EducationContent } from './education-content';
 
 @Injectable({
   providedIn: 'root',

@@ -4,12 +4,12 @@
 
 .in-view {
   @include reveal-stagger((
-    '.contact-title': 200ms,
-    '.contact-content': 600ms,
+    '.contact-section-title': 200ms,
+    '.contact-section-content': 600ms,
   ));
 }
 
-.contact-content {
+.contact-section-content {
   @include slide-down-hidden;
   display: flex;
   flex-direction: row;
@@ -120,13 +120,13 @@
 }
 
 @media screen and (max-width: 75rem) {
-  .contact-content {
+  .contact-section-content {
     gap: 4vw;
   }
 }
 
 @media screen and (max-width: 62.5rem) {
-  .contact-content {
+  .contact-section-content {
     flex-direction: column;
     align-items: center;
     gap: 2rem;

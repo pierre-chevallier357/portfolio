@@ -3,13 +3,13 @@
 
 .in-view {
   @include reveal-stagger((
-    '.about-title': 200ms,
+    '.about-section-title': 200ms,
     '.paragraph': 600ms,
     '.picture-frame': 1000ms,
   ));
 }
 
-.about-content {
+.about-section-content {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -47,7 +47,7 @@
 }
 
 @media screen and (max-width: 62.5rem) {
-  .about-content {
+  .about-section-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;

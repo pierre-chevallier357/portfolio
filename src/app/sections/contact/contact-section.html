@@ -1,8 +1,8 @@
 <section (inView)="isInView.set(true)" [class.in-view]="isInView()" class="page-section" id="contact"
          portfolioInView>
-  <h1 class="contact-title">{{ title() }}</h1>
+  <h1 class="contact-section-title">{{ title() }}</h1>
 
-  <div class="contact-content">
+  <div class="contact-section-content">
     <div class="contact-card">
       <h2 class="contact-card-title">{{ contactContent().resumeTitle }}</h2>
       <a [download]="resumeFileName()" [href]="resumeUrl()" class="contact-button">

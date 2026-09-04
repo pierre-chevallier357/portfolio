@@ -1,4 +1,13 @@
-import { Component, computed, ElementRef, inject, input, InputSignal, Signal, viewChild } from '@angular/core';
+import {
+  Component,
+  computed,
+  ElementRef,
+  inject,
+  input,
+  InputSignal,
+  Signal,
+  viewChild,
+} from '@angular/core';
 import { Mission } from '../../../content/experience-content';
 import { LanguageStore } from '../../../core/language/language-store';
 

@@ -15,27 +15,27 @@
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
   grid-template-areas:
-    "title portrait"
-    "about about";
+    "home-section-title home-section-portrait"
+    "home-section-about-link home-section-about-link";
   align-items: center;
   margin: 10vh auto;
   width: 80vw;
   column-gap: 3rem;
   scroll-margin-top: 14rem;
 
-  .home-title {
+  .home-section-title {
     width: 100%;
     position: relative;
     font-size: clamp(3rem, 0.5rem + 5vw, 10rem);
     letter-spacing: -0.125rem;
     margin: 0 0 2rem;
-    grid-area: title;
+    grid-area: home-section-title;
     text-align: start;
   }
 
-  .portrait {
+  .home-section-portrait {
     @include slide-down-hidden;
-    grid-area: portrait;
+    grid-area: home-section-portrait;
     position: relative;
     margin: 0;
 
@@ -98,10 +98,10 @@
     }
   }
 
-  .about-link {
+  .home-section-about-link {
     @include slide-down-hidden;
     @include hover-translate;
-    grid-area: about;
+    grid-area: home-section-about-link;
     text-decoration: none;
     border: 0.125rem solid var(--text-color);
     border-radius: 2rem;
@@ -123,15 +123,15 @@
 
   &.in-view {
     @include reveal-stagger((
-      '.home-title': 200ms,
-      '.portrait': 600ms,
-      '.about-link': 1000ms,
+      '.home-section-title': 200ms,
+      '.home-section-portrait': 600ms,
+      '.home-section-about-link': 1000ms,
     ));
   }
 }
 
 @media (min-width: 62rem) {
-  .home-title {
+  .home-section-title {
     letter-spacing: -0.25rem;
   }
 }
@@ -145,9 +145,9 @@
   .home-section {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "title"
-      "portrait"
-      "about";
+      "home-section-title"
+      "home-section-portrait"
+      "home-section-about-link";
     justify-items: center;
     gap: 2rem;
     margin: 0 auto;
@@ -156,16 +156,16 @@
     column-gap: 0;
     scroll-margin-top: 8rem;
 
-    .home-title {
+    .home-section-title {
       margin: 0;
       text-align: center;
     }
 
-    .about-link {
+    .home-section-about-link {
       margin-left: 0;
     }
 
-    .portrait {
+    .home-section-portrait {
       .profile-picture {
         max-width: 80vw;
       }
