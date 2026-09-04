@@ -2,41 +2,101 @@
   {
     "id": 1,
     "company": "NovaTech",
-    "logo": "assets/logos/novatech.svg",
-    "title": "Développeur Front-End Angular",
-    "description": "Développement d’un portail métier destiné aux équipes internes. Mise en place d’interfaces performantes et amélioration continue de l’expérience utilisateur.",
-    "technologies": ["Angular", "TypeScript", "RxJS", "SCSS"]
+    "missions": [
+      {
+        "id": 11,
+        "period": "Mars 2023 - Aujourd'hui",
+        "location": "Lyon, France (Hybride)",
+        "role": "Développeur Front-End Angular",
+        "company": "Portail métier interne",
+        "summary": "Refonte du portail métier utilisé quotidiennement par plus de 800 collaborateurs, temps de chargement divisés par deux.",
+        "description": "Développement d'un portail métier destiné aux équipes internes. Mise en place d'interfaces performantes, migration vers une gestion d'état à base de signaux et amélioration continue de l'expérience utilisateur en étroite collaboration avec les équipes produit et design.",
+        "technologies": ["Angular", "TypeScript", "RxJS", "SCSS"]
+      }
+    ]
   },
   {
     "id": 2,
     "company": "DataSphere",
-    "logo": "assets/logos/datasphere.svg",
-    "title": "Développeur Full-Stack",
-    "description": "Conception de services web et d’API REST pour des applications de gestion. Participation aux choix techniques et aux revues de code.",
-    "technologies": ["Angular", "Node.js", "NestJS", "PostgreSQL"]
+    "missions": [
+      {
+        "id": 21,
+        "period": "Juin 2022 - Fév 2023",
+        "location": "Télétravail",
+        "role": "Développeur Full-Stack",
+        "company": "Client : FleetOps",
+        "summary": "Conception de la couche d'API REST de la plateforme de gestion de flotte FleetOps, plus de 50k requêtes/jour.",
+        "description": "Conception de services web et d'API REST pour des applications de gestion. Participation aux choix techniques et aux revues de code, ainsi qu'à la définition des standards de code adoptés par l'équipe d'ingénierie.",
+        "technologies": ["Angular", "Node.js", "NestJS", "PostgreSQL"]
+      },
+      {
+        "id": 22,
+        "period": "Jan 2022 - Mai 2022",
+        "location": "Télétravail",
+        "role": "Développeur Front-End",
+        "company": "Client : FleetOps",
+        "summary": "Livraison du premier prototype de tableau de bord interactif, validé par les parties prenantes en moins de six semaines.",
+        "description": "Réalisation du premier prototype de tableau de bord utilisé pour valider les orientations produit avec les parties prenantes, avec un accent sur l'itération rapide et les retours fréquents de l'équipe design.",
+        "technologies": ["Angular", "RxJS", "Chart.js"]
+      },
+      {
+        "id": 23,
+        "period": "Jan 2022 - Mai 2022",
+        "location": "Télétravail",
+        "role": "Développeur Front-End",
+        "company": "Client : FleetOps",
+        "summary": "Livraison du premier prototype de tableau de bord interactif, validé par les parties prenantes en moins de six semaines.",
+        "description": "Réalisation du premier prototype de tableau de bord utilisé pour valider les orientations produit avec les parties prenantes, avec un accent sur l'itération rapide et les retours fréquents de l'équipe design.",
+        "technologies": ["Angular", "RxJS", "Chart.js"]
+      }
+    ]
   },
   {
     "id": 3,
     "company": "GreenSoft",
-    "logo": "assets/logos/greensoft.svg",
-    "title": "Ingénieur Logiciel",
-    "description": "Création de solutions logicielles pour le suivi d’indicateurs environnementaux avec intégration de tableaux de bord interactifs.",
-    "technologies": ["Angular", "C#", ".NET", "Azure"]
+    "missions": [
+      {
+        "id": 31,
+        "period": "Sep 2020 - Déc 2021",
+        "location": "Grenoble, France",
+        "role": "Ingénieur Logiciel",
+        "company": "Projet : EcoWatch",
+        "summary": "Livraison de tableaux de bord interactifs de suivi d'indicateurs environnementaux pour 12 partenaires régionaux.",
+        "description": "Création de solutions logicielles pour le suivi d'indicateurs environnementaux avec intégration de tableaux de bord interactifs et de pipelines de reporting automatisés utilisés par les partenaires régionaux.",
+        "technologies": ["Angular", "C#", ".NET", "Azure"]
+      }
+    ]
   },
   {
     "id": 4,
     "company": "CloudVision",
-    "logo": "assets/logos/cloudvision.svg",
-    "title": "Lead Développeur Front",
-    "description": "Encadrement technique d’une équipe front-end et définition d’architectures modernes pour plusieurs produits SaaS.",
-    "technologies": ["Angular", "Nx", "Jest", "Docker"]
+    "missions": [
+      {
+        "id": 41,
+        "period": "Fév 2019 - Août 2020",
+        "location": "Paris, France",
+        "role": "Lead Développeur Front",
+        "company": "Plusieurs produits SaaS",
+        "summary": "Encadrement d'une équipe de 5 développeurs front-end et définition d'une architecture partagée sur 3 produits SaaS.",
+        "description": "Encadrement technique d'une équipe front-end et définition d'architectures modernes pour plusieurs produits SaaS, avec la mise en place d'une bibliothèque de composants partagée et de bonnes pratiques CI/CD.",
+        "technologies": ["Angular", "Nx", "Jest", "Docker"]
+      }
+    ]
   },
   {
     "id": 5,
     "company": "TechFactory",
-    "logo": "assets/logos/techfactory.svg",
-    "title": "Ingénieur Développement",
-    "description": "Développement de fonctionnalités stratégiques et optimisation des performances applicatives sur des projets à forte visibilité.",
-    "technologies": ["Angular", "Spring Boot", "Kubernetes", "GitLab CI"]
+    "missions": [
+      {
+        "id": 51,
+        "period": "Sep 2017 - Jan 2019",
+        "location": "Nantes, France",
+        "role": "Ingénieur Développement",
+        "company": "Projet : HighTraffic",
+        "summary": "Optimisation des chemins de rendu critiques, amélioration des scores de performance de 40% sur des projets à forte visibilité.",
+        "description": "Développement de fonctionnalités stratégiques et optimisation des performances applicatives sur des projets à forte visibilité, avec un fort accent sur des gains de performance mesurables et le monitoring.",
+        "technologies": ["Angular", "Spring Boot", "Kubernetes", "GitLab CI"]
+      }
+    ]
   }
 ]

@@ -1,0 +1,103 @@
+@use 'card' as *;
+
+:host {
+  display: block;
+}
+
+.entry-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.6rem;
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--pine-teal-700);
+
+  .entry-separator {
+    opacity: 0.6;
+  }
+}
+
+:host-context([data-theme='dark']) .entry-meta {
+  color: var(--soft-linen-300);
+}
+
+.entry-card {
+  position: relative;
+  margin-bottom: 2rem;
+  @include card;
+
+  .entry-role {
+    margin: 1.75rem 0 0.75rem;
+    font-size: var(--font-size-h4);
+  }
+
+  .entry-summary {
+    margin: 0 0 1.25rem;
+    padding: 0.75rem 1rem;
+    line-height: 1.6;
+  }
+
+  .entry-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+
+    .tech-badge {
+      @include card(0.5rem 0.8rem, 2rem, var(--surface-color-2));
+      font-size: var(--font-size-small);
+      font-weight: 600;
+    }
+  }
+
+  .entry-details {
+    border-top: var(--border);
+    padding-top: 0.75rem;
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--pine-teal-700);
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      .chevron {
+        width: 1.25rem;
+        height: 1.25rem;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &[open] summary .chevron {
+      transform: rotate(180deg);
+    }
+
+    .entry-description {
+      margin: 0.75rem 0 0;
+      line-height: 1.7;
+    }
+  }
+
+  :host-context([data-theme='dark']) .entry-details summary {
+    color: var(--soft-linen-300);
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .entry-card {
+    .entry-role {
+      margin-top: 2.25rem;
+    }
+  }
+}

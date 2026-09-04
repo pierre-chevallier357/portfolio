@@ -1,0 +1,15 @@
+<section [attr.aria-label]="company().company" class="company-section">
+  <header class="company-header">
+    <h3 class="company-name">{{ company().company }}</h3>
+  </header>
+
+  <div #missionsContainer class="company-body">
+    <portfolio-timeline [dotPositions]="dotPositions()" [height]="timelineHeight()"
+                        [top]="timelineStartingPosition()"></portfolio-timeline>
+    <div class="company-missions">
+      @for (mission of company().missions; track mission.id) {
+        <portfolio-timeline-entry [mission]="mission"/>
+      }
+    </div>
+  </div>
+</section>

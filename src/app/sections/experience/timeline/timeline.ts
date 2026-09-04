@@ -21,11 +21,11 @@ import { map, startWith } from 'rxjs/operators';
   styleUrl: './timeline.scss',
 })
 export class Timeline {
-  public readonly dotsCount: InputSignal<number> = input.required<number>();
+  public readonly dotPositions: InputSignal<number[]> = input.required<number[]>();
   public readonly height: InputSignal<number> = input.required<number>();
   public readonly top: InputSignal<number> = input.required<number>();
   protected readonly dotsPercentages: Signal<number[]> = computed(() =>
-    this.getEvenlySpacedPercentages(this.dotsCount()),
+    this.dotPositions().map((position) => Math.min(100, Math.max(0, position))),
   );
   private readonly line: Signal<ElementRef<HTMLDivElement>> =
     viewChild.required<ElementRef<HTMLDivElement>>('line');
@@ -40,18 +40,16 @@ export class Timeline {
       : of(0),
     { initialValue: 0 },
   );
-  protected readonly progress: Signal<number> = computed(() => {
+  private readonly rawProgress: Signal<number> = computed(() => {
     this.updateScrollValue();
-    if (!this.isBrowser) return 0;
+    if (!this.isBrowser) return -1;
     const rect: DOMRect = this.line().nativeElement.getBoundingClientRect();
     const viewportCenter: number = (window.innerHeight ?? 0) / 2;
-    return Math.max(0, Math.min((viewportCenter - rect.top) / rect.height, 1));
+    return (viewportCenter - rect.top) / rect.height;
   });
+  protected readonly progress: Signal<number> = computed(() =>
+    Math.max(0, Math.min(this.rawProgress(), 1)),
+  );
   protected readonly fillHeight: Signal<string> = computed(() => `${this.progress() * 100}%`);
-
-  private getEvenlySpacedPercentages(count: number): number[] {
-    if (count <= 0) return [];
-    if (count === 1) return [0];
-    return Array.from({ length: count }, (_, i) => Math.round((i * 100) / (count - 1)));
-  }
+  protected readonly isDotActive = (dot: number): boolean => this.rawProgress() >= dot / 100;
 }

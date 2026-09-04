@@ -1,0 +1,55 @@
+:host {
+  display: block;
+}
+
+.company-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+
+  .company-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+    .company-name {
+      margin: 0;
+    }
+  }
+
+  .company-body {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 2rem;
+
+    .company-missions {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 56.25rem) {
+  .company-section {
+    .company-body {
+      grid-template-columns: 2.5rem 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .company-section {
+    .company-header {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .company-body {
+      grid-template-columns: 1.5rem 1fr;
+      gap: 1rem;
+    }
+  }
+}

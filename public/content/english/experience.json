@@ -2,41 +2,101 @@
   {
     "id": 1,
     "company": "NovaTech",
-    "logo": "assets/logos/novatech.svg",
-    "title": "Angular Front-End Developer",
-    "description": "Development of a business portal intended for internal teams. Implementation of high-performance interfaces and continuous improvement of the user experience.",
-    "technologies": ["Angular", "TypeScript", "RxJS", "SCSS"]
+    "missions": [
+      {
+        "id": 11,
+        "period": "Mar 2023 - Present",
+        "location": "Lyon, France (Hybrid)",
+        "role": "Angular Front-End Developer",
+        "company": "Internal Business Portal",
+        "summary": "Rebuilt the internal business portal used daily by 800+ employees, cutting page load times in half.",
+        "description": "Development of a business portal intended for internal teams. Implementation of high-performance interfaces, migration to signal-based state management, and continuous improvement of the user experience through close collaboration with product and design teams.",
+        "technologies": ["Angular", "TypeScript", "RxJS", "SCSS"]
+      }
+    ]
   },
   {
     "id": 2,
     "company": "DataSphere",
-    "logo": "assets/logos/datasphere.svg",
-    "title": "Full-Stack Developer",
-    "description": "Design of web services and REST APIs for business management applications. Participation in technical decision-making and code reviews.",
-    "technologies": ["Angular", "Node.js", "NestJS", "PostgreSQL"]
+    "missions": [
+      {
+        "id": 21,
+        "period": "Jun 2022 - Feb 2023",
+        "location": "Remote",
+        "role": "Full-Stack Developer",
+        "company": "Client: FleetOps",
+        "summary": "Designed the REST API layer powering FleetOps' fleet management platform, serving 50k+ requests/day.",
+        "description": "Design of web services and REST APIs for business management applications. Participation in technical decision-making and code reviews, along with the definition of coding standards adopted across the engineering team.",
+        "technologies": ["Angular", "Node.js", "NestJS", "PostgreSQL"]
+      },
+      {
+        "id": 22,
+        "period": "Jan 2022 - May 2022",
+        "location": "Remote",
+        "role": "Front-End Developer",
+        "company": "Client: FleetOps",
+        "summary": "Delivered the first interactive dashboard prototype, validated with stakeholders in under six weeks.",
+        "description": "Built the initial dashboard prototype used to validate product direction with stakeholders, focusing on rapid iteration and close feedback loops with the design team.",
+        "technologies": ["Angular", "RxJS", "Chart.js"]
+      },
+      {
+        "id": 23,
+        "period": "Jan 2022 - May 2022",
+        "location": "Remote",
+        "role": "Front-End Developer",
+        "company": "Client: FleetOps",
+        "summary": "Delivered the first interactive dashboard prototype, validated with stakeholders in under six weeks.",
+        "description": "Built the initial dashboard prototype used to validate product direction with stakeholders, focusing on rapid iteration and close feedback loops with the design team.",
+        "technologies": ["Angular", "RxJS", "Chart.js"]
+      }
+    ]
   },
   {
     "id": 3,
     "company": "GreenSoft",
-    "logo": "assets/logos/greensoft.svg",
-    "title": "Software Engineer",
-    "description": "Creation of software solutions for monitoring environmental indicators, including the integration of interactive dashboards.",
-    "technologies": ["Angular", "C#", ".NET", "Azure"]
+    "missions": [
+      {
+        "id": 31,
+        "period": "Sep 2020 - Dec 2021",
+        "location": "Grenoble, France",
+        "role": "Software Engineer",
+        "company": "Project: EcoWatch",
+        "summary": "Shipped interactive dashboards tracking environmental indicators for 12 regional partners.",
+        "description": "Creation of software solutions for monitoring environmental indicators, including the integration of interactive dashboards and automated reporting pipelines used by regional partners.",
+        "technologies": ["Angular", "C#", ".NET", "Azure"]
+      }
+    ]
   },
   {
     "id": 4,
     "company": "CloudVision",
-    "logo": "assets/logos/cloudvision.svg",
-    "title": "Lead Front-End Developer",
-    "description": "Technical leadership of a front-end team and definition of modern architectures for multiple SaaS products.",
-    "technologies": ["Angular", "Nx", "Jest", "Docker"]
+    "missions": [
+      {
+        "id": 41,
+        "period": "Feb 2019 - Aug 2020",
+        "location": "Paris, France",
+        "role": "Lead Front-End Developer",
+        "company": "Multiple SaaS Products",
+        "summary": "Led a team of 5 front-end developers and defined shared architecture across 3 SaaS products.",
+        "description": "Technical leadership of a front-end team and definition of modern architectures for multiple SaaS products, including the introduction of a shared component library and CI/CD best practices.",
+        "technologies": ["Angular", "Nx", "Jest", "Docker"]
+      }
+    ]
   },
   {
     "id": 5,
     "company": "TechFactory",
-    "logo": "assets/logos/techfactory.svg",
-    "title": "Development Engineer",
-    "description": "Development of strategic features and optimization of application performance for high-visibility projects.",
-    "technologies": ["Angular", "Spring Boot", "Kubernetes", "GitLab CI"]
+    "missions": [
+      {
+        "id": 51,
+        "period": "Sep 2017 - Jan 2019",
+        "location": "Nantes, France",
+        "role": "Development Engineer",
+        "company": "Project: HighTraffic",
+        "summary": "Optimized critical rendering paths, improving performance scores by 40% on high-visibility projects.",
+        "description": "Development of strategic features and optimization of application performance for high-visibility projects, with a strong focus on measurable performance improvements and monitoring.",
+        "technologies": ["Angular", "Spring Boot", "Kubernetes", "GitLab CI"]
+      }
+    ]
   }
 ]

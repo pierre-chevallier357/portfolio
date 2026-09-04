@@ -2,7 +2,7 @@
   <div #line class="line">
     <div [style.height]="fillHeight()" class="line-fill"></div>
     @for (dot of dotsPercentages(); track dot) {
-      <div [class.dot-active]="progress() >= dot / 100" [style.top.%]="dot" class="dot"></div>
+      <div [class.dot-active]="isDotActive(dot)" [style.top.%]="dot" class="dot"></div>
     }
   </div>
 </div>
