@@ -1,11 +1,13 @@
 import {
   Component,
   computed,
+  effect,
+  EffectRef,
   inject,
   PLATFORM_ID,
   Signal,
   signal,
-  WritableSignal,
+  WritableSignal
 } from '@angular/core';
 import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -41,7 +43,7 @@ export class Header {
   private readonly remSize: Signal<number> = computed(() =>
     parseFloat(getComputedStyle(document.documentElement).fontSize),
   );
-  private readonly scrollThresholdInPixels: number = this.isBrowser ? 5 * this.remSize() : 80; // 80 px is the fallback for SSR
+  private readonly scrollThresholdInPixels: number = this.isBrowser ? 5 * this.remSize() : 80; // 80 px is the fallback for SSR, matching 5rem
   protected readonly hasScrolledAfterThreshold: Signal<boolean> = this.isBrowser
     ? toSignal(
         fromEvent(window, 'scroll').pipe(
@@ -55,6 +57,23 @@ export class Header {
   protected readonly navLinks: Signal<HeaderContent> = this.contentProvider.getHeaderContent();
   protected readonly homeSectionTitle: Signal<string> =
     this.contentProvider.getSectionTitle('home');
+  private readonly desktopBreakpointInPixels: number = this.isBrowser
+    ? 62.5 * this.remSize()
+    : 1000; // 1000 px is the fallback for SSR, matching the 62.5rem media query
+  private readonly isDesktop: Signal<boolean> = this.isBrowser
+    ? toSignal(
+        fromEvent(window, 'resize').pipe(
+          map(() => window.innerWidth > this.desktopBreakpointInPixels),
+          startWith(window.innerWidth > this.desktopBreakpointInPixels),
+        ),
+        { initialValue: false },
+      )
+    : signal(false);
+  private readonly closeMenuOnDesktopEffect: EffectRef = effect(() => {
+    if (this.isDesktop() && this.isMenuOpened()) {
+      this.closeMenu();
+    }
+  });
 
   protected toggleMenu(): void {
     this.isMenuOpened.update((isMenuOpened) => !isMenuOpened);
