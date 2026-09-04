@@ -26,6 +26,12 @@
         "level": 85,
         "color": "brilliant-azure",
         "description": "Utilisé quotidiennement pour apporter un typage statique et un meilleur outillage au JavaScript, notamment avec Angular."
+      },
+      {
+        "name": "Vibe coding",
+        "level": 90,
+        "color": "default",
+        "description": "Je suis autant à l'aise avec l'IA que sans. Je peux développer en m'appuyant entièrement sur l'IA pour développer plus vite, ou m'en passer complètement pour garder la maîtrise totale du code. À vous de choisir !"
       }
     ]
   },

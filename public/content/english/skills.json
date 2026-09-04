@@ -26,6 +26,12 @@
         "level": 85,
         "color": "brilliant-azure",
         "description": "Used daily to bring type safety and better tooling to JavaScript codebases, especially within Angular."
+      },
+      {
+        "name": "Vibe coding",
+        "level": 90,
+        "color": "default",
+        "description": "I'm as comfortable using AI as not using it. I can rely entirely on AI for development to code faster, or not at all to keep full control on the code. It's up to you!"
       }
     ]
   },
