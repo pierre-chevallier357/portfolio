@@ -6,12 +6,12 @@ import { HomeTitle } from './home-title/home-title';
 import { ContentProvider } from '../../content/content-provider';
 
 @Component({
-  selector: 'portfolio-home',
+  selector: 'portfolio-home-section',
   imports: [NgOptimizedImage, InView, HomeTitle],
-  templateUrl: './home.html',
-  styleUrl: './home.scss',
+  templateUrl: './home-section.html',
+  styleUrl: './home-section.scss',
 })
-export class Home {
+export class HomeSection {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly languageStore: LanguageStore = inject(LanguageStore);
   protected readonly portraitAlt: Signal<string> = computed(() =>

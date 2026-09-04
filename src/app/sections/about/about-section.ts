@@ -6,12 +6,12 @@ import { LanguageStore } from '../../core/language/language-store';
 import { AboutContent } from '../../content/about-content';
 
 @Component({
-  selector: 'portfolio-about',
+  selector: 'portfolio-about-section',
   imports: [NgOptimizedImage, InView],
-  templateUrl: './about.html',
-  styleUrl: './about.scss',
+  templateUrl: './about-section.html',
+  styleUrl: './about-section.scss',
 })
-export class About {
+export class AboutSection {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   protected readonly age: number = this.calculateAge(new Date('2000-10-20'));
   private readonly contentProvider: ContentProvider = inject(ContentProvider);

@@ -2,7 +2,7 @@
 
 Personal portfolio website of **Pierre Chevallier**, built with Angular.
 
-It features several sections: Home, About, Skills, Experience, Education, and Contact, available in both **English and French**.
+It features several sections: HomeSection, About, SkillsSection, ExperienceSection, EducationSection, and ContactSection, available in both **English and French**.
 
 ![Website preview](public/images/website-preview.png "Website preview")
 

@@ -14,12 +14,12 @@ import { ContactContent } from '../../content/contact-content';
 import { LanguageStore } from '../../core/language/language-store';
 
 @Component({
-  selector: 'portfolio-contact',
+  selector: 'portfolio-contact-section',
   imports: [InView],
-  templateUrl: './contact.html',
-  styleUrl: './contact.scss',
+  templateUrl: './contact-section.html',
+  styleUrl: './contact-section.scss',
 })
-export class Contact {
+export class ContactSection {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   protected readonly copied: WritableSignal<boolean> = signal(false);
   private readonly platformId: object = inject(PLATFORM_ID);

@@ -5,12 +5,12 @@ import { ContentProvider } from '../../content/content-provider';
 import { CompanySection } from './company-section/company-section';
 
 @Component({
-  selector: 'portfolio-experience',
+  selector: 'portfolio-experience-section',
   imports: [InView, CompanySection],
-  templateUrl: './experience.html',
-  styleUrl: './experience.scss',
+  templateUrl: './experience-section.html',
+  styleUrl: './experience-section.scss',
 })
-export class Experience {
+export class ExperienceSection {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
   protected readonly experience: Signal<ExperienceContent> =

@@ -4,12 +4,12 @@ import { ContentProvider } from '../../content/content-provider';
 import { EducationContent } from '../../content/education-content';
 
 @Component({
-  selector: 'portfolio-education',
+  selector: 'portfolio-education-section',
   imports: [InView],
-  templateUrl: './education.html',
-  styleUrl: './education.scss',
+  templateUrl: './education-section.html',
+  styleUrl: './education-section.scss',
 })
-export class Education {
+export class EducationSection {
   protected readonly isInView: WritableSignal<boolean> = signal(false);
   private readonly contentProvider: ContentProvider = inject(ContentProvider);
   protected readonly educationContent: Signal<EducationContent> =
